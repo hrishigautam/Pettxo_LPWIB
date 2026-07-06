@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   Pettxo Brand Colors
+   Orange           : #F75927
+   Beige Background : #F5EFE6
+   Beige Cards      : #FDF4EE
+   Brown            : #5C3629
+========================================== */
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    background-color: #f5efe6; /* Beige Background - #F5EFE6 */
+  }
+
+  body {
+    background-color: #f5efe6; /* Beige Background - #F5EFE6 */
+    color: #1f2937;
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  blockquote {
+    font-style: normal;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .wrap-x {
+    @apply max-w-[1280px] mx-auto px-6 md:px-16;
+  }
+}
