@@ -98,12 +98,12 @@ export default function Features() {
   // ── Pinned scroll showcase ──
   return (
     <section ref={sectionRef} id="features" className="bg-card" aria-label="What's inside Pettxo">
-      <div className="min-h-screen flex flex-col justify-center max-w-[1280px] mx-auto px-6 md:px-16 py-8 md:py-16">
+      <div className="min-h-screen flex flex-col justify-center max-w-[1280px] mx-auto px-6 md:px-16 py-8 md:py-10">
         <Header />
 
-        <div className="mt-6 md:mt-12 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-6 md:gap-16 items-center">
+        <div className="mt-6 md:mt-5 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-6 md:gap-16 items-center">
           {/* Phone with stacked screens */}
-          <div className="justify-self-center md:justify-self-start w-full max-w-[190px] md:max-w-[300px]">
+          <div className="justify-self-center md:justify-self-start w-full max-w-[130px] md:max-w-[230px]">
             <Phone>
               {FEATURES.map((f, i) => (
                 <div key={i} className="app-screen absolute inset-0">
@@ -137,10 +137,10 @@ export default function Features() {
 function Header() {
   return (
     <div>
-      <span className="block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-3.5">
+      <span className="block text-[10.5px] font-semibold tracking-[0.20em] uppercase pt-10 text-orange mb-2">
         What's Inside
       </span>
-      <h2 className="font-serif font-bold text-dark leading-[1.14] max-w-[520px]" style={{ fontSize: 'clamp(26px, 4vw, 44px)' }}>
+      <h2 className="font-serif font-bold text-dark leading-[1.14] max-w-[670px]" style={{ fontSize: 'clamp(28px, 3vw, 40px)' }}>
         One app for your entire pet life.
       </h2>
     </div>
@@ -190,7 +190,7 @@ function Screen({ i }) {
 function StatusBar({ title }) {
   return (
     <div className="flex items-center justify-center relative px-4 pt-3 pb-2 border-b border-[#F0E8DF]">
-      <span className="font-sans font-semibold text-[13px] text-dark">{title}</span>
+      <span className="font-sans font-semibold text-[12px] text-dark">{title}</span>
     </div>
   )
 }
@@ -206,19 +206,19 @@ function ScreenDiscover() {
       <StatusBar title="Discover" />
       <div className="px-3.5 pt-3">
         <div className="flex items-center gap-2 bg-white rounded-full border border-[#E5E7EB] px-3.5 py-2.5">
-          <span className="w-3.5 h-3.5 rounded-full border-2 border-muted" />
+          <span className="w-3 h-3 rounded-full border-2 border-muted" />
           <span className="text-[12px] text-muted">Groomers near you</span>
         </div>
       </div>
       <div className="px-3.5 py-3 flex flex-col gap-2.5">
         {rows.map((r, k) => (
-          <div key={k} className="flex items-center gap-3 bg-white rounded-[12px] border border-[#E5E7EB] p-2.5">
-            <div className="w-10 h-10 rounded-full bg-[rgba(247,89,39,0.12)] border border-orange flex-shrink-0" />
+          <div key={k} className="flex items-center gap-3 bg-white rounded-[12px] border border-[#E5E7EB] p-2">
+            <div className="w-7 h-7 rounded-full bg-[rgba(247,89,39,0.12)] border border-orange flex-shrink-0" />
             <div className="min-w-0">
-              <p className="font-sans font-semibold text-[12px] text-dark truncate">{r.n}</p>
-              <p className="text-[10.5px] text-muted truncate">{r.m}</p>
+              <p className="font-sans font-semibold text-[10px] text-dark truncate">{r.n}</p>
+              <p className="text-[9.5px] text-muted truncate">{r.m}</p>
             </div>
-            <span className="ml-auto text-[10px] font-semibold text-orange bg-[rgba(247,89,39,0.12)] rounded-full px-2 py-1">Book</span>
+            <span className="ml-auto text-[9px] font-semibold text-orange bg-[rgba(247,89,39,0.12)] rounded-full px-2 py-1">Book</span>
           </div>
         ))}
       </div>
@@ -232,23 +232,23 @@ function ScreenFeed() {
       <StatusBar title="Pettxo" />
       <div className="p-3.5 flex flex-col gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-full flex-shrink-0 bg-[rgba(247,89,39,0.12)] border border-orange" />
+          <div className="w-6 h-6 rounded-full flex-shrink-0 bg-[rgba(247,89,39,0.12)] border border-orange" />
           <div className="flex flex-col gap-0.5">
-            <span className="font-semibold text-[12px] text-dark">Raju Rastogi</span>
-            <span className="text-[9px] font-semibold text-orange bg-[rgba(247,89,39,0.12)] rounded-full px-2 py-0.5 self-start">Pet Parent</span>
+            <span className="font-semibold text-[10px] text-dark">Raju Rastogi</span>
+            <span className="text-[8px] font-semibold text-orange bg-[rgba(247,89,39,0.12)] rounded-full px-2 py-0.5 self-start">Pet Parent</span>
           </div>
         </div>
         <div className="rounded-[12px] bg-card border border-[#E5E7EB] p-3">
-          <p className="font-serif text-[12.5px] leading-[1.55] text-dark mb-2.5">
+          <p className="font-serif text-[10.5px] leading-[1.55] text-dark mb-2.5">
             "Because pets aren't just animals. They're family."
           </p>
-          <div className="flex gap-3.5 text-[11px] text-muted">
+          <div className="flex gap-3.5 text-[9px] text-muted">
             <span>♡ 12</span><span>💬 3</span><span>↗ Share</span>
           </div>
         </div>
         <div className="rounded-[12px] border border-[#E5E7EB] px-3 py-2.5 flex flex-col gap-1">
-          <span className="text-[8.5px] font-bold tracking-[0.12em] uppercase text-orange">Near you</span>
-          <span className="text-[10.5px] font-light text-muted">Discover pet parents in your city</span>
+          <span className="text-[7.5px] font-bold tracking-[0.12em] uppercase text-orange">Near you</span>
+          <span className="text-[9.5px] font-light text-muted">Discover pet parents in your city</span>
         </div>
       </div>
     </div>
@@ -260,19 +260,19 @@ function ScreenBooking() {
     <div className="w-full h-full bg-card flex flex-col">
       <StatusBar title="Booking" />
       <div className="flex-1 flex flex-col items-center px-4 pt-6">
-        <div className="w-14 h-14 rounded-full bg-orange grid place-items-center mb-3">
+        <div className="w-12 h-12 rounded-full bg-orange grid place-items-center mb-3">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
-        <p className="font-serif font-bold text-[16px] text-dark mb-1">Booking confirmed</p>
-        <p className="text-[11px] text-muted mb-4">Grooming · Sat, 10:00 AM</p>
-        <div className="w-full bg-white rounded-[12px] border border-[#E5E7EB] p-3 flex flex-col gap-2.5">
+        <p className="font-serif font-bold text-[13px] text-dark mb-1">Booking confirmed</p>
+        <p className="text-[9px] text-muted mb-4">Grooming · Sat, 10:00 AM</p>
+        <div className="w-full text-[9px] bg-white rounded-[9px] border border-[#E5E7EB] p-3 flex flex-col gap-2">
           <Row k="Provider" v="Aarav · Groomer" />
           <Row k="Status" v="Paid securely" accent />
           <Row k="Code" v="PTX-4821" />
         </div>
       </div>
-      <div className="px-4 pb-4 pt-3">
-        <div className="w-full text-center bg-orange text-white font-semibold text-[12px] rounded-full py-2.5">View service history</div>
+      <div className="px-3 pb-3 pt-3">
+        <div className="w-full text-center bg-orange text-white font-semibold text-[9px] rounded-full py-2">View service history</div>
       </div>
     </div>
   )
@@ -286,3 +286,10 @@ function Row({ k, v, accent }) {
     </div>
   )
 }
+
+
+
+
+
+
+

@@ -37,7 +37,7 @@ export default function Contact() {
             Contact
           </span>
           <h1 className="reveal font-serif font-black leading-[1.08] tracking-[-0.02em] text-dark mb-6 max-w-[760px]" style={{ fontSize: 'clamp(34px, 6vw, 64px)' }}>
-            We'd <span className="text-orange">love to</span>  hear from <span className="text-orange"></span>you.
+            We'd <span className="text-orange">love </span> to hear from <span className="text-orange">you.</span>
           </h1>
           <p className="reveal font-light leading-[1.82] text-muted max-w-[620px]" style={{ fontSize: 'clamp(15px,2vw,18px)' }}>
             Questions, partnerships, press, or support — reach us directly. We read everything and reply as fast as we can.
@@ -50,7 +50,7 @@ export default function Contact() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ContactCard title="General & Support" body="For anything about using Pettxo, your account, or a booking.">
-              <a href="mailto:hello@pettxo.com" className="text-orange font-medium text-[15px] hover:underline">Email → hello@pettxo.com</a>
+              <a href="mailto:support@pettxo.com" className="text-orange font-medium text-[15px] hover:underline">Email → support@pettxo.com</a>
             </ContactCard>
 
             <ContactCard title="Service Providers" body="Want to list your services or have a question about your profile?">

@@ -26,7 +26,7 @@ const FAQ = [
 ]
 
 const LIST_LABEL = 'Become a Founding Provider'
-
+const LIST_LABEL_SHORT = 'Install Pettxo — Free'
 export default function ForProviders() {
   const ref = useRef(null)
 
@@ -46,16 +46,16 @@ export default function ForProviders() {
   return (
     <div ref={ref}>
       {/* HERO */}
-      <section className="bg-beige pt-32 pb-14 md:pt-40 md:pb-20 reveal-group">
+      <section className="bg-beige pt-32 pb-14 md:pt-25 md:pb-25 reveal-group">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
-          <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-4">
+          <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-6">
             For Service Providers
           </span>
           <h1 className="reveal font-serif font-black text-dark leading-[1.04] tracking-[-0.025em] mb-6" style={{ fontSize: 'clamp(40px, 7vw, 80px)' }}>
-            Your next client is<br />
-            <span className="text-orange"> already looking.</span>
+            Your <span className="text-orange">  next client</span> is<br />already
+            <span className="text-orange">  looking.</span>
           </h1>
-          <p className="reveal font-light leading-[1.82] text-muted max-w-[620px] mb-8" style={{ fontSize: 'clamp(15px,2vw,18px)' }}>
+          <p className="reveal font-light leading-[1.82] text-muted max-w-[620px] mb-20" style={{ fontSize: 'clamp(15px,2vw,18px)' }}>
             Groomers, vets, walkers, trainers, sitters — get discovered by pet parents near you, take bookings, and get paid securely inside the app.
           </p>
           <div className="reveal">
@@ -151,7 +151,7 @@ export default function ForProviders() {
             Join now and list free while early access lasts.
           </p>
           <div className="reveal flex flex-col items-center gap-3.5">
-            <InstallButton label={LIST_LABEL} className="w-full sm:w-auto min-w-[260px]" />
+            <InstallButton label={LIST_LABEL_SHORT} className="w-full sm:w-auto min-w-[260px]" />
             <p className="text-[12.5px] font-light text-muted">Available on App Store &amp; Play Store</p>
             <p className="text-[12px] font-light text-muted opacity-80 max-w-[420px]">
               By listing your services, you agree to our Service Provider Agreement.

@@ -47,36 +47,6 @@ function Pill({ c, zone }) {
   );
 }
 
-function Cutout({ wrapClass, onError }) {
-  return (
-    <div className={"hero-cutout-wrap pointer-events-none " + wrapClass}>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 70% 60%, rgba(247,89,39,0.10) 0%, transparent 60%)",
-        }}
-      />
-      <img
-        src="/images/hero-pets.png"
-        alt="A dog and a cat together"
-        onError={onError}
-        className="hero-cutout relative block w-full h-auto"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to bottom, #000 86%, transparent 100%)",
-          maskImage: "linear-gradient(to bottom, #000 86%, transparent 100%)",
-          WebkitMaskRepeat: "no-repeat",
-          maskRepeat: "no-repeat",
-          WebkitMaskSize: "100% 100%",
-          maskSize: "100% 100%",
-        }}
-      />
-    </div>
-  );
-}
-
 export default function Hero() {
   const sectionRef = useRef(null);
   const eyebrowRef = useRef(null);
@@ -85,6 +55,8 @@ export default function Hero() {
   const subRef = useRef(null);
   const ctaRef = useRef(null);
   const btnRef = useRef(null);
+  const photoRef = useRef(null);
+  const photoImgRef = useRef(null);
   const textColRef = useRef(null);
   const [imgOk, setImgOk] = useState(true);
 
@@ -96,7 +68,6 @@ export default function Hero() {
       const root = sectionRef.current;
       const caps = gsap.utils.toArray(root.querySelectorAll(".hero-capsule"));
       const pills = caps.map((c) => c.querySelector(".pill"));
-      const cutouts = gsap.utils.toArray(root.querySelectorAll(".hero-cutout"));
       const textEls = [
         eyebrowRef.current,
         line1Ref.current,
@@ -107,8 +78,6 @@ export default function Hero() {
       const rnd = (a, b) => a + Math.random() * (b - a);
 
       // Drift zone + directional wrap pads for a capsule, from its layer container.
-      // Desktop: capsules live in the right region; left excursion is kept tight so they
-      // never reach the headline glyphs, while the right exit stays dramatic.
       const zoneFor = (el) => {
         const cont = el.parentElement;
         const w = cont.clientWidth,
@@ -205,51 +174,19 @@ export default function Hero() {
       if (reduce) {
         gsap.set(textEls, { opacity: 1, y: 0 });
         pills.forEach((p) => gsap.set(p, { opacity: 1, scale: 1 }));
-        cutouts.forEach((c) => gsap.set(c, { opacity: 1, scale: 1 }));
+        gsap.set(photoRef.current, { opacity: 1, scale: 1 });
         return;
       }
 
       // ── Entrance ──
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.fromTo(
-        eyebrowRef.current,
-        { opacity: 0, y: 18 },
-        { opacity: 1, y: 0, duration: 0.65 },
-        0.15,
-      )
-        .fromTo(
-          line1Ref.current,
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.85 },
-          0.3,
-        )
-        .fromTo(
-          line2Ref.current,
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.85 },
-          0.45,
-        )
-        .fromTo(
-          subRef.current,
-          { opacity: 0, y: 22 },
-          { opacity: 1, y: 0, duration: 0.8 },
-          0.6,
-        )
-        .fromTo(
-          ctaRef.current,
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.65 },
-          0.75,
-        );
+      tl.fromTo(eyebrowRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, 0.1)
+        .fromTo(line1Ref.current, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.8 }, 0.25)
+        .fromTo(line2Ref.current, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.8 }, 0.4)
+        .fromTo(subRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.55)
+        .fromTo(ctaRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, 0.7)
+        .fromTo(photoRef.current, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1.2 }, 0.3);
 
-      cutouts.forEach((el) =>
-        tl.fromTo(
-          el,
-          { opacity: 0, scale: 0.96 },
-          { opacity: 1, scale: 1, duration: 1.0 },
-          0.5,
-        ),
-      );
       pills.forEach((el, i) =>
         tl.fromTo(
           el,
@@ -259,23 +196,34 @@ export default function Hero() {
         ),
       );
 
-      // Gentle cutout idle float
-      cutouts.forEach((el) =>
-        gsap.to(el, {
+      // Gentle photo idle float — animates the image itself, not the fixed-height box
+      if (photoImgRef.current) {
+        gsap.to(photoImgRef.current, {
           y: "+=10",
           duration: 5,
           ease: "sine.inOut",
           repeat: -1,
           yoyo: true,
           delay: 1.5,
-        }),
-      );
+        });
+      }
+
+      // Gentle photo idle float — the subtle continuous up/down bob from the original design
+      if (photoRef.current) {
+        gsap.to(photoRef.current, {
+          y: "+=10",
+          duration: 5,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: 1.5,
+        });
+      }
 
       // Install button: 3 gentle glow pulses then rest
       if (btnRef.current) {
         gsap.to(btnRef.current, {
-          boxShadow:
-            "0 14px 34px rgba(247,89,39,0.36), 0 0 0 8px rgba(247,89,39,0.10)",
+          boxShadow: "0 14px 34px rgba(247,89,39,0.36), 0 0 0 8px rgba(247,89,39,0.10)",
           duration: 1.6,
           ease: "sine.inOut",
           repeat: 5,
@@ -360,96 +308,119 @@ export default function Hero() {
   const mobileCaps = CAPS.filter((c) => c.m);
 
   return (
-    <section
-      ref={sectionRef}
-      id="hero"
-      className="sec-hero relative overflow-hidden bg-beige md:min-h-[100dvh] pb-10 md:pb-14"
-    >
-      {/* ── DESKTOP capsule layer (behind cutout) ── */}
+    <section ref={sectionRef} className="relative bg-beige overflow-hidden">
+      {/* Soft decorative glow behind the headline */}
       <div
-        className="hidden md:block absolute inset-0 z-10 pointer-events-none"
         aria-hidden="true"
-      >
-        {CAPS.map((c) => (
-          <Pill key={c.l} c={c} zone="desktop" />
-        ))}
-      </div>
+        className="pointer-events-none absolute -left-24 -top-24 w-[420px] h-[420px] rounded-full bg-orange/10 blur-[110px]"
+      />
 
-      {/* ── DESKTOP cutout — large, right-anchored, fades into beige ── */}
-      {imgOk && (
-        <Cutout
-          wrapClass="hidden md:block absolute right-0 bottom-6 -translate-y-[30px] z-20 w-[48%] max-w-[700px] min-w-[320px]"
-          onError={() => setImgOk(false)}
-        />
-      )}
-
-      {/* ── Text (always on top) ── */}
-      <div className="relative z-30 max-w-[1280px] mx-auto px-6 md:px-16 pt-16 md:pt-24 pb-8 md:pb-12">
-        <div ref={textColRef} className="max-w-[640px]">
-          <span
-            ref={eyebrowRef}
-            className="block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-4 opacity-0"
-          >
-            Care · Trust · Love
-          </span>
-          <h1
-            className="font-serif font-black leading-[1.10] tracking-[-0.02em] text-dark mb-5"
-            style={{ fontSize: "clamp(36px, 6.5vw, 70px)" }}
-          >
-            <span ref={line1Ref} className="block opacity-0">
-              Because pets aren't just animals.
-            </span>
-            <span ref={line2Ref} className="block text-dark opacity-0">
-              They're <span className="text-orange">family</span>.
-            </span>
-          </h1>
-          <p
-            ref={subRef}
-            className="text-dark font-light leading-[1.75] mb-6 opacity-0"
-            style={{ fontSize: "clamp(14.5px, 1.8vw, 16px)" }}
-          >
-            Find trusted groomers, vets, walkers, and trainers near you.
-            <br />
-            List your services. Build your name.
-            <br />
-            Connect with your local pet community.
-            <br />
-            Every pet. Every person.{" "}
-            <span className="text-orange font-semibold">One app.</span>
-          </p>
-          <div ref={ctaRef} className="opacity-0">
-            <a
-              ref={btnRef}
-              href="#"
-              onClick={handleInstall}
-              aria-label="Install Pettxo — Free"
-              className="btn-install inline-flex items-center justify-center gap-2.5 h-[52px] px-8 w-full md:w-auto bg-orange text-white font-semibold text-[16px] rounded-[12px] shadow-[0_14px_34px_rgba(247,89,39,0.36)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(247,89,39,0.46)]"
-            >
-              Install Pettxo — Free
-            </a>
-            <p className="mt-3 text-[12.5px] font-light text-muted text-center md:text-left">
-              Available on App Store &amp; Play Store
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* ── MOBILE media zone (in flow, below CTA): cutout + drifting capsules ── */}
-      <div
-        className="md:hidden relative z-10 min-h-[210px] mt-1"
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 z-10 pointer-events-none">
-          {mobileCaps.map((c) => (
-            <Pill key={c.l} c={c} zone="mobile" />
+      <div className="relative md:min-h-[600px]">
+        {/* DESKTOP capsule layer (behind photo) */}
+        <div
+          className="hidden md:block absolute inset-0 z-10 pointer-events-none"
+          aria-hidden="true"
+        >
+          {CAPS.map((c) => (
+            <Pill key={c.l} c={c} zone="desktop" />
           ))}
         </div>
+
+        {/* Desktop photo — height capped independently so it never overflows the screen,
+            and never clips the text column even if the photo is shorter/taller. */}
         {imgOk && (
-          <Cutout
-            wrapClass="absolute top-0 left-1/2 -translate-x-1/2 z-20 w-[80%] max-w-[320px]"
-            onError={() => setImgOk(false)}
-          />
+          <div
+            ref={photoRef}
+            className="hidden md:block absolute top-8 right-0 z-20 w-[79%] max-w-[950px] h-[96vh] max-h-[640px] min-h-[480px] overflow-hidden"
+          >
+            <img
+              src="/images/hero-pets.png"
+              alt="A dog and a cat together"
+              onError={() => setImgOk(false)}
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Barely-visible fade into the page background, only near the left edge */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-y-0 left-0 w-[30%]"
+              style={{
+                background: "linear-gradient(to right, #F7EFE4 0%, rgba(247,239,228,0) 100%)",
+              }}
+            />
+          </div>
         )}
+
+        {/* Text column */}
+        <div className="relative z-30 max-w-[1280px] mx-auto px-6 md:px-16 pt-16 md:pt-28 pb-10 md:pb-8">
+          <div ref={textColRef} className="max-w-[600px]">
+            <span
+              ref={eyebrowRef}
+              className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-orange  px-3.5 py-[7px] mb-6 opacity-0"
+            >
+              {/* <span className="w-[6px] h-[6px]  bg-orange" /> */}
+              Care · Trust · Love
+            </span>
+            <h1
+              className="font-serif font-black leading-[1.08] tracking-[-0.02em] text-dark mb-6"
+              style={{ fontSize: "clamp(34px, 6vw, 68px)" }}
+            >
+              <span ref={line1Ref} className="block opacity-0">
+                Because pets aren't just animals.
+              </span>
+              <span ref={line2Ref} className="block opacity-0">
+                <span className="text-orange"> They're family.</span>
+              </span>
+            </h1>
+            <p
+              ref={subRef}
+              className="text-dark/75 font-light leading-[1.75] mb-5 opacity-0"
+              style={{ fontSize: "clamp(13.5px, 1.6vw, 14px)" }}
+            >
+              Find trusted groomers, vets, walkers, and trainers near you.
+              <br />
+              Connect with your local pet community.
+                       <br />
+              List your services. Build your name.
+              <br />
+             
+             
+              Every Pet. Every person. One App
+            </p>
+            <div ref={ctaRef} className="opacity-0">
+              <a
+                ref={btnRef}
+                href="#"
+                onClick={handleInstall}
+                aria-label="Install Pettxo — Free"
+                className="btn-install inline-flex items-center justify-center gap-2.5 h-[54px] px-9 w-full md:w-auto bg-orange text-white font-semibold text-[16px] rounded-[14px] shadow-[0_14px_34px_rgba(247,89,39,0.36)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(247,89,39,0.46)]"
+              >
+                Install Pettxo — Free
+              </a>
+              <p className="mt-3 text-[12.5px] font-light text-muted text-center md:text-left">
+                Available on App Store &amp; Play Store
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* MOBILE media zone: photo card + drifting capsules over it */}
+        <div className="md:hidden relative z-10 mx-6 mb-2 min-h-[240px]">
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            {mobileCaps.map((c) => (
+              <Pill key={c.l} c={c} zone="mobile" />
+            ))}
+          </div>
+          {imgOk && (
+            <div className="relative z-20 rounded-[22px] overflow-hidden aspect-[4/3] shadow-[0_16px_40px_rgba(31,41,55,0.14)]">
+              <img
+                src="/images/hero-pets.png"
+                alt="A dog and a cat together"
+                onError={() => setImgOk(false)}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

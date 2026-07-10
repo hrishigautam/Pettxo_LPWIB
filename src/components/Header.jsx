@@ -46,7 +46,24 @@ export default function Header() {
       style={{ backgroundColor: 'rgba(245,239,230,0)' }}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-16 h-[62px] flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="Pettxo home" onClick={() => setOpen(false)}>
+       
+       <Link
+  to="/"
+  className="flex items-center gap-1"
+  aria-label="Pettxo home"
+  onClick={() => setOpen(false)}
+>
+  <img
+    src="/images/logo.png"
+    alt="Pettxo Logo"
+    className="w-[36px] h-[36px] object-contain flex-shrink-0"
+  />
+
+  <span className="font-sans font-semibold text-[18px] text-orange tracking-[-0.02em]">
+    Pettxo
+  </span>
+</Link>
+        {/* <Link to="/" className="flex items-center gap-2.5" aria-label="Pettxo home" onClick={() => setOpen(false)}>
           <span className="w-[34px] h-[34px] bg-orange rounded-lg grid place-items-center flex-shrink-0">
             <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
               <ellipse cx="11"   cy="15"   rx="4.2" ry="3.2" fill="#fff"/>
@@ -56,8 +73,8 @@ export default function Header() {
               <ellipse cx="14.4" cy="8"    rx="1.5" ry="2.0" fill="#fff"/>
             </svg>
           </span>
-          <span className="font-sans font-semibold text-[18px] text-dark tracking-[-0.02em]">Pettxo</span>
-        </Link>
+          <span className="font-sans font-semibold text-[18px] text-orange tracking-[-0.02em]">Pettxo</span>
+        </Link> */}
 
         {/* Desktop nav */}
         <nav aria-label="Site navigation" className="hidden md:flex gap-7 text-sm text-muted">

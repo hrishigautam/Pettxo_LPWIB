@@ -13,7 +13,23 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 md:px-16">
         {/* Brand row */}
         <div className="flex flex-col gap-1.5 mb-10">
-          <Link
+                 <Link
+  to="/"
+  className="flex items-center gap-1"
+  aria-label="Pettxo home"
+  onClick={() => setOpen(false)}
+>
+  <img
+    src="/images/logo.png"
+    alt="Pettxo Logo"
+    className="w-[36px] h-[36px] object-contain flex-shrink-0"
+  />
+
+  <span className="font-sans font-semibold text-[18px] text-orange tracking-[-0.02em]">
+    Pettxo
+  </span>
+</Link>
+          {/* <Link
             to="/"
             className="flex items-center gap-2.5"
             aria-label="Pettxo home"
@@ -30,7 +46,7 @@ export default function Footer() {
             <span className="font-sans font-semibold text-[18px] text-dark tracking-[-0.02em]">
               Pettxo
             </span>
-          </Link>
+          </Link> */}
           <p className="text-[13px] font-normal text-muted">
             Where Pets &amp; People Connect
           </p>
@@ -115,8 +131,8 @@ export default function Footer() {
             >
               X → @pettxo_app
             </a>
-            <a href="mailto:hello@pettxo.com" className={A}>
-              Email → hello@pettxo.com
+            <a href="mailto:support@pettxo.com" className={A}>
+              Email → support@pettxo.com
             </a>
           </nav>
         </div>

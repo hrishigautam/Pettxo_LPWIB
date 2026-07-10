@@ -31,7 +31,7 @@ export default function About() {
   return (
     <div ref={ref}>
       {/* HERO */}
-      <section className="bg-beige pt-32 pb-14 md:pt-40 md:pb-20 reveal-group">
+      <section className="bg-beige pt-32 pb-14 md:pt-25 md:pb-28 reveal-group">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
           <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-4">
             About Pettxo
@@ -40,10 +40,10 @@ export default function About() {
             className="reveal font-serif font-black text-dark leading-[1.08] tracking-[-0.02em] mb-6 max-w-[820px]"
             style={{ fontSize: 'clamp(34px, 6vw, 64px)' }}
           >
-            Pet care deserved better infrastructure.<br />
-            <span className="text-orange">So we're building it.</span>
+              <span className="text-orange">Pet care</span> deserved better <br/> <span className="text-orange">infrastructure</span> .<br />
+           So we're <span className="text-orange"> building </span>it.
           </h1>
-          <p className="reveal font-light leading-[1.82] text-muted max-w-[620px]" style={{ fontSize: 'clamp(15px,2vw,18px)' }}>
+          <p className="reveal font-light pb-28 leading-[1.82] text-muted max-w-[620px]" style={{ fontSize: 'clamp(15px,2vw,18px)' }}>
             Pettxo is the social platform for the entire pet ecosystem —
             bringing pet parents, service providers, and pet lovers together in one place.
           </p>
@@ -169,12 +169,12 @@ export default function About() {
           </p>
           <div className="reveal flex flex-col sm:flex-row items-center gap-4">
             <InstallButton className="w-full sm:w-auto min-w-[240px]" />
-            <Link
+            {/* <Link
               to="/for-providers"
               className="inline-flex items-center justify-center h-[54px] px-8 border border-[#E5E7EB] text-dark font-medium text-base rounded-[10px] transition-all hover:border-dark w-full sm:w-auto"
             >
               Become a Founding Provider →
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
