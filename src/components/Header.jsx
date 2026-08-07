@@ -54,9 +54,10 @@ export default function Header() {
   onClick={() => setOpen(false)}
 >
   <img
-    src="/images/logo.png"
+    // src="/images/pp.jpeg"
+    src="/images/logo.png"                                                                                                                                                  
     alt="Pettxo Logo"
-    className="w-[36px] h-[36px] object-contain flex-shrink-0"
+    className="w-[32px] h-[32px] object-contain flex-shrink-0"
   />
 
   <span className="font-sans font-semibold text-[18px] text-orange tracking-[-0.02em]">
