@@ -1,9 +1,11 @@
+// About.jsx
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import InstallButton from '../components/InstallButton.jsx'
+import '../CSS/AboutResponsive.css'
 
 const VALUES = [
   { h: 'Every pet deserves better.', b: 'Better care, chosen with confidence — not guesswork from a group chat.' },
@@ -29,8 +31,8 @@ export default function About() {
   }, { scope: ref })
 
   return (
-    <div ref={ref}>
-      {/* HERO */}
+<div ref={ref} className="about-page">
+        {/* HERO */}
       <section className="bg-beige pt-32 pb-14 md:pt-25 md:pb-28 reveal-group">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
           <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-4">
@@ -125,39 +127,54 @@ export default function About() {
         </div>
       </section>
 
-      {/* THE FOUNDER */}
-      <section className="bg-card py-14 md:py-20 reveal-group">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 md:gap-16 items-start">
-            <div className="reveal">
-              <img
-                src="/images/founder.jpg"
-                alt="Hrishi Gautam, Founder & CEO of Pettxo"
-                loading="lazy"
-                className="w-full max-w-[300px] block rounded-[20px] border border-[#E5E7EB]"
-                style={{ aspectRatio: '3 / 4', objectFit: 'cover', objectPosition: 'center top', boxShadow: '0 20px 60px rgba(31,41,55,0.12)' }}
-              />
-            </div>
-            <div className="reveal">
-              <span className="block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-5">
-                The Founder
-              </span>
-              <div className="flex flex-col gap-4 font-light leading-[1.85] text-muted mb-7" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
-                <p>Hrishi Gautam is a computer-science engineer — and a dog parent to Beera.</p>
-                <p>The idea for Pettxo didn't come from a spreadsheet. It came from watching someone close to him struggle to find pet care they could actually trust — the calls, the dead-end group chats, the contacts that led nowhere.</p>
-                <p>He had another path in front of him. He'd cleared the GRE and TOEFL, with a master's abroad and a high-paying job waiting. He walked away from both — validated the problem with real pet parents and real providers, and started building.</p>
-              </div>
-              <blockquote className="font-serif italic text-dark leading-[1.6] mb-7" style={{ fontSize: 'clamp(19px,2.6vw,26px)' }}>
-                "We're not building a directory. We're building the trust layer that pet care has been missing — for every pet, and every person who takes care of one."
-              </blockquote>
-              <p className="font-sans font-semibold text-[16px] text-dark">Hrishi Gautam</p>
-              <p className="text-[14px] font-light text-muted mt-1">Founder &amp; CEO, Pettxo</p>
-              <p className="mt-5 text-[14px] font-semibold text-orange">Built with love by a team that cares.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* THE FOUNDER */}
+<section className="bg-card py-14 md:py-20 reveal-group">
+  <div className="max-w-[1280px] mx-auto px-6 md:px-16">
+<div className="max-w-[1000px]">
+      <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-4">
+        The Founder
+      </span>
 
+      <div
+        className="reveal font-light leading-[1.85] text-muted mb-7"
+        style={{ fontSize: 'clamp(15px, 2vw, 17px)' }}
+      >
+        <p className="mb-5">
+          Hrishi Gautam is a computer-science engineer — and a dog parent to Beera.
+        </p>
+
+        <p>
+          The idea for Pettxo didn't come from a spreadsheet. It came from watching
+          someone close to him struggle to find pet care they could actually trust —
+          the calls, the dead-end group chats, the contacts that led nowhere.
+        </p>
+      </div>
+
+      <blockquote
+        className="reveal font-serif italic text-dark leading-[1.55] mb-7 max-w-[850px]"
+        style={{ fontSize: 'clamp(20px, 2.6vw, 26px)' }}
+      >
+        "We're not building a directory. We're building the trust layer that pet
+        care has been missing — for every pet, and every person who takes care of one."
+      </blockquote>
+
+      <div className="reveal">
+        <p className="font-sans font-semibold text-[16px] text-dark">
+          Hrishi Gautam
+        </p>
+
+        <p className="text-[14px] font-light text-muted mt-1">
+          Founder &amp; CEO, Pettxo
+        </p>
+
+        <p className="mt-5 text-[14px] font-semibold text-orange">
+          Built with love by a team that cares.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* CTA */}
       <section className="bg-beige py-14 md:py-20 reveal-group">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16 text-center max-w-[620px] mx-auto flex flex-col items-center">

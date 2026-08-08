@@ -1,3 +1,4 @@
+// Features.jsx
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -11,6 +12,10 @@ const FEATURES = [
       'Real profiles. Real work. Real reviews — before you send a single message.',
       'No more asking in group chats. No more forwarded contacts.',
     ],
+    image: '/images/screen-services.png',
+    alt: 'Services screen showing nearby groomers, walkers, and boarding listings',
+    insetY: '1px',   // upar-neeche kitna margin — number badhao to zyada margin (chhoti image)
+insetX: '-12px', 
   },
   {
     label: 'Your Daily Feed',
@@ -20,6 +25,10 @@ const FEATURES = [
       'See their work. Build trust through content, not cold calls.',
       'Your feed. Your community. Your city.',
     ],
+    image: '/images/screen-feed.png',
+    alt: 'Home feed screen showing posts from pet parents and service providers',
+      insetY: '1px',   // upar-neeche kitna margin — number badhao to zyada margin (chhoti image)
+insetX: '-12px', 
   },
   {
     label: 'Book. Pay. Done.',
@@ -28,6 +37,10 @@ const FEATURES = [
       'No DMs. No cash handovers. No "I\'ll send you the details later."',
       "Your pet's complete service history, organised in one place, forever.",
     ],
+    image: '/images/screen-booking.png',
+    alt: 'Booking details screen showing a confirmed, paid booking',
+      insetY: '1px',   // upar-neeche kitna margin — number badhao to zyada margin (chhoti image)
+insetX: '-12px', 
   },
 ]
 
@@ -85,7 +98,7 @@ export default function Features() {
           <div className="flex flex-col gap-14 mt-12">
             {FEATURES.map((f, i) => (
               <div key={i} className="flex flex-col md:flex-row items-center gap-9 md:gap-14">
-                <div className="w-full max-w-[280px] flex-shrink-0"><Phone><Screen i={i} /></Phone></div>
+                <div className="w-full max-w-[280px] flex-shrink-0"><Phone><Screen f={f} /></Phone></div>
                 <TextPanel f={f} static />
               </div>
             ))}
@@ -107,7 +120,7 @@ export default function Features() {
             <Phone>
               {FEATURES.map((f, i) => (
                 <div key={i} className="app-screen absolute inset-0">
-                  <Screen i={i} />
+                  <Screen f={f} />
                 </div>
               ))}
             </Phone>
@@ -180,116 +193,34 @@ function Phone({ children }) {
   )
 }
 
-// ── Clean in-app mock screens (no screenshots, no error toasts) ──
-function Screen({ i }) {
-  if (i === 0) return <ScreenDiscover />
-  if (i === 1) return <ScreenFeed />
-  return <ScreenBooking />
-}
-
-function StatusBar({ title }) {
+// ── Screen — real app screenshot inside the phone frame.
+//     f.insetY shrinks visible height, f.insetX shrinks visible width —
+//     either can be used alone or together. Frame size is never touched. ──
+function Screen({ f }) {
+  if (f.insetY || f.insetX) {
+    return (
+      <div className="w-full h-full bg-white overflow-hidden flex items-center justify-center">
+        <img
+          src={f.image}
+          alt={f.alt}
+          className="select-none pointer-events-none"
+          style={{
+            width: f.insetX ? `calc(100% - ${f.insetX})` : '100%',
+            height: f.insetY ? `calc(100% - ${f.insetY})` : '100%',
+            objectFit: 'contain',
+            objectPosition: 'center',
+          }}
+          draggable={false}
+        />
+      </div>
+    )
+  }
   return (
-    <div className="flex items-center justify-center relative px-4 pt-3 pb-2 border-b border-[#F0E8DF]">
-      <span className="font-sans font-semibold text-[12px] text-dark">{title}</span>
-    </div>
+    <img
+      src={f.image}
+      alt={f.alt}
+      className="w-full h-full object-cover object-center select-none pointer-events-none"
+      draggable={false}
+    />
   )
 }
-
-function ScreenDiscover() {
-  const rows = [
-    { n: 'Aarav · Groomer', m: 'Mobile grooming · ★ 4.9' },
-    { n: 'Sky Pet Clinic', m: 'Vet · Open now · ★ 4.8' },
-    { n: 'Maya · Dog Walker', m: 'Daily walks · ★ 5.0' },
-  ]
-  return (
-    <div className="w-full h-full bg-card flex flex-col">
-      <StatusBar title="Discover" />
-      <div className="px-3.5 pt-3">
-        <div className="flex items-center gap-2 bg-white rounded-full border border-[#E5E7EB] px-3.5 py-2.5">
-          <span className="w-3 h-3 rounded-full border-2 border-muted" />
-          <span className="text-[12px] text-muted">Groomers near you</span>
-        </div>
-      </div>
-      <div className="px-3.5 py-3 flex flex-col gap-2.5">
-        {rows.map((r, k) => (
-          <div key={k} className="flex items-center gap-3 bg-white rounded-[12px] border border-[#E5E7EB] p-2">
-            <div className="w-7 h-7 rounded-full bg-[rgba(247,89,39,0.12)] border border-orange flex-shrink-0" />
-            <div className="min-w-0">
-              <p className="font-sans font-semibold text-[10px] text-dark truncate">{r.n}</p>
-              <p className="text-[9.5px] text-muted truncate">{r.m}</p>
-            </div>
-            <span className="ml-auto text-[9px] font-semibold text-orange bg-[rgba(247,89,39,0.12)] rounded-full px-2 py-1">Book</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function ScreenFeed() {
-  return (
-    <div className="w-full h-full bg-white flex flex-col">
-      <StatusBar title="Pettxo" />
-      <div className="p-3.5 flex flex-col gap-3">
-        <div className="flex items-center gap-2.5">
-          <div className="w-6 h-6 rounded-full flex-shrink-0 bg-[rgba(247,89,39,0.12)] border border-orange" />
-          <div className="flex flex-col gap-0.5">
-            <span className="font-semibold text-[10px] text-dark">Raju Rastogi</span>
-            <span className="text-[8px] font-semibold text-orange bg-[rgba(247,89,39,0.12)] rounded-full px-2 py-0.5 self-start">Pet Parent</span>
-          </div>
-        </div>
-        <div className="rounded-[12px] bg-card border border-[#E5E7EB] p-3">
-          <p className="font-serif text-[10.5px] leading-[1.55] text-dark mb-2.5">
-            "Because pets aren't just animals. They're family."
-          </p>
-          <div className="flex gap-3.5 text-[9px] text-muted">
-            <span>♡ 12</span><span>💬 3</span><span>↗ Share</span>
-          </div>
-        </div>
-        <div className="rounded-[12px] border border-[#E5E7EB] px-3 py-2.5 flex flex-col gap-1">
-          <span className="text-[7.5px] font-bold tracking-[0.12em] uppercase text-orange">Near you</span>
-          <span className="text-[9.5px] font-light text-muted">Discover pet parents in your city</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ScreenBooking() {
-  return (
-    <div className="w-full h-full bg-card flex flex-col">
-      <StatusBar title="Booking" />
-      <div className="flex-1 flex flex-col items-center px-4 pt-6">
-        <div className="w-12 h-12 rounded-full bg-orange grid place-items-center mb-3">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        </div>
-        <p className="font-serif font-bold text-[13px] text-dark mb-1">Booking confirmed</p>
-        <p className="text-[9px] text-muted mb-4">Grooming · Sat, 10:00 AM</p>
-        <div className="w-full text-[9px] bg-white rounded-[9px] border border-[#E5E7EB] p-3 flex flex-col gap-2">
-          <Row k="Provider" v="Aarav · Groomer" />
-          <Row k="Status" v="Paid securely" accent />
-          <Row k="Code" v="PTX-4821" />
-        </div>
-      </div>
-      <div className="px-3 pb-3 pt-3">
-        <div className="w-full text-center bg-orange text-white font-semibold text-[9px] rounded-full py-2">View service history</div>
-      </div>
-    </div>
-  )
-}
-
-function Row({ k, v, accent }) {
-  return (
-    <div className="flex items-center justify-between">
-      <span className="text-[10.5px] text-muted">{k}</span>
-      <span className={'text-[11px] font-semibold ' + (accent ? 'text-orange' : 'text-dark')}>{v}</span>
-    </div>
-  )
-}
-
-
-
-
-
-
-

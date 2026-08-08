@@ -1,0 +1,333 @@
+/* =========================================================
+   PETTXO HEADER
+   Desktop styles are intentionally NOT touched.
+   Mobile/tablet menu styles only.
+   ========================================================= */
+
+
+/* -----------------------------
+   MOBILE MENU BUTTON
+   ----------------------------- */
+
+.mobile-menu-button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.menu-line {
+  position: absolute;
+  width: 21px;
+  height: 2px;
+  border-radius: 999px;
+  background: #1f2937;
+  transition:
+    transform 0.35s ease,
+    top 0.35s ease,
+    opacity 0.25s ease;
+}
+
+.line-one {
+  top: 15px;
+}
+
+.line-two {
+  top: 23px;
+}
+
+.line-one.open {
+  top: 19px;
+  transform: rotate(45deg);
+}
+
+.line-two.open {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+
+/* -----------------------------
+   SIDE DRAWER
+   ----------------------------- */
+
+.mobile-side-menu {
+  position: fixed;
+
+  /* Full natural screen height */
+  top: 0;
+  right: 0;
+  height: 100dvh;
+
+  /* Do NOT make screen narrower */
+  width: min(82vw, 360px);
+
+  z-index: 1001;
+
+  opacity: 0;
+  transform: translateX(100%);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(245, 239, 230, 0.94)
+    );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    -18px 0 55px rgba(31, 41, 55, 0.12);
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------
+   INNER MENU
+   ----------------------------- */
+
+.mobile-menu-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding:
+    22px
+    22px
+    max(24px, env(safe-area-inset-bottom));
+}
+
+
+/* -----------------------------
+   TOP
+   ----------------------------- */
+
+.mobile-menu-top {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.mobile-menu-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #1f2937;
+}
+
+
+/* -----------------------------
+   CLOSE BUTTON
+   ----------------------------- */
+
+/* .mobile-close-button {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  cursor: pointer;
+}
+
+.mobile-close-button span {
+  position: absolute;
+
+  width: 17px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #1f2937;
+}
+
+.mobile-close-button span:first-child {
+  transform: rotate(45deg);
+}
+
+.mobile-close-button span:last-child {
+  transform: rotate(-45deg);
+} */
+
+
+/* -----------------------------
+   NAVIGATION
+   ----------------------------- */
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 18px;
+}
+
+.mobile-nav-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 58px;
+
+  padding: 0 2px;
+
+  text-decoration: none;
+
+  color: #1f2937;
+
+  border-bottom: 1px solid rgba(229, 231, 235, 0.78);
+
+  transition:
+    padding-left 0.25s ease,
+    color 0.25s ease;
+}
+
+.mobile-nav-link:hover {
+  padding-left: 7px;
+  color: #f75927;
+}
+
+.mobile-nav-text {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.mobile-nav-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #f75927;
+
+  opacity: 0;
+
+  transform: scale(0.5);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-nav-link:hover .mobile-nav-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* -----------------------------
+   BOTTOM TEXT
+   ----------------------------- */
+
+.mobile-menu-bottom {
+  margin-top: auto;
+
+  padding-top: 20px;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  color: rgba(31, 41, 55, 0.48);
+
+  letter-spacing: 0.02em;
+}
+
+
+/* -----------------------------
+   BACKDROP
+   ----------------------------- */
+
+.mobile-menu-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  border: 0;
+
+  background: rgba(31, 41, 55, 0.08);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET + MOBILE ONLY
+   Desktop (md and above) remains untouched.
+   ========================================================= */
+
+@media (min-width: 768px) {
+  .mobile-side-menu,
+  .mobile-menu-backdrop {
+    display: none !important;
+  }
+}
+
+
+/* -----------------------------
+   SMALL MOBILE
+   ----------------------------- */
+
+@media (max-width: 480px) {
+  .mobile-side-menu {
+    width: min(84vw, 340px);
+  }
+
+  .mobile-menu-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mobile-nav-text {
+    font-size: 15px;
+  }
+}
+
+
+/* -----------------------------
+   VERY SMALL MOBILE
+   ----------------------------- */
+
+@media (max-width: 360px) {
+  .mobile-side-menu {
+    width: 88vw;
+  }
+
+  .mobile-menu-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
