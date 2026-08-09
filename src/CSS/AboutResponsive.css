@@ -42,10 +42,9 @@
    ABOUT PAGE - RESPONSIVE QUOTE
    Desktop remains unchanged
 ========================================= */
-
 @media (max-width: 767px) {
   .about-page blockquote {
-    font-size: 11px !important;
+    font-size: 15px !important;
     line-height: 1.65 !important;
     margin-bottom: 24px !important;
   }
@@ -53,7 +52,7 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .about-page blockquote {
-    font-size: 19px !important;
+    font-size: 20px !important;
     line-height: 1.65 !important;
   }
 }
@@ -62,21 +61,36 @@
    Desktop remains completely unchanged
 ========================================= */
 
+/* =========================================
+   ABOUT PAGE - FOUNDER DETAILS
+========================================= */
+
 @media (max-width: 767px) {
+  .about-page blockquote {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 24px !important;
+  }
+
   .about-founder-name {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
   .about-founder-role {
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
 
   .about-founder-tagline {
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .about-page blockquote {
+    font-size: 20px !important;
+    line-height: 1.65 !important;
+  }
+
   .about-founder-name {
     font-size: 15px !important;
   }

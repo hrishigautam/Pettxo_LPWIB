@@ -1,8 +1,10 @@
+// Problem.jsx
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
+import "../CSS/ProblemResponsive.css"
 
 export default function Problem() {
   const sectionRef  = useRef(null)
@@ -48,7 +50,7 @@ export default function Problem() {
     <section
       ref={sectionRef}
       id="problem"
-      className="bg-beige py-14 md:py-20 relative"
+      className="bg-beige problem-section py-14 md:py-20 relative"
       aria-label="The problem with pet care today"
     >
       <span aria-hidden="true" className="block w-12 h-[3px] bg-orange absolute top-0 left-6 md:left-16" />
@@ -56,13 +58,13 @@ export default function Problem() {
       <div className="max-w-[1280px] mx-auto px-6 md:px-16">
         <h2
           ref={headlineRef}
-          className="font-serif font-bold text-dark leading-[1.12] tracking-[-0.01em] mb-9 md:mb-11"
+          className=" font-serif font-bold text-dark leading-[1.12] tracking-[-0.01em] mb-9 md:mb-11"
           style={{ fontSize: 'clamp(26px, 4.5vw, 50px)' }}
         >
           Everything in life has an app. Pet care still runs on forwarded screenshots.
         </h2>
 
-        <div ref={bodyRef} className="flex flex-col gap-2.5 max-w-[600px] mb-9">
+        <div ref={bodyRef} className="problem-copy flex flex-col gap-2.5 max-w-[600px] mb-9">
           <p className="font-light leading-[1.85] text-dark" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
             A great groomer with no online presence.
           </p>
@@ -77,7 +79,7 @@ export default function Problem() {
           </p>
         </div>
 
-        <p ref={closerRef} className="text-[17px] font-semibold leading-[1.7] text-orange">
+        <p ref={closerRef} className=" problem-closer text-[17px] font-semibold leading-[1.7] text-orange">
           Pettxo organises it.<br />
           For every pet. For every person. For everyone in the ecosystem.
         </p>

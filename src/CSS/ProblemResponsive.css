@@ -1,0 +1,131 @@
+/* =====================================================
+   PROBLEM — RESPONSIVE UI
+   Desktop remains completely untouched
+   ===================================================== */
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+  .problem-section {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  .problem-section > div {
+    padding-left: 42px !important;
+    padding-right: 42px !important;
+  }
+
+  .problem-section h2 {
+    max-width: 760px;
+    font-size: 42px !important;
+    line-height: 1.13 !important;
+  }
+
+  .problem-section .problem-copy {
+    max-width: 620px;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+
+  .problem-section {
+    padding-top: 58px !important;
+    padding-bottom: 60px !important;
+    overflow: hidden;
+  }
+
+  .problem-section > div {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+
+  /* ---------- HEADING ---------- */
+
+  .problem-section h2 {
+    max-width: 100%;
+    font-size: 30px !important;
+    line-height: 1.17 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 27px !important;
+  }
+
+
+  /* ---------- PROBLEM TEXT ---------- */
+
+  .problem-section .problem-copy {
+    max-width: 100%;
+    margin-bottom: 28px !important;
+    gap: 9px !important;
+  }
+
+  .problem-section .problem-copy p {
+    font-size: 14px !important;
+    line-height: 1.72 !important;
+  }
+
+
+  /* ---------- FINAL ORANGE MESSAGE ---------- */
+
+  .problem-section .problem-closer {
+    position: relative;
+    max-width: 100%;
+    margin-top: 4px;
+    padding: 15px 17px;
+    border-left: 3px solid #F75927;
+    background: rgba(247, 89, 39, 0.055);
+    border-radius: 0 10px 10px 0;
+
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 390px) {
+
+  .problem-section {
+    padding-top: 48px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .problem-section > div {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+
+  .problem-section h2 {
+    font-size: 27px !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.018em !important;
+    margin-bottom: 24px !important;
+  }
+
+
+  .problem-section .problem-copy {
+    gap: 7px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .problem-section .problem-copy p {
+    font-size: 13.5px !important;
+    line-height: 1.68 !important;
+  }
+
+
+  .problem-section .problem-closer {
+    padding: 13px 15px;
+
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+  }
+}

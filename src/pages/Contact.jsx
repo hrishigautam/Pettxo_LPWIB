@@ -1,9 +1,11 @@
+// Contact.jsx
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import InstallButton from '../components/InstallButton.jsx'
+import "../CSS/ContactResponsive.css"
 
 const FAQ = [
   { q: 'Is Pettxo live yet?', a: 'We’re launching soon. Install the app to be among the first in your city.' },
@@ -29,7 +31,7 @@ export default function Contact() {
   }, { scope: ref })
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="contact-page">
       {/* HERO */}
       <section className="bg-beige pt-32 pb-14 md:pt-40 md:pb-16 reveal-group">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
@@ -43,6 +45,7 @@ export default function Contact() {
             Questions, partnerships, press, or support — reach us directly. We read everything and reply as fast as we can.
           </p>
         </div>
+        
       </section>
 
       {/* CONTACT METHODS */}

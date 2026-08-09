@@ -1,0 +1,146 @@
+/* =========================================================
+   FEATURES RESPONSIVE
+   Desktop UI untouched
+========================================================= */
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .app-textpanel {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .app-textpanel h3 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .app-textpanel p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .app-dot {
+    width: 8px !important;
+    height: 8px !important;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  /* Keep the feature area clean */
+  .app-textpanel {
+    width: 100%;
+    padding: 0 14px;
+  }
+
+  /*
+    Phone stays centered.
+    Don't make it too tiny.
+  */
+  .app-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Feature label */
+  .app-textpanel > p:first-child {
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 9px !important;
+  }
+
+  /* Main feature heading */
+  .app-textpanel h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 14px !important;
+    max-width: 340px;
+  }
+
+  /* Feature description */
+  .app-textpanel p {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    max-width: 340px;
+  }
+
+  /* Dots */
+  .app-dot {
+    width: 8px !important;
+    height: 8px !important;
+    flex-shrink: 0;
+  }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 390px) {
+
+  .app-textpanel {
+    padding: 0 10px;
+  }
+
+  .app-textpanel > p:first-child {
+    font-size: 8.5px !important;
+    letter-spacing: 0.14em !important;
+    margin-bottom: 8px !important;
+  }
+
+  .app-textpanel h3 {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+    max-width: 300px;
+  }
+
+  .app-textpanel p {
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+    max-width: 300px;
+  }
+
+  .app-dot {
+    width: 7px !important;
+    height: 7px !important;
+  }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 350px) {
+
+  .app-textpanel {
+    padding: 0 6px;
+  }
+
+  .app-textpanel h3 {
+    font-size: 17px !important;
+    max-width: 280px;
+  }
+
+  .app-textpanel p {
+    font-size: 11.5px !important;
+    max-width: 280px;
+  }
+}

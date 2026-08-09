@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { handleInstall } from "../lib/stores.js";
-
+import "../CSS/HeroResponsive.css";
 // SEO keyword pills — real text in the DOM, no traction numbers, no location.
 // a: accent ('dot' = orange dot + dark · 'text' = orange text · 'none' = dark)
 // m: also shown on mobile (7 strongest)
@@ -180,12 +180,42 @@ export default function Hero() {
 
       // ── Entrance ──
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.fromTo(eyebrowRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, 0.1)
-        .fromTo(line1Ref.current, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.8 }, 0.25)
-        .fromTo(line2Ref.current, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.8 }, 0.4)
-        .fromTo(subRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.55)
-        .fromTo(ctaRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, 0.7)
-        .fromTo(photoRef.current, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1.2 }, 0.3);
+      tl.fromTo(
+        eyebrowRef.current,
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        0.1,
+      )
+        .fromTo(
+          line1Ref.current,
+          { opacity: 0, y: 28 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          0.25,
+        )
+        .fromTo(
+          line2Ref.current,
+          { opacity: 0, y: 28 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          0.4,
+        )
+        .fromTo(
+          subRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.7 },
+          0.55,
+        )
+        .fromTo(
+          ctaRef.current,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.6 },
+          0.7,
+        )
+        .fromTo(
+          photoRef.current,
+          { opacity: 0, scale: 1.06 },
+          { opacity: 1, scale: 1, duration: 1.2 },
+          0.3,
+        );
 
       pills.forEach((el, i) =>
         tl.fromTo(
@@ -223,7 +253,8 @@ export default function Hero() {
       // Install button: 3 gentle glow pulses then rest
       if (btnRef.current) {
         gsap.to(btnRef.current, {
-          boxShadow: "0 14px 34px rgba(247,89,39,0.36), 0 0 0 8px rgba(247,89,39,0.10)",
+          boxShadow:
+            "0 14px 34px rgba(247,89,39,0.36), 0 0 0 8px rgba(247,89,39,0.10)",
           duration: 1.6,
           ease: "sine.inOut",
           repeat: 5,
@@ -308,7 +339,10 @@ export default function Hero() {
   const mobileCaps = CAPS.filter((c) => c.m);
 
   return (
-    <section ref={sectionRef} className="relative bg-beige overflow-hidden">
+    <section
+      ref={sectionRef}
+      className=" hero-section relative bg-beige overflow-hidden"
+    >
       {/* Soft decorative glow behind the headline */}
       <div
         aria-hidden="true"
@@ -344,7 +378,8 @@ export default function Hero() {
               aria-hidden="true"
               className="absolute inset-y-0 left-0 w-[30%]"
               style={{
-                background: "linear-gradient(to right, #F7EFE4 0%, rgba(247,239,228,0) 100%)",
+                background:
+                  "linear-gradient(to right, #F7EFE4 0%, rgba(247,239,228,0) 100%)",
               }}
             />
           </div>
@@ -355,7 +390,7 @@ export default function Hero() {
           <div ref={textColRef} className="max-w-[600px]">
             <span
               ref={eyebrowRef}
-              className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-orange  px-3.5 py-[7px] mb-6 opacity-0"
+              className="hero-eyebrow inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-orange  px-3.5 py-[7px] mb-6 opacity-0"
             >
               {/* <span className="w-[6px] h-[6px]  bg-orange" /> */}
               Care · Trust · Love
@@ -373,20 +408,18 @@ export default function Hero() {
             </h1>
             <p
               ref={subRef}
-              className="text-dark/75 font-light leading-[1.75] mb-5 opacity-0"
+              className="text-dark/75 font-light leading-[1.75] mb-5 opacity-0 hero-description"
               style={{ fontSize: "clamp(13.5px, 1.6vw, 14px)" }}
             >
               Find trusted groomers, vets, walkers, and trainers near you.
               <br />
               Connect with your local pet community.
-                       <br />
+              <br />
               List your services. Build your name.
               <br />
-             
-             
               Every Pet. Every person. One App
             </p>
-            <div ref={ctaRef} className="opacity-0">
+            <div ref={ctaRef} className="opacity-0 hero-cta">
               <a
                 ref={btnRef}
                 href="#"
@@ -404,14 +437,14 @@ export default function Hero() {
         </div>
 
         {/* MOBILE media zone: photo card + drifting capsules over it */}
-        <div className="md:hidden relative z-10 mx-6 mb-2 min-h-[240px]">
-          <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="md:hidden relative z-10 mx-6 mb-2 min-h-[240px] hero-mobile-media">
+          <div className="absolute inset-0 z-10 pointer-events-none hero-mobile-capsules">
             {mobileCaps.map((c) => (
               <Pill key={c.l} c={c} zone="mobile" />
             ))}
           </div>
           {imgOk && (
-            <div className="relative z-20 rounded-[22px] overflow-hidden aspect-[4/3] shadow-[0_16px_40px_rgba(31,41,55,0.14)]">
+            <div className="relative z-20 rounded-[22px] overflow-hidden aspect-[4/3] shadow-[0_16px_40px_rgba(31,41,55,0.14)] hero-mobile-photo">
               <img
                 src="/images/hero-pets.png"
                 alt="A dog and a cat together"

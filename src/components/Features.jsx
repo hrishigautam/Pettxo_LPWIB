@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import "../CSS/FeaturesResponsive.css"
 
 const FEATURES = [
   {
@@ -44,7 +45,10 @@ insetX: '-12px',
   },
 ]
 
-const reduceMotion = typeof window !== 'undefined' &&
+// const reduceMotion = typeof window !== 'undefined' &&
+//   window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const reduceMotion =
+  typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 export default function Features() {
@@ -110,7 +114,7 @@ export default function Features() {
 
   // ── Pinned scroll showcase ──
   return (
-    <section ref={sectionRef} id="features" className="bg-card" aria-label="What's inside Pettxo">
+    <section ref={sectionRef} id="features" className="bg-card"  features-page aria-label="What's inside Pettxo">
       <div className="min-h-screen flex flex-col justify-center max-w-[1280px] mx-auto px-6 md:px-16 py-8 md:py-10">
         <Header />
 

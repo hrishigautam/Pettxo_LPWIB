@@ -1,0 +1,347 @@
+/* =========================================================
+   PETTXO — CONTACT RESPONSIVE CSS
+   ---------------------------------------------------------
+   Desktop UI is untouched.
+   Only tablet + mobile responsive changes.
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   768px - 1023px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* Main horizontal spacing */
+  .contact-page .reveal-group > div,
+  .contact-page section > div {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  /* Contact cards */
+  .contact-page .grid {
+    gap: 24px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   Up to 767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* -------------------------------------------------------
+     GENERAL
+     ------------------------------------------------------- */
+
+  .contact-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .contact-page .reveal-group {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .contact-page .reveal-group > div,
+  .contact-page section > div {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     SECTION SPACING
+     ------------------------------------------------------- */
+
+  .contact-page .reveal-group.py-14,
+  .contact-page .reveal-group.py-20 {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .contact-page h1 {
+    font-size: 34px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .contact-page h1 + p {
+    font-size: 13.5px !important;
+    line-height: 1.75 !important;
+    max-width: 100% !important;
+  }
+
+
+  /* Hero small "Contact" label */
+  .contact-page .reveal-group > div > span {
+    font-size: 9px !important;
+    letter-spacing: 0.18em !important;
+  }
+
+
+/* =======================================================
+   CONTACT METHODS — MOBILE UI
+   ======================================================= */
+
+@media (max-width: 767px) {
+
+  /* Section */
+  .contact-page .bg-card.py-14 {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  /* Cards grid */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Individual contact cards */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+
+    padding: 17px 16px !important;
+
+    border: 1px solid rgba(92, 54, 41, 0.08) !important;
+    border-radius: 12px !important;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+
+  /* Card title */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * h3 {
+    font-size: 15.5px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 6px !important;
+  }
+
+
+  /* Card description */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * p {
+    font-size: 12.5px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 11px !important;
+  }
+
+
+  /* Contact links */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * a {
+    display: inline-block !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    font-weight: 500 !important;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* Social card */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * .flex.flex-col {
+    gap: 5px !important;
+  }
+
+
+  /* Social links */
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * .flex.flex-col a {
+    width: fit-content;
+  }
+}
+
+
+/* =======================================================
+   SMALL PHONES
+   ======================================================= */
+
+@media (max-width: 390px) {
+
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 {
+    gap: 10px !important;
+  }
+
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * {
+    padding: 15px 14px !important;
+    border-radius: 11px !important;
+  }
+
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * h3 {
+    font-size: 15px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * p {
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 9px !important;
+  }
+
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 > * a {
+    font-size: 12px !important;
+  }
+}
+
+
+  /* =======================================================
+     CTA
+     ======================================================= */
+
+  .contact-page h2[style*="52px"] {
+    font-size: 29px !important;
+    line-height: 1.12 !important;
+    margin-bottom: 23px !important;
+  }
+
+
+  /* CTA content */
+  .contact-page .reveal.flex.flex-col.items-center {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* Install button */
+  .contact-page .min-w-\[240px\] {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 260px !important;
+  }
+
+
+  /* CTA tagline */
+  .contact-page .tracking-\[0\.16em\] {
+    font-size: 10px !important;
+    letter-spacing: 0.14em !important;
+  }
+
+
+  /* -------------------------------------------------------
+     TEXT SAFETY
+     ------------------------------------------------------- */
+
+  .contact-page h1,
+  .contact-page h2,
+  .contact-page h3,
+  .contact-page p,
+  .contact-page a {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   Up to 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .contact-page .reveal-group > div,
+  .contact-page section > div {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     HERO
+     ------------------------------------------------------- */
+
+  .contact-page h1 {
+    font-size: 30px !important;
+    line-height: 1.07 !important;
+  }
+
+  .contact-page h1 + p {
+    font-size: 12.5px !important;
+    line-height: 1.72 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTACT CARDS
+     ------------------------------------------------------- */
+
+  .contact-page .grid.grid-cols-1.md\:grid-cols-2 {
+    gap: 16px !important;
+  }
+
+  .contact-page .grid h3 {
+    font-size: 16px !important;
+  }
+
+  .contact-page .grid p {
+    font-size: 12.5px !important;
+  }
+
+  .contact-page .grid a {
+    font-size: 12.5px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     QUICK ANSWERS
+     ------------------------------------------------------- */
+
+  .contact-page h2 {
+    font-size: 23px !important;
+  }
+
+  .contact-page .border-l-\[3px\] {
+    padding-left: 12px !important;
+  }
+
+  .contact-page .border-l-\[3px\] p:first-child {
+    font-size: 13.5px !important;
+  }
+
+  .contact-page .border-l-\[3px\] p:last-child {
+    font-size: 12.5px !important;
+    line-height: 1.74 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     CTA
+     ------------------------------------------------------- */
+
+  .contact-page h2[style*="52px"] {
+    font-size: 27px !important;
+    line-height: 1.1 !important;
+  }
+
+  .contact-page .min-w-\[240px\] {
+    max-width: 250px !important;
+  }
+
+  .contact-page .tracking-\[0\.16em\] {
+    font-size: 9px !important;
+  }
+}

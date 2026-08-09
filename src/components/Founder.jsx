@@ -85,55 +85,88 @@ export default function Founder() {
             Why We're Building Pettxo
           </span>
 
-          <blockquote
-            ref={quoteRef}
-            className="
-              font-serif
-              italic
-              leading-[1.65]
-              text-dark
-              mb-6
-            text-[11px]
-sm:text-[19px]
-md:text-[27px]
-            "
-          >
-            "We're not building a directory. We're building the trust layer that
-            pet care has been missing — for every pet, and every person who takes
-            care of one."
-          </blockquote>
+         <blockquote
+  ref={quoteRef}
+  className="
+    font-serif
+    italic
+    leading-[1.6]
+    text-dark
+    mb-5
+    text-[16px]
+    sm:text-[19px]
+    md:text-[27px]
+  "
+>
+  "We're not building a directory. We're building the trust layer that
+  pet care has been missing — for every pet, and every person who takes
+  care of one."
+</blockquote>
 
-          <div ref={attrRef} className="opacity-0">
+<div ref={attrRef} className="opacity-0">
 
-            <p className="font-sans font-semibold  text-[12px]
-sm:text-[15px]
-md:text-[16px] text-dark">
-              Hrishi Gautam
-            </p>
+  <p
+    className="
+      font-sans
+      font-semibold
+      text-[13px]
+      sm:text-[15px]
+      md:text-[16px]
+      text-dark
+    "
+  >
+    Hrishi Gautam
+  </p>
 
-            <p className="text-[12px]
-sm:text-[15px]
-md:text-[16px] font-light text-muted mt-1">
-              Founder &amp; CEO, Pettxo
-            </p>
+  <p
+    className="
+      text-[12px]
+      sm:text-[14px]
+      md:text-[16px]
+      font-light
+      text-muted
+      mt-1
+    "
+  >
+    Founder &amp; CEO, Pettxo
+  </p>
 
-            <p className="mt-5 text-[12px]
-sm:text-[15px]
-md:text-[16px] font-semibold text-orange">
-              Built with love by a team that cares.
-            </p>
+  <p
+    className="
+      mt-4
+      sm:mt-5
+      text-[12px]
+      sm:text-[14px]
+      md:text-[16px]
+      font-semibold
+      text-orange
+    "
+  >
+    Built with love by a team that cares.
+  </p>
 
-            <Link
-              to="/about"
-              className="inline-block mt-4 text-[12px]
-sm:text-[15px]
-md:text-[16px] font-medium text-dark border-b border-orange pb-0.5 hover:text-orange transition-colors"
-            >
-              Read our full story →
-            </Link>
+  <Link
+    to="/about"
+    className="
+      inline-block
+      mt-3
+      sm:mt-4
+      text-[12px]
+      sm:text-[14px]
+      md:text-[16px]
+      font-medium
+      text-dark
+      border-b
+      border-orange
+      pb-0.5
+      hover:text-orange
+      transition-colors
+    "
+  >
+    Read our full story →
+  </Link>
 
-          </div>
-
+</div>
         </div>
       </div>
     </section>
