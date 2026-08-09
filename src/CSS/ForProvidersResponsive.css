@@ -1,0 +1,429 @@
+/* =========================================================
+   PETTXO — FOR PROVIDERS RESPONSIVE
+   ONLY RESPONSIVE OVERRIDES
+   Main JSX + colors + desktop UI untouched
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .reveal-group > div {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  /* Keep tablet headings balanced */
+  .reveal-group h1 {
+    max-width: 760px;
+  }
+
+  /* Benefits */
+  .reveal-group .grid {
+    column-gap: 40px !important;
+    row-gap: 42px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* -------------------------------------------------------
+     MAIN SECTION WIDTH
+     ------------------------------------------------------- */
+
+  .reveal-group {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .reveal-group > div {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     SECTION SPACING
+     ------------------------------------------------------- */
+
+  .reveal-group.py-14 {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  .reveal-group.py-20 {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .reveal-group h1 {
+    font-size: 32px !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 17px !important;
+    max-width: 100% !important;
+  }
+
+  .reveal-group h1 + p {
+    font-size: 13px !important;
+    line-height: 1.72 !important;
+    max-width: 100% !important;
+    margin-bottom: 32px !important;
+  }
+
+
+  /* Hero small label */
+  .reveal-group > div > span {
+    font-size: 8px !important;
+    letter-spacing: 0.18em !important;
+    line-height: 1.4 !important;
+  }
+
+
+  /* =======================================================
+     HEADINGS
+     ======================================================= */
+
+  .reveal-group h2 {
+    font-size: 25px !important;
+    line-height: 1.17 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+
+  /* =======================================================
+     OPPORTUNITY
+     ======================================================= */
+
+  .reveal-group h2 {
+    max-width: 100% !important;
+  }
+
+  .reveal-group h2 + div {
+    font-size: 13px !important;
+    line-height: 1.78 !important;
+  }
+
+
+  /* =======================================================
+     WHY PETTXO
+     ======================================================= */
+
+  .reveal-group .grid {
+    grid-template-columns: 1fr !important;
+    gap: 27px !important;
+  }
+
+  .reveal-group .grid > div {
+    min-width: 0;
+  }
+
+  /* Benefit number */
+  .reveal-group .grid > div > div:first-child {
+    font-size: 23px !important;
+    line-height: 1 !important;
+    margin-bottom: 9px !important;
+  }
+
+  /* Benefit title */
+  .reveal-group .grid h3 {
+    font-size: 17px !important;
+    line-height: 1.32 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Benefit text */
+  .reveal-group .grid p {
+    font-size: 13px !important;
+    line-height: 1.76 !important;
+    max-width: 100% !important;
+  }
+
+
+  /* =======================================================
+     HOW IT WORKS
+     ======================================================= */
+
+  .reveal-group .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+    gap: 27px !important;
+  }
+
+  /* Step number */
+  .reveal-group .grid > div > div[aria-hidden="true"] {
+    font-size: 40px !important;
+    line-height: 1 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Step heading */
+  .reveal-group .grid h3 {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Step description */
+  .reveal-group .grid p {
+    font-size: 13px !important;
+    line-height: 1.76 !important;
+  }
+
+
+  /* =======================================================
+     FAQ
+     ======================================================= */
+
+  .reveal-group .border-l-\[3px\] {
+    padding-left: 13px !important;
+    border-left-width: 2px !important;
+  }
+
+  .reveal-group .border-l-\[3px\] p:first-child {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .reveal-group .border-l-\[3px\] p:last-child {
+    font-size: 13px !important;
+    line-height: 1.76 !important;
+  }
+
+
+  /* =======================================================
+     CTA
+     ======================================================= */
+
+  .reveal-group h2[style*="56px"] {
+    font-size: 29px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .reveal-group h2[style*="56px"] + p {
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+    margin-bottom: 25px !important;
+  }
+
+  /* CTA button */
+  .reveal-group .min-w-\[260px\] {
+    width: 100% !important;
+    max-width: 260px !important;
+    min-width: 0 !important;
+  }
+
+  /* CTA supporting text */
+  .reveal-group .text-\[12\.5px\] {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
+
+  .reveal-group .text-\[12px\] {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
+
+
+  /* =======================================================
+     TEXT SAFETY
+     ======================================================= */
+
+  .reveal-group h1,
+  .reveal-group h2,
+  .reveal-group h3,
+  .reveal-group p {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+
+  /* =======================================================
+     BUTTON SAFETY
+     ======================================================= */
+
+  .reveal-group a,
+  .reveal-group button {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   360px — 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .reveal-group > div {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+
+  /* Hero */
+  .reveal-group h1 {
+    font-size: 30px !important;
+    line-height: 1.07 !important;
+  }
+
+  .reveal-group h1 + p {
+    font-size: 12.5px !important;
+    line-height: 1.72 !important;
+  }
+
+
+  /* Section headings */
+  .reveal-group h2 {
+    font-size: 24px !important;
+    line-height: 1.18 !important;
+  }
+
+
+  /* Benefit titles */
+  .reveal-group .grid h3 {
+    font-size: 16px !important;
+  }
+
+  /* Body text */
+  .reveal-group .grid p {
+    font-size: 12.5px !important;
+    line-height: 1.76 !important;
+  }
+
+
+  /* Step numbers */
+  .reveal-group .grid > div > div[aria-hidden="true"] {
+    font-size: 38px !important;
+  }
+
+
+  /* Step title */
+  .reveal-group .grid h3 {
+    font-size: 15px !important;
+  }
+
+
+  /* FAQ */
+  .reveal-group .border-l-\[3px\] p:first-child {
+    font-size: 13.5px !important;
+  }
+
+  .reveal-group .border-l-\[3px\] p:last-child {
+    font-size: 12.5px !important;
+  }
+
+
+  /* Final CTA */
+  .reveal-group h2[style*="56px"] {
+    font-size: 27px !important;
+  }
+
+  .reveal-group h2[style*="56px"] + p {
+    font-size: 12.5px !important;
+  }
+}
+
+
+
+
+
+
+
+
+/* =======================================================
+   MOBILE BUTTONS
+   ======================================================= */
+
+@media (max-width: 767px) {
+
+  /* Become a Founding Provider button */
+  .reveal-group a,
+  .reveal-group button {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* First hero button - compact */
+  .reveal-group:first-child a,
+  .reveal-group:first-child button {
+    min-height: 42px !important;
+    height: auto !important;
+    padding: 9px 20px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Final Install Pettxo — Free button */
+  .reveal-group:last-child a,
+  .reveal-group:last-child button {
+    min-height: 44px !important;
+    height: auto !important;
+    padding: 10px 22px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+  }
+}
+
+
+/* Small phones */
+@media (max-width: 390px) {
+
+  /* Become a Founding Provider */
+  .reveal-group:first-child a,
+  .reveal-group:first-child button {
+    font-size: 11px !important;
+    min-height: 40px !important;
+    /* padding: 8px 13px !important; */
+
+  }
+
+  /* Install Pettxo — Free */
+  .reveal-group:last-child a,
+  .reveal-group:last-child button {
+    font-size: 11.5px !important;
+    min-height: 42px !important;
+    padding: 9px 20px !important;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 390px) {
+
+  /* Become a Founding Provider button */
+  .reveal-group:first-child a,
+  .reveal-group:first-child button {
+    font-size: 11px !important;
+    min-height: 40px !important;
+    padding: 8px 18px !important;
+
+    /* CENTER */
+    display: flex !important;
+    width: fit-content !important;
+    /* margin-left: auto !important; */
+    margin-right: auto !important;
+  }
+
+}

@@ -12,22 +12,30 @@
 .mobile-menu-button {
   width: 40px;
   height: 40px;
+
   display: grid;
   place-items: center;
+
   position: relative;
+
   border: 0;
   background: transparent;
   padding: 0;
+
   cursor: pointer;
   z-index: 1002;
 }
 
 .menu-line {
   position: absolute;
+
   width: 21px;
   height: 2px;
+
   border-radius: 999px;
+
   background: #1f2937;
+
   transition:
     transform 0.35s ease,
     top 0.35s ease,
@@ -60,12 +68,11 @@
 .mobile-side-menu {
   position: fixed;
 
-  /* Full natural screen height */
   top: 0;
   right: 0;
+
   height: 100dvh;
 
-  /* Do NOT make screen narrower */
   width: min(82vw, 360px);
 
   z-index: 1001;
@@ -73,24 +80,28 @@
   opacity: 0;
   transform: translateX(100%);
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(245, 239, 230, 0.94)
-    );
+  /*
+    SOLID BACKGROUND
+    No glass / gradient
+  */
+  background: #f5efe6;
 
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  border-left: 1px solid #e5e7eb;
 
-  border-left: 1px solid rgba(255, 255, 255, 0.7);
-
-  box-shadow:
-    -18px 0 55px rgba(31, 41, 55, 0.12);
+  box-shadow: -18px 0 55px rgba(31, 41, 55, 0.12);
 
   overflow: hidden;
 
   pointer-events: none;
+
+  visibility: hidden;
+}
+
+
+/* Menu becomes clickable only when open */
+.mobile-side-menu.is-open {
+  pointer-events: auto;
+  visibility: visible;
 }
 
 
@@ -100,6 +111,7 @@
 
 .mobile-menu-inner {
   height: 100%;
+
   display: flex;
   flex-direction: column;
 
@@ -111,73 +123,6 @@
 
 
 /* -----------------------------
-   TOP
-   ----------------------------- */
-
-.mobile-menu-top {
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding-bottom: 18px;
-
-  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
-}
-
-.mobile-menu-title {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: #1f2937;
-}
-
-
-/* -----------------------------
-   CLOSE BUTTON
-   ----------------------------- */
-
-/* .mobile-close-button {
-  width: 36px;
-  height: 36px;
-
-  display: grid;
-  place-items: center;
-
-  position: relative;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.58);
-
-  cursor: pointer;
-}
-
-.mobile-close-button span {
-  position: absolute;
-
-  width: 17px;
-  height: 2px;
-
-  border-radius: 999px;
-
-  background: #1f2937;
-}
-
-.mobile-close-button span:first-child {
-  transform: rotate(45deg);
-}
-
-.mobile-close-button span:last-child {
-  transform: rotate(-45deg);
-} */
-
-
-/* -----------------------------
    NAVIGATION
    ----------------------------- */
 
@@ -185,7 +130,7 @@
   display: flex;
   flex-direction: column;
 
-  margin-top: 18px;
+  margin-top: 72px;
 }
 
 .mobile-nav-link {
@@ -203,7 +148,7 @@
 
   color: #1f2937;
 
-  border-bottom: 1px solid rgba(229, 231, 235, 0.78);
+  border-bottom: 1px solid #e5e7eb;
 
   transition:
     padding-left 0.25s ease,
@@ -218,6 +163,7 @@
 .mobile-nav-text {
   font-size: 16px;
   font-weight: 500;
+
   letter-spacing: -0.01em;
 }
 
@@ -275,10 +221,11 @@
 
   border: 0;
 
+  /*
+    Normal backdrop.
+    No glass blur.
+  */
   background: rgba(31, 41, 55, 0.08);
-
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 
   cursor: pointer;
 }
@@ -294,6 +241,10 @@
   .mobile-menu-backdrop {
     display: none !important;
   }
+
+  .mobile-menu-button {
+    display: none !important;
+  }
 }
 
 
@@ -302,6 +253,7 @@
    ----------------------------- */
 
 @media (max-width: 480px) {
+
   .mobile-side-menu {
     width: min(84vw, 340px);
   }
@@ -314,6 +266,10 @@
   .mobile-nav-text {
     font-size: 15px;
   }
+
+  .mobile-nav-links {
+    margin-top: 68px;
+  }
 }
 
 
@@ -322,6 +278,7 @@
    ----------------------------- */
 
 @media (max-width: 360px) {
+
   .mobile-side-menu {
     width: 88vw;
   }
@@ -329,5 +286,9 @@
   .mobile-menu-inner {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .mobile-nav-text {
+    font-size: 15px;
   }
 }

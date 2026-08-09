@@ -158,19 +158,21 @@ export default function About() {
         care has been missing — for every pet, and every person who takes care of one."
       </blockquote>
 
-      <div className="reveal">
-        <p className="font-sans font-semibold text-[16px] text-dark">
-          Hrishi Gautam
-        </p>
+     <div className="reveal">
+  <p className="font-sans font-semibold text-[16px] text-dark about-founder-name">
+    Hrishi Gautam
+  </p>
 
-        <p className="text-[14px] font-light text-muted mt-1">
-          Founder &amp; CEO, Pettxo
-        </p>
+  <p className="text-[14px] font-light text-muted mt-1 about-founder-role">
+    Founder &amp; CEO, Pettxo
+  </p>
 
-        <p className="mt-5 text-[14px] font-semibold text-orange">
-          Built with love by a team that cares.
-        </p>
-      </div>
+  <p className="mt-5 text-[14px] font-semibold text-orange about-founder-tagline">
+    Built with love by a team that cares.
+  </p>
+</div>
+
+      
 
     </div>
   </div>

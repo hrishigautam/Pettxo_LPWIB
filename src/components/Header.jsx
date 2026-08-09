@@ -1,6 +1,6 @@
 // Header.jsx
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -18,7 +18,9 @@ export default function Header() {
   const hdrRef = useRef(null)
   const menuRef = useRef(null)
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
 
+  // Desktop header scroll animation — unchanged
   useGSAP(() => {
     ScrollTrigger.create({
       trigger: document.body,
@@ -70,14 +72,55 @@ export default function Header() {
     { dependencies: [open] }
   )
 
+  const handleNavClick = (e, item) => {
+    setOpen(false)
+
+    // How It Works
+    if (item.to === '/#how') {
+      e.preventDefault()
+
+      if (window.location.pathname === '/') {
+        setTimeout(() => {
+          const section = document.getElementById('how')
+
+          if (section) {
+            section.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            })
+          }
+        }, 50)
+      } else {
+        navigate('/#how')
+
+        setTimeout(() => {
+          const section = document.getElementById('how')
+
+          if (section) {
+            section.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            })
+          }
+        }, 300)
+      }
+
+      return
+    }
+
+    navigate(item.to)
+  }
+
   return (
     <header
       ref={hdrRef}
       className="fixed top-0 left-0 right-0 z-[500] border-t-2 border-orange"
       style={{ backgroundColor: 'rgba(245,239,230,0)' }}
     >
+
       {/* MAIN HEADER — DESKTOP UNCHANGED */}
-      <div className="max-w-[1280px] mx-auto px-6 md:px-16 h-[62px] flex items-center justify-between">
+
+      <div className="flex items-center justify-between max-w-[1280px] mx-auto px-6 md:px-16 py-3">
 
         {/* Logo */}
         <Link
@@ -131,8 +174,21 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             className="mobile-menu-button"
           >
-            <span className={open ? 'menu-line line-one open' : 'menu-line line-one'} />
-            <span className={open ? 'menu-line line-two open' : 'menu-line line-two'} />
+            <span
+              className={
+                open
+                  ? 'menu-line line-one open'
+                  : 'menu-line line-one'
+              }
+            />
+
+            <span
+              className={
+                open
+                  ? 'menu-line line-two open'
+                  : 'menu-line line-two'
+              }
+            />
           </button>
         </div>
       </div>
@@ -140,27 +196,21 @@ export default function Header() {
       {/* MOBILE SIDE DRAWER */}
       <div
         ref={menuRef}
-        className="mobile-side-menu"
+        className={`mobile-side-menu ${open ? 'is-open' : ''}`}
         aria-hidden={!open}
       >
         <div className="mobile-menu-inner">
-
-          {/* Top */}
-{/* Top */}
-<div className="mobile-menu-top">
-  <span className="mobile-menu-title">Menu</span>
-</div>
 
           {/* Navigation */}
           <nav
             aria-label="Mobile navigation"
             className="mobile-nav-links"
           >
-            {NAV.map((n, index) => (
-              <Link
+            {NAV.map((n) => (
+              <a
                 key={n.label}
-                to={n.to}
-                onClick={() => setOpen(false)}
+                href={n.to}
+                onClick={(e) => handleNavClick(e, n)}
                 className="mobile-nav-link"
               >
                 <span className="mobile-nav-text">
@@ -168,7 +218,7 @@ export default function Header() {
                 </span>
 
                 <span className="mobile-nav-dot" />
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -189,6 +239,7 @@ export default function Header() {
           onClick={() => setOpen(false)}
         />
       )}
+
     </header>
   )
 }
