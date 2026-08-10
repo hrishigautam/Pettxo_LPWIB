@@ -168,38 +168,126 @@ return (
         </a>
       </nav>
 
-      {/* Connect */}
-      <nav
-        className="flex flex-col gap-1.5 sm:gap-1 md:gap-3 min-w-0"
-        
-        aria-label="Connect links"
-      >
-        <p className="text-[9.5px] sm:text-[10.5px] md:text-[11px] font-semibold tracking-[0.14em] uppercase text-dark mb-0 sm:mb-1">
-          Connect
-        </p>
+    {/* Connect */}
+<nav
+  className="flex flex-col gap-1.5 sm:gap-1 md:gap-3 min-w-0"
+  aria-label="Connect links"
+>
+  <p className="text-[9.5px] sm:text-[10.5px] md:text-[11px] font-semibold tracking-[0.14em] uppercase text-dark mb-0 sm:mb-1">
+    Connect
+  </p>
 
-        <a
-          href="https://www.instagram.com/pettxo_app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${A} break-words`}
-        >
-          Instagram → @pettxo_app
-        </a>
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/pettxo_app"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pettxo Instagram"
+    className={`${A} flex items-center gap-2`}
+  >
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      // className="flex-shrink-0"
+className="flex-shrink-0 text-orange"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <circle
+        cx="17.5"
+        cy="6.5"
+        r="1"
+        fill="currentColor"
+      />
+    </svg>
 
-        <a
-          href="https://x.com/pettxo_app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${A} break-words`}
-        >
-          X → @pettxo_app
-        </a>
+    <span>→ @pettxo_app</span>
+  </a>
 
-        <a href="mailto:support@pettxo.com" className={`${A} break-words`}>
-          Email → support@pettxo.com
-        </a>
-      </nav>
+  {/* X */}
+  <a
+    href="https://x.com/pettxo_app"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pettxo on X"
+    className={`${A} flex items-center gap-2`}
+  >
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      // className="flex-shrink-0"
+      className="flex-shrink-0 text-orange"
+    >
+      <path
+        d="M5 4L19 20M19 4L5 20"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+
+    <span>→ @pettxo_app</span>
+  </a>
+
+  {/* Email */}
+  <a
+    href="mailto:support@pettxo.com"
+    aria-label="Email Pettxo"
+    className={`${A} flex items-center gap-2 break-words`}
+  >
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      // className="flex-shrink-0"
+      className="flex-shrink-0 text-orange"
+    >
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <path
+        d="M4 7L12 13L20 7"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+    <span>→ support@pettxo.com</span>
+  </a>
+</nav>
     </div>
 
     {/* Copyright */}
