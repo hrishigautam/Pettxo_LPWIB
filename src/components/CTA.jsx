@@ -73,8 +73,8 @@ export default function CTA() {
   )
 
   return (
-    <section
-      ref={sectionRef}
+    
+      <section id="cta" ref={sectionRef}
       className="
         w-full
         overflow-hidden
