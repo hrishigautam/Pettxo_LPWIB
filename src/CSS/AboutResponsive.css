@@ -124,11 +124,21 @@
 
   /* About Pettxo → How It Started spacing */
   .about-page > section:first-child {
-    padding-bottom: 22px !important;
+    padding-bottom: 1px !important;
   }
 
   .about-page > section:nth-child(2) {
-    padding-top: 22px !important;
+    padding-top: 1px !important;
+  }
+
+ 
+  .about-page > section:first-child > div > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .about-page > section:nth-child(2) > div > *:first-child,
+  .about-page > section:nth-child(2) > div > *:first-child + * {
+    margin-top: 0 !important;
   }
 
   /* About page mobile typography */
@@ -179,6 +189,8 @@
   .about-page h1 + p {
     max-width: 100%;
     overflow-wrap: break-word;
+    margin-bottom: 24px !important;
+    padding-bottom: 35px !important;
   }
 
 

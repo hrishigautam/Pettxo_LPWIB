@@ -55,7 +55,7 @@ export default function About() {
       {/* THE STORY */}
       <section className="bg-card py-14 md:py-20 reveal-group">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16 max-w-[760px]">
-          <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-3.5">
+          <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase pt-4 text-orange mb-3.5">
             How It Started
           </span>
           <h2 className="reveal font-serif font-bold text-dark leading-[1.18] mb-7" style={{ fontSize: 'clamp(24px,4vw,40px)' }}>

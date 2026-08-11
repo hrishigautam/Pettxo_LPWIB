@@ -56,17 +56,28 @@
 
 
   /* -------------------------------------------------------
-     SECTION SPACING
+     SECTION SPACING (top/bottom reduced on mobile)
      ------------------------------------------------------- */
 
   .reveal-group.py-14 {
-    padding-top: 42px !important;
-    padding-bottom: 42px !important;
+    padding-top: 26px !important;
+    padding-bottom: 26px !important;
   }
 
   .reveal-group.py-20 {
-    padding-top: 42px !important;
-    padding-bottom: 42px !important;
+    padding-top: 26px !important;
+    padding-bottom: 26px !important;
+  }
+
+  /* Hero section uses pt-32 / pb-14 directly (not py-14),
+     so it needs its own override to actually shrink on mobile.
+     Kept tall enough to clear the fixed navbar/logo up top. */
+  .reveal-group.pt-32 {
+    padding-top: 78px !important;
+  }
+
+  .reveal-group.pb-14 {
+    padding-bottom: 24px !important;
   }
 
 
@@ -86,7 +97,7 @@
     font-size: 13px !important;
     line-height: 1.72 !important;
     max-width: 100% !important;
-    margin-bottom: 32px !important;
+    margin-bottom: 24px !important;
   }
 
 
@@ -278,6 +289,25 @@
   .reveal-group > div {
     padding-left: 18px !important;
     padding-right: 18px !important;
+  }
+
+  /* Slightly tighter section spacing on very small phones */
+  .reveal-group.pt-32 {
+    padding-top: 70px !important;
+  }
+
+  .reveal-group.pb-14 {
+    padding-bottom: 20px !important;
+  }
+
+  .reveal-group.py-14 {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .reveal-group.py-20 {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
   }
 
 

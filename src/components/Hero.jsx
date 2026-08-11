@@ -1,4 +1,3 @@
-
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -238,12 +237,68 @@ export default function Hero() {
           }
         }
 
-        // Fallback
+        // Fallback: scan a grid of candidate spots and check
+        // against ALL already-placed pills in this zone (not
+        // just the last one), so we never silently place on top
+        // of an earlier pill.
         if (!placed) {
           const existing =
             placedByZone[zoneKey];
 
-          if (existing.length > 0) {
+          const maxX = Math.max(
+            z.x0,
+            z.x1 - w,
+          );
+
+          const maxY = Math.max(
+            z.y0,
+            z.y1 - h,
+          );
+
+          const stepX = Math.max(
+            w + GAP,
+            20,
+          );
+
+          const stepY = Math.max(
+            h + GAP,
+            20,
+          );
+
+          let found = false;
+
+          outer: for (
+            let gy = z.y0;
+            gy <= maxY;
+            gy += stepY
+          ) {
+            for (
+              let gx = z.x0;
+              gx <= maxX;
+              gx += stepX
+            ) {
+              const collision =
+                existing.some(
+                  (other) =>
+                    overlaps(
+                      gx,
+                      gy,
+                      w,
+                      h,
+                      other,
+                    ),
+                );
+
+              if (!collision) {
+                x = gx;
+                y = gy;
+                found = true;
+                break outer;
+              }
+            }
+          }
+
+          if (!found && existing.length > 0) {
             const last =
               existing[existing.length - 1];
 
@@ -254,10 +309,7 @@ export default function Hero() {
                   last._w +
                   GAP,
               ),
-              Math.max(
-                z.x0,
-                z.x1 - w,
-              ),
+              maxX,
             );
 
             y = Math.min(
@@ -265,10 +317,7 @@ export default function Hero() {
                 z.y0,
                 last._s.y,
               ),
-              Math.max(
-                z.y0,
-                z.y1 - h,
-              ),
+              maxY,
             );
           }
         }
@@ -500,7 +549,7 @@ export default function Hero() {
       const resolveCollisions = () => {
         for (
           let pass = 0;
-          pass < 3;
+          pass < 6;
           pass++
         ) {
           for (
@@ -657,6 +706,13 @@ export default function Hero() {
         });
 
         resolveCollisions();
+
+        // Re-clamp after collision resolution so a pill pushed
+        // outside its zone doesn't get teleported to the opposite
+        // edge next tick and land on top of another pill.
+        caps.forEach((el) => {
+          clampToZone(el);
+        });
 
         caps.forEach((el) => {
           const s = el._s;
