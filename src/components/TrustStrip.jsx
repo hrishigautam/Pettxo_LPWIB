@@ -33,10 +33,10 @@ export default function TrustStrip() {
             start: "top 92%",
             once: true,
           },
-        },
+        }
       );
     },
-    { scope: ref },
+    { scope: ref }
   );
 
   return (
@@ -45,8 +45,10 @@ export default function TrustStrip() {
       className="bg-card border-y border-[#E5E7EB]"
       aria-label="Why trust Pettxo"
     >
-      <div className="max-w-[1280px] mx-auto px-3 md:px-12 py-3 md:py-4">
-        <div className="flex flex-wrap items-center justify-center gap-x-4 md:gap-x-4 gap-y-2">
+      <div className="max-w-[1280px] mx-auto px-3 sm:px-6 md:px-12 py-3 md:py-4">
+        {/* <div className="flex flex-wrap items-center justify-center gap-x-4 md:gap-x-4 gap-y-2"> */}
+          <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-4 gap-y-2">
+          {/* First dot - Desktop/Tablet only */}
           <span
             aria-hidden="true"
             className="hidden sm:inline text-orange text-[22px] leading-none font-bold"
@@ -55,13 +57,35 @@ export default function TrustStrip() {
           </span>
 
           {ITEMS.map((item) => (
-            <div key={item} className="flex items-center gap-x-4 md:gap-x-8">
-          <span className="trust-item text-center sm:text-left text-[10px] sm:text-[12px] md:text-[16px] font-medium text-dark leading-snug sm:leading-none sm:whitespace-nowrap px-2 sm:px-0">
+            <div
+              key={item}
+              className="flex items-center gap-x-4 md:gap-x-8"
+            >
+             <span
+  className="
+    trust-item
+    text-center sm:text-left
+    text-[6px] sm:text-[12px] md:text-[16px]
+    font-medium
+    text-dark
+    leading-none
+    whitespace-nowrap
+    px-0
+  "
+>
   {item}
 </span>
+
+              {/* Separator */}
               <span
                 aria-hidden="true"
-                className="hidden sm:inline text-orange text-[22px] leading-none font-bold"
+                className="
+                  hidden sm:inline
+                  text-orange
+                  text-[22px]
+                  leading-none
+                  font-bold
+                "
               >
                 ·
               </span>
