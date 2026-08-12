@@ -1,12 +1,12 @@
 /* =====================================================
    PROBLEM — RESPONSIVE UI
    Desktop remains completely untouched
-   ===================================================== */
+===================================================== */
 
 
 /* ================= TABLET ================= */
 
-@media (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
   .problem-section {
     padding-top: 80px !important;
@@ -32,7 +32,7 @@
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
   .problem-section {
     padding-top: 58px !important;
@@ -48,11 +48,12 @@
 
   /* ---------- HEADING ---------- */
 
-  .problem-section h2 {
-    max-width: 100%;
-    font-size: 30px !important;
-    line-height: 1.17 !important;
-    letter-spacing: -0.02em !important;
+  .problem-section h2,
+  .problem-section > div > h2 {
+    max-width: 100% !important;
+    font-size: 23px !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.015em !important;
     margin-bottom: 27px !important;
   }
 
@@ -60,7 +61,7 @@
   /* ---------- PROBLEM TEXT ---------- */
 
   .problem-section .problem-copy {
-    max-width: 100%;
+    max-width: 100% !important;
     margin-bottom: 28px !important;
     gap: 9px !important;
   }
@@ -90,7 +91,7 @@
 
 /* ================= SMALL PHONES ================= */
 
-@media (max-width: 390px) {
+@media screen and (max-width: 390px) {
 
   .problem-section {
     padding-top: 48px !important;
@@ -103,13 +104,21 @@
   }
 
 
-  .problem-section h2 {
-    font-size: 27px !important;
-    line-height: 1.18 !important;
-    letter-spacing: -0.018em !important;
+  /* ---------- SMALL PHONE HEADING ---------- */
+@media screen and (max-width: 390px) {
+
+  .problem-section h2,
+  .problem-section > div > h2 {
+    font-size: 19px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.01em !important;
     margin-bottom: 24px !important;
   }
 
+}
+
+
+  /* ---------- PROBLEM TEXT ---------- */
 
   .problem-section .problem-copy {
     gap: 7px !important;
@@ -122,9 +131,10 @@
   }
 
 
-  .problem-section .problem-closer {
-    padding: 13px 15px;
+  /* ---------- FINAL ORANGE MESSAGE ---------- */
 
+  .problem-section .problem-closer {
+    padding: 13px 15px !important;
     font-size: 13.5px !important;
     line-height: 1.65 !important;
   }
