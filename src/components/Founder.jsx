@@ -72,7 +72,7 @@ export default function Founder() {
     <section
       ref={sectionRef}
       id="founder"
-      className="bg-card py-14 md:py-20"
+      className="bg-[#F5EFE6] py-14 md:py-20"
       aria-label="Why we're building Pettxo"
     >
       <div className="max-w-[1100px] mx-auto px-5 md:px-8">

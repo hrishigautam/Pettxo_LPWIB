@@ -114,7 +114,7 @@ export default function Features() {
 
   // ── Pinned scroll showcase ──
   return (
-    <section ref={sectionRef} id="features" className="bg-card"  features-page aria-label="What's inside Pettxo">
+    <section ref={sectionRef} id="features" className="bg-[#F5EFE6]"  features-page aria-label="What's inside Pettxo">
       <div className="min-h-screen flex flex-col justify-center max-w-[1280px] mx-auto px-6 md:px-16 py-8 md:py-10">
         <Header />
 

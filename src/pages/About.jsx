@@ -79,7 +79,7 @@ export default function About() {
         </section>
 
         {/* THE STORY */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16 max-w-[760px]">
             <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase pt-4 text-orange mb-3.5">
               How It Started
@@ -150,7 +150,7 @@ export default function About() {
         </section>
 
         {/* WHAT PETTXO IS */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16 max-w-[760px]">
             <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-3.5">
               What We Are
@@ -216,7 +216,7 @@ export default function About() {
         </section>
 
         {/* THE FOUNDER */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16">
             <div className="max-w-[1000px]">
 

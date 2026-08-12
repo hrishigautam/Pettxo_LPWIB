@@ -105,7 +105,7 @@ export default function ForProviders() {
         </section>
 
         {/* THE OPPORTUNITY */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16 max-w-[760px]">
             <h2
               className="reveal font-serif font-bold text-dark leading-[1.18] mb-7"
@@ -164,7 +164,7 @@ export default function ForProviders() {
         </section>
 
         {/* HOW IT WORKS (PROVIDERS) */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16">
             <span className="reveal block text-[10.5px] font-semibold tracking-[0.20em] uppercase text-orange mb-3.5">
               Get Started In Minutes
@@ -232,7 +232,7 @@ export default function ForProviders() {
         </section>
 
         {/* CTA */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16 text-center max-w-[620px] mx-auto flex flex-col items-center">
 
             <h2

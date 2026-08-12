@@ -78,7 +78,7 @@ export default function Contact() {
         </section>
 
         {/* CONTACT METHODS */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -186,7 +186,7 @@ export default function Contact() {
         </section>
 
         {/* CTA */}
-        <section className="bg-card py-14 md:py-20 reveal-group">
+        <section className="bg-[#F5EFE6] py-14 md:py-20 reveal-group">
           <div className="max-w-[1280px] mx-auto px-6 md:px-16 text-center max-w-[620px] mx-auto flex flex-col items-center">
 
             <h2
@@ -216,7 +216,7 @@ export default function Contact() {
 
 function ContactCard({ title, body, children }) {
   return (
-    <div className="reveal bg-card border border-[#E5E7EB] rounded-[18px] p-7 md:p-8">
+    <div className="reveal bg-[#F5EFE6] border border-[#E5E7EB] rounded-[18px] p-7 md:p-8">
 
       <h3 className="font-serif font-bold text-dark text-[20px] mb-2">
         {title}
