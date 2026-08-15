@@ -134,9 +134,9 @@ if (el.dataset.zone === "mobile") {
 
     // Capsules dog image ke upar
     // navbar ke paas tak ja sakti hain
-    y0: -90,
+    y0: -120,
 
-    y1: Math.max(-90, h - 6),
+    y1: Math.max(-120, h - 6),
 
     padL: 4,
     padR: 4,

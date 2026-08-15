@@ -3,16 +3,17 @@
    DESKTOP COMPLETELY UNTOUCHED
 ========================================================= */
 
-
 @media (max-width: 767px) {
 
   .hero-section {
     min-height: auto !important;
 
     /*
-      Hero ke bahar capsules leak nahi hongi
+      IMPORTANT:
+      Negative Y capsules ko hero ke upper area me
+      jane dena hai.
     */
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .hero-section .relative.z-30.max-w-\[1280px\] {
@@ -74,7 +75,6 @@
 
   .hero-cta {
     width: auto !important;
-
     position: relative !important;
     z-index: 100 !important;
   }
@@ -112,37 +112,38 @@
 
   /* =====================================================
      DOG + CAT MEDIA
-
-     ORIGINAL POSITION RESTORED
-
-     IMPORTANT:
-     Capsules ko upar dog image ke empty space me
-     visible hone dena hai.
+     
+     IMAGE RIGHT SIDE ME RAHEGI
+     IMAGE SIZE RESTORE
   ===================================================== */
 
-.hero-mobile-media {
-  position: absolute !important;
+  .hero-mobile-media {
+    position: absolute !important;
 
-  top: 105px !important;
-  right: -23px !important;
-
-  width: 50% !important;
-  height: 255px !important;
-
-  min-height: 0 !important;
-  margin: 0 !important;
-
-  z-index: 20 !important;
-  pointer-events: none !important;
-
-  overflow: visible !important;
-}
     /*
-      IMPORTANT:
-      HIDDEN HATA DIYA.
-      Isi wajah se capsules cut ho rahi thi.
+      Dog/cat image ki original mobile position
     */
-  
+    top: 105px !important;
+    right: -23px !important;
+
+    /*
+      50% se image chhoti ho rahi thi.
+      70% se image proper size me rahegi.
+    */
+    width: 70% !important;
+    height: 225px !important;
+
+    min-height: 0 !important;
+    margin: 0 !important;
+
+    z-index: 20 !important;
+    pointer-events: none !important;
+
+    /*
+      Capsules ko upar jaane dena hai.
+    */
+    overflow: visible !important;
+  }
 
 
   /* =====================================================
@@ -187,6 +188,9 @@
     box-shadow: none !important;
     background: transparent !important;
 
+    /*
+      Dog/cat size restore
+    */
     transform: scale(1.42) !important;
     transform-origin: center center !important;
   }
@@ -194,14 +198,11 @@
 
   /* =====================================================
      CAPSULE AREA
-
-     CAPSULES:
-     - DOG IMAGE KE UPAR AA SAKTI HAIN
-     - DOG KE SIDE AA SAKTI HAIN
-     - IMAGE KE AROUND AA SAKTI HAIN
-     - UPPER EMPTY SPACE ME AA SAKTI HAIN
-
-     LEKIN HERO KE BAHAR NAHI JAYENGI
+     
+     IMPORTANT:
+     JS y0 = -120 se capsules upar ja sakti hain.
+     
+     CSS yahan unko clip nahi karega.
   ===================================================== */
 
   .hero-mobile-capsules {
@@ -220,12 +221,13 @@
     pointer-events: none !important;
 
     /*
-      CAPSULE IMAGE KE PICHE
+      IMAGE KE PICHE
     */
     z-index: 10 !important;
 
     /*
-      CAPSULES KO CLIP MAT KARO
+      VERY IMPORTANT:
+      Capsules upper space me cut nahi hongi.
     */
     overflow: visible !important;
   }
@@ -241,7 +243,7 @@
     position: absolute !important;
 
     /*
-      IMAGE KE PICHE
+      Image ke peeche
     */
     z-index: 5 !important;
 
@@ -353,12 +355,12 @@
     top: 105px !important;
     right: -2px !important;
 
+    /*
+      Image ko chhota nahi karna
+    */
     width: 72% !important;
     height: 215px !important;
 
-    /*
-      CAPSULES CUT NAHI HONGI
-    */
     overflow: visible !important;
 
     z-index: 20 !important;
@@ -394,9 +396,6 @@
     width: 100% !important;
     height: 100% !important;
 
-    /*
-      CUTTING REMOVED
-    */
     overflow: visible !important;
 
     z-index: 10 !important;
@@ -493,9 +492,6 @@
     width: 73% !important;
     height: 205px !important;
 
-    /*
-      CAPSULES CUT NAHI HONGI
-    */
     overflow: visible !important;
 
     z-index: 20 !important;
@@ -531,9 +527,6 @@
     width: 100% !important;
     height: 100% !important;
 
-    /*
-      CUTTING REMOVED
-    */
     overflow: visible !important;
 
     z-index: 10 !important;
