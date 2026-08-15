@@ -3,6 +3,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    MOBILE RESPONSIVE ONLY
    DESKTOP COMPLETELY UNTOUCHED
@@ -110,16 +121,21 @@
 
   /* =====================================================
      DOG + CAT MEDIA
+
+     IMAGE:
+     - UP
+     - THODI LEFT
+     - THODI BADI
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    top: 75px !important;
-    right: 5px !important;
+    top: 68px !important;
+    right: 0 !important;
 
-    width: 50% !important;
-    height: 270px !important;
+    width: 54% !important;
+    height: 260px !important;
 
     min-height: 0 !important;
     margin: 0 !important;
@@ -133,7 +149,6 @@
 
   /* =====================================================
      DOG + CAT IMAGE
-     THODA BADA
   ===================================================== */
 
   .hero-mobile-photo {
@@ -143,7 +158,7 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 270px !important;
+    height: 260px !important;
 
     margin: 0 !important;
 
@@ -161,7 +176,7 @@
     display: block !important;
 
     width: 100% !important;
-    height: 270px !important;
+    height: 260px !important;
 
     object-fit: contain !important;
     object-position: center !important;
@@ -171,7 +186,11 @@
     box-shadow: none !important;
     background: transparent !important;
 
-    transform: scale(1.50) !important;
+    /*
+      IMAGE SIZE
+      Badi hai but over-zoom nahi
+    */
+    transform: scale(1.38) !important;
     transform-origin: center center !important;
   }
 
@@ -196,6 +215,7 @@
     pointer-events: none !important;
 
     z-index: 10 !important;
+
     overflow: visible !important;
   }
 
@@ -313,15 +333,15 @@
 
   /* =====================================================
      DOG + CAT
-     IMAGE THODI BADI
+     UP + LEFT + THODI BADI
   ===================================================== */
 
   .hero-mobile-media {
-    top: 75px !important;
-    right: 5px !important;
+    top: 65px !important;
+    right: 0 !important;
 
-    width: 72% !important;
-    height: 250px !important;
+    width: 75% !important;
+    height: 245px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -332,19 +352,23 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 250px !important;
+    height: 245px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 250px !important;
+    height: 245px !important;
 
     object-fit: contain !important;
     object-position: center !important;
 
-    transform: scale(1.52) !important;
+    /*
+      Size controlled mainly by width/height,
+      scale only moderate rakha hai
+    */
+    transform: scale(1.40) !important;
     transform-origin: center center !important;
   }
 
@@ -449,15 +473,15 @@
 
   /* =====================================================
      DOG + CAT
-     IMAGE THODI BADI
+     UP + LEFT + THODI BADI
   ===================================================== */
 
   .hero-mobile-media {
-    top: 65px !important;
-    right: 5px !important;
+    top: 55px !important;
+    right: 0 !important;
 
-    width: 73% !important;
-    height: 240px !important;
+    width: 76% !important;
+    height: 230px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -468,19 +492,19 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 240px !important;
+    height: 230px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 240px !important;
+    height: 230px !important;
 
     object-fit: contain !important;
     object-position: center !important;
 
-    transform: scale(1.50) !important;
+    transform: scale(1.38) !important;
     transform-origin: center center !important;
   }
 
