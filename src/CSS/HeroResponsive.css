@@ -7,6 +7,599 @@
 
   .hero-section {
     min-height: auto !important;
+  }
+
+  .hero-section .relative.z-30.max-w-\[1280px\] {
+    padding-top: 30px !important;
+    padding-bottom: 14px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+
+  /* =====================================================
+     TEXT / LEFT SECTION
+  ===================================================== */
+
+  .hero-section .max-w-\[600px\] {
+    max-width: 68% !important;
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-eyebrow {
+    position: relative !important;
+    top: 17px !important;
+
+    font-size: 7.5px !important;
+    letter-spacing: 0.14em !important;
+
+    padding: 0 !important;
+    margin-bottom: 25px !important;
+
+    z-index: 100 !important;
+  }
+
+  .hero-section h1 {
+    font-size: 27px !important;
+    line-height: 1.04 !important;
+    letter-spacing: -0.035em !important;
+    margin-bottom: 12px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-description {
+    font-size: 7.8px !important;
+    line-height: 1.42 !important;
+    max-width: 225px !important;
+    margin-bottom: 12px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     BUTTON
+  ===================================================== */
+
+  .hero-cta {
+    width: auto !important;
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-cta .btn-install {
+    width: auto !important;
+    min-width: 112px !important;
+    height: 35px !important;
+
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+
+    font-size: 9px !important;
+    border-radius: 8px !important;
+
+    box-shadow:
+      0 8px 20px rgba(247, 89, 39, 0.25) !important;
+  }
+
+  .hero-cta > p {
+    text-align: left !important;
+    width: max-content !important;
+
+    margin-top: 5px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    font-size: 7px !important;
+    white-space: nowrap !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     DOG + CAT MEDIA
+     
+     IMAGE:
+     - UP
+     - LEFT
+     - THODA BADA
+  ===================================================== */
+
+  .hero-mobile-media {
+    position: absolute !important;
+
+    top: 82px !important;
+
+    left: 24% !important;
+    right: 0 !important;
+
+    width: auto !important;
+    height: 245px !important;
+
+    min-height: 0 !important;
+    margin: 0 !important;
+
+    z-index: 20 !important;
+    pointer-events: none !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     DOG + CAT IMAGE
+  ===================================================== */
+
+  .hero-mobile-photo {
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: 245px !important;
+
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-mobile-photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 245px !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    /*
+      IMAGE THODI BADI
+    */
+    transform: scale(1.55) !important;
+    transform-origin: center center !important;
+  }
+
+
+  /* =====================================================
+     CAPSULE AREA
+     
+     SIRF RIGHT IMAGE AREA
+  ===================================================== */
+
+  .hero-mobile-capsules {
+    display: block !important;
+
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    pointer-events: none !important;
+
+    z-index: 10 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     CAPSULE
+  ===================================================== */
+
+  .hero-capsule {
+    display: block !important;
+
+    position: absolute !important;
+
+    z-index: 5 !important;
+
+    max-width: 90% !important;
+  }
+
+  .hero-capsule .pill {
+    padding: 3px 7px !important;
+
+    font-size: 6px !important;
+    font-weight: 600 !important;
+
+    letter-spacing: 0 !important;
+    border-width: 1px !important;
+
+    box-shadow:
+      0 3px 8px rgba(31, 41, 55, 0.12) !important;
+  }
+}
+
+
+/* =========================================================
+   390px AND BELOW
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .hero-section .relative.z-30.max-w-\[1280px\] {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+
+    padding-top: 29px !important;
+    padding-bottom: 13px !important;
+  }
+
+  .hero-section .max-w-\[600px\] {
+    max-width: 68% !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-eyebrow {
+    top: 17px !important;
+    font-size: 7px !important;
+    margin-bottom: 24px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-section h1 {
+    font-size: 26px !important;
+    line-height: 1.03 !important;
+    margin-bottom: 11px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-description {
+    font-size: 7.5px !important;
+    line-height: 1.4 !important;
+
+    max-width: 215px !important;
+    margin-bottom: 11px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     BUTTON
+  ===================================================== */
+
+  .hero-cta {
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-cta .btn-install {
+    min-width: 110px !important;
+    height: 34px !important;
+
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+
+    font-size: 8.8px !important;
+    border-radius: 8px !important;
+  }
+
+  .hero-cta > p {
+    font-size: 6.8px !important;
+    text-align: left !important;
+    width: max-content !important;
+    margin-top: 5px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     DOG + CAT
+     
+     UP + LEFT + BIGGER
+  ===================================================== */
+
+  .hero-mobile-media {
+    top: 72px !important;
+
+    left: 22% !important;
+    right: 0 !important;
+
+    width: auto !important;
+
+    height: 235px !important;
+
+    overflow: hidden !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-mobile-photo {
+    top: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: 235px !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-mobile-photo,
+  .hero-mobile-photo img {
+    width: 100% !important;
+    height: 235px !important;
+  }
+
+  .hero-mobile-photo img {
+    transform: scale(1.56) !important;
+    transform-origin: center center !important;
+  }
+
+
+  /* =====================================================
+     CAPSULES
+  ===================================================== */
+
+  .hero-mobile-capsules {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    overflow: hidden !important;
+
+    z-index: 10 !important;
+  }
+
+  .hero-capsule {
+    position: absolute !important;
+    z-index: 5 !important;
+  }
+
+  .hero-capsule .pill {
+    padding: 2.8px 6.5px !important;
+    font-size: 5.6px !important;
+  }
+}
+
+
+/* =========================================================
+   360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .hero-section .relative.z-30.max-w-\[1280px\] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-section .max-w-\[600px\] {
+    max-width: 69% !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-eyebrow {
+    top: 16px !important;
+    font-size: 6.8px !important;
+    margin-bottom: 23px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-section h1 {
+    font-size: 25px !important;
+    line-height: 1.03 !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-description {
+    font-size: 7.3px !important;
+    line-height: 1.4 !important;
+    max-width: 205px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     BUTTON
+  ===================================================== */
+
+  .hero-cta {
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-cta .btn-install {
+    min-width: 106px !important;
+    height: 33px !important;
+    font-size: 8.5px !important;
+  }
+
+  .hero-cta > p {
+    font-size: 6.5px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     DOG + CAT
+     
+     UP + LEFT + BIGGER
+  ===================================================== */
+
+  .hero-mobile-media {
+    top: 62px !important;
+
+    left: 20% !important;
+    right: 0 !important;
+
+    width: auto !important;
+
+    height: 225px !important;
+
+    overflow: hidden !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-mobile-photo {
+    top: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: 225px !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-mobile-photo,
+  .hero-mobile-photo img {
+    width: 100% !important;
+    height: 225px !important;
+  }
+
+  .hero-mobile-photo img {
+    transform: scale(1.54) !important;
+    transform-origin: center center !important;
+  }
+
+
+  /* =====================================================
+     CAPSULES
+  ===================================================== */
+
+  .hero-mobile-capsules {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    overflow: hidden !important;
+
+    z-index: 10 !important;
+  }
+
+  .hero-capsule {
+    position: absolute !important;
+    z-index: 5 !important;
+  }
+
+  .hero-capsule .pill {
+    padding: 2px 5px !important;
+    font-size: 5px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   MOBILE RESPONSIVE ONLY
+   DESKTOP COMPLETELY UNTOUCHED
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .hero-section {
+    min-height: auto !important;
     overflow: hidden !important;
   }
 
@@ -105,12 +698,6 @@
 
   /* =====================================================
      DOG + CAT MEDIA
-
-     IMAGE:
-     - UP
-     - LEFT
-     - THODA BADA
-     - NICHE KA GAP REDUCED
   ===================================================== */
 
   .hero-mobile-media {
@@ -120,7 +707,7 @@
     right: 5px !important;
 
     width: 50% !important;
-    height: 255px !important;
+    height: 270px !important;
 
     min-height: 0 !important;
     margin: 0 !important;
@@ -134,6 +721,7 @@
 
   /* =====================================================
      DOG + CAT IMAGE
+     THODA BADA
   ===================================================== */
 
   .hero-mobile-photo {
@@ -143,7 +731,7 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 255px !important;
+    height: 270px !important;
 
     margin: 0 !important;
 
@@ -161,7 +749,7 @@
     display: block !important;
 
     width: 100% !important;
-    height: 255px !important;
+    height: 270px !important;
 
     object-fit: contain !important;
     object-position: center !important;
@@ -171,10 +759,7 @@
     box-shadow: none !important;
     background: transparent !important;
 
-    /*
-      IMAGE THODI BADI
-    */
-    transform: scale(1.42) !important;
+    transform: scale(1.50) !important;
     transform-origin: center center !important;
   }
 
@@ -198,11 +783,7 @@
 
     pointer-events: none !important;
 
-    /*
-      CAPSULES IMAGE KE PICHE
-    */
     z-index: 10 !important;
-
     overflow: visible !important;
   }
 
@@ -320,8 +901,7 @@
 
   /* =====================================================
      DOG + CAT
-     390px:
-     UP + LEFT + BOTTOM GAP REDUCED
+     IMAGE THODI BADI
   ===================================================== */
 
   .hero-mobile-media {
@@ -329,7 +909,7 @@
     right: 5px !important;
 
     width: 72% !important;
-    height: 235px !important;
+    height: 250px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -340,19 +920,19 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 235px !important;
+    height: 250px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 235px !important;
+    height: 250px !important;
 
     object-fit: contain !important;
     object-position: center !important;
 
-    transform: scale(1.44) !important;
+    transform: scale(1.52) !important;
     transform-origin: center center !important;
   }
 
@@ -457,9 +1037,7 @@
 
   /* =====================================================
      DOG + CAT
-     360px:
-     AUR UP + LEFT
-     BOTTOM GAP REDUCED
+     IMAGE THODI BADI
   ===================================================== */
 
   .hero-mobile-media {
@@ -467,7 +1045,7 @@
     right: 5px !important;
 
     width: 73% !important;
-    height: 225px !important;
+    height: 240px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -478,19 +1056,19 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 225px !important;
+    height: 240px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 225px !important;
+    height: 240px !important;
 
     object-fit: contain !important;
     object-position: center !important;
 
-    transform: scale(1.42) !important;
+    transform: scale(1.50) !important;
     transform-origin: center center !important;
   }
 
