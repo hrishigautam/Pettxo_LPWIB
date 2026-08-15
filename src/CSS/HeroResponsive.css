@@ -7,13 +7,7 @@
 
   .hero-section {
     min-height: auto !important;
-
-    /*
-      IMPORTANT:
-      Negative Y capsules ko hero ke upper area me
-      jane dena hai.
-    */
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   .hero-section .relative.z-30.max-w-\[1280px\] {
@@ -30,7 +24,6 @@
 
   .hero-section .max-w-\[600px\] {
     max-width: 68% !important;
-
     position: relative !important;
     z-index: 100 !important;
   }
@@ -113,25 +106,23 @@
   /* =====================================================
      DOG + CAT MEDIA
      
-     IMAGE RIGHT SIDE ME RAHEGI
-     IMAGE SIZE RESTORE
+     IMAGE:
+     - PEHLE SE UPAR
+     - PEHLE SE LEFT
+     - CAPSULES VISIBLE
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    /*
-      Dog/cat image ki original mobile position
-    */
-    top: 105px !important;
-    right: -23px !important;
+    /* UP */
+    top: 75px !important;
 
-    /*
-      50% se image chhoti ho rahi thi.
-      70% se image proper size me rahegi.
-    */
-    width: 70% !important;
-    height: 225px !important;
+    /* LEFT */
+    right: 5px !important;
+
+    width: 50% !important;
+    height: 255px !important;
 
     min-height: 0 !important;
     margin: 0 !important;
@@ -139,9 +130,6 @@
     z-index: 20 !important;
     pointer-events: none !important;
 
-    /*
-      Capsules ko upar jaane dena hai.
-    */
     overflow: visible !important;
   }
 
@@ -168,9 +156,6 @@
 
     overflow: visible !important;
 
-    /*
-      IMAGE CAPSULES KE UPAR
-    */
     z-index: 20 !important;
   }
 
@@ -188,9 +173,6 @@
     box-shadow: none !important;
     background: transparent !important;
 
-    /*
-      Dog/cat size restore
-    */
     transform: scale(1.42) !important;
     transform-origin: center center !important;
   }
@@ -198,11 +180,6 @@
 
   /* =====================================================
      CAPSULE AREA
-     
-     IMPORTANT:
-     JS y0 = -120 se capsules upar ja sakti hain.
-     
-     CSS yahan unko clip nahi karega.
   ===================================================== */
 
   .hero-mobile-capsules {
@@ -220,15 +197,8 @@
 
     pointer-events: none !important;
 
-    /*
-      IMAGE KE PICHE
-    */
     z-index: 10 !important;
 
-    /*
-      VERY IMPORTANT:
-      Capsules upper space me cut nahi hongi.
-    */
     overflow: visible !important;
   }
 
@@ -242,9 +212,6 @@
 
     position: absolute !important;
 
-    /*
-      Image ke peeche
-    */
     z-index: 5 !important;
 
     max-width: 90% !important;
@@ -349,25 +316,25 @@
 
   /* =====================================================
      DOG + CAT
+     
+     390px:
+     IMAGE AUR UP + LEFT
   ===================================================== */
 
   .hero-mobile-media {
-    top: 105px !important;
-    right: -2px !important;
+    top: 75px !important;
+    right: 5px !important;
 
-    /*
-      Image ko chhota nahi karna
-    */
     width: 72% !important;
     height: 215px !important;
 
     overflow: visible !important;
-
     z-index: 20 !important;
   }
 
   .hero-mobile-photo {
     top: 0 !important;
+    right: 0 !important;
     z-index: 20 !important;
   }
 
@@ -397,7 +364,6 @@
     height: 100% !important;
 
     overflow: visible !important;
-
     z-index: 10 !important;
   }
 
@@ -483,22 +449,25 @@
 
   /* =====================================================
      DOG + CAT
+     
+     360px:
+     IMAGE AUR UP + LEFT
   ===================================================== */
 
   .hero-mobile-media {
-    top: 95px !important;
-    right: -2px !important;
+    top: 65px !important;
+    right: 5px !important;
 
     width: 73% !important;
     height: 205px !important;
 
     overflow: visible !important;
-
     z-index: 20 !important;
   }
 
   .hero-mobile-photo {
     top: 0 !important;
+    right: 0 !important;
     z-index: 20 !important;
   }
 
@@ -528,7 +497,6 @@
     height: 100% !important;
 
     overflow: visible !important;
-
     z-index: 10 !important;
   }
 
