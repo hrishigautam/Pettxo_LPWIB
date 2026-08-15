@@ -3,6 +3,7 @@
    DESKTOP COMPLETELY UNTOUCHED
 ========================================================= */
 
+
 @media (max-width: 767px) {
 
   .hero-section {
@@ -15,6 +16,7 @@
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+
 
   /* =====================================================
      TEXT
@@ -41,8 +43,6 @@
     letter-spacing: -0.035em !important;
     margin-bottom: 12px !important;
 
-    /* IMPORTANT:
-       Heading ke upar koi capsule nahi aayega */
     position: relative !important;
     z-index: 100 !important;
   }
@@ -102,15 +102,12 @@
      IMPORTANT:
      Media ko heading ke neeche rakha gaya hai.
      
-     Heading ke area me media/capsules nahi honge.
+     CAPSULES IS MEDIA KE ANDAR HAIN.
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    /*
-      Heading ke neeche se media start.
-    */
     top: 115px !important;
     right: -3px !important;
 
@@ -124,8 +121,7 @@
     pointer-events: none !important;
 
     /*
-      CAPSULES HARD CLIP:
-      Is box ke bahar kuch bhi visible nahi hoga.
+      Media ke bahar capsules visible nahi honge.
     */
     overflow: hidden !important;
   }
@@ -133,6 +129,8 @@
 
   /* =====================================================
      DOG + CAT IMAGE
+     
+     IMAGE CAPSULES KE UPAR RAHEGI
   ===================================================== */
 
   .hero-mobile-photo {
@@ -152,6 +150,11 @@
     box-shadow: none !important;
 
     overflow: visible !important;
+
+    /*
+      IMAGE = ABOVE CAPSULES
+    */
+    z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
@@ -176,10 +179,7 @@
   /* =====================================================
      CAPSULE AREA
      
-     VERY IMPORTANT
-     
-     Capsule container SAME media box ke andar hai.
-     Isliye heading ke andar nahi ja sakta.
+     CAPSULES IMAGE KE PICHE RAHENGI
   ===================================================== */
 
   .hero-mobile-capsules {
@@ -187,10 +187,6 @@
 
     position: absolute !important;
 
-    /*
-      NO negative top.
-      NO movement above media.
-    */
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
@@ -201,11 +197,11 @@
 
     pointer-events: none !important;
 
-    z-index: 30 !important;
-
     /*
-      Hard clipping.
+      CAPSULE CONTAINER = BELOW IMAGE
     */
+    z-index: 10 !important;
+
     overflow: hidden !important;
   }
 
@@ -219,11 +215,11 @@
 
     position: absolute !important;
 
-    z-index: 10 !important;
-
     /*
-      Capsule ko box ke bahar visible hone se rokna.
+      CAPSULE = BELOW IMAGE
     */
+    z-index: 5 !important;
+
     max-width: 90% !important;
   }
 
@@ -324,10 +320,17 @@
     height: 215px !important;
 
     overflow: hidden !important;
+
+    z-index: 20 !important;
   }
 
   .hero-mobile-photo {
     top: 0 !important;
+
+    /*
+      IMAGE CAPSULES KE UPAR
+    */
+    z-index: 20 !important;
   }
 
   .hero-mobile-photo,
@@ -345,7 +348,7 @@
   /* =====================================================
      CAPSULES
      
-     HEADING AREA COMPLETELY BLOCKED
+     CAPSULES IMAGE KE PICHE
   ===================================================== */
 
   .hero-mobile-capsules {
@@ -358,12 +361,20 @@
     height: 100% !important;
 
     overflow: hidden !important;
+
+    /*
+      BELOW IMAGE
+    */
     z-index: 10 !important;
   }
 
   .hero-capsule {
     position: absolute !important;
-    z-index: 10 !important;
+
+    /*
+      BELOW IMAGE
+    */
+    z-index: 5 !important;
   }
 
   .hero-capsule .pill {
@@ -436,10 +447,17 @@
     height: 205px !important;
 
     overflow: hidden !important;
+
+    z-index: 20 !important;
   }
 
   .hero-mobile-photo {
     top: 0 !important;
+
+    /*
+      IMAGE CAPSULES KE UPAR
+    */
+    z-index: 20 !important;
   }
 
   .hero-mobile-photo,
@@ -458,6 +476,7 @@
      CAPSULES
      
      HEADING ME BILKUL NAHI JAYENGE
+     IMAGE KE PICHE RAHENGI
   ===================================================== */
 
   .hero-mobile-capsules {
@@ -470,12 +489,20 @@
     height: 100% !important;
 
     overflow: hidden !important;
+
+    /*
+      BELOW IMAGE
+    */
     z-index: 10 !important;
   }
 
   .hero-capsule {
     position: absolute !important;
-    z-index: 10 !important;
+
+    /*
+      BELOW IMAGE
+    */
+    z-index: 5 !important;
   }
 
   .hero-capsule .pill {
