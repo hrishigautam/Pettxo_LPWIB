@@ -105,20 +105,18 @@
 
   /* =====================================================
      DOG + CAT MEDIA
-     
+
      IMAGE:
-     - PEHLE SE UPAR
-     - PEHLE SE LEFT
-     - CAPSULES VISIBLE
+     - UP
+     - LEFT
+     - THODA BADA
+     - NICHE KA GAP REDUCED
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    /* UP */
     top: 75px !important;
-
-    /* LEFT */
     right: 5px !important;
 
     width: 50% !important;
@@ -145,7 +143,7 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 225px !important;
+    height: 255px !important;
 
     margin: 0 !important;
 
@@ -163,7 +161,7 @@
     display: block !important;
 
     width: 100% !important;
-    height: 225px !important;
+    height: 255px !important;
 
     object-fit: contain !important;
     object-position: center !important;
@@ -173,6 +171,9 @@
     box-shadow: none !important;
     background: transparent !important;
 
+    /*
+      IMAGE THODI BADI
+    */
     transform: scale(1.42) !important;
     transform-origin: center center !important;
   }
@@ -197,6 +198,9 @@
 
     pointer-events: none !important;
 
+    /*
+      CAPSULES IMAGE KE PICHE
+    */
     z-index: 10 !important;
 
     overflow: visible !important;
@@ -316,9 +320,8 @@
 
   /* =====================================================
      DOG + CAT
-     
      390px:
-     IMAGE AUR UP + LEFT
+     UP + LEFT + BOTTOM GAP REDUCED
   ===================================================== */
 
   .hero-mobile-media {
@@ -326,7 +329,7 @@
     right: 5px !important;
 
     width: 72% !important;
-    height: 215px !important;
+    height: 235px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -335,16 +338,20 @@
   .hero-mobile-photo {
     top: 0 !important;
     right: 0 !important;
+
+    width: 100% !important;
+    height: 235px !important;
+
     z-index: 20 !important;
   }
 
-  .hero-mobile-photo,
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 215px !important;
-  }
+    height: 235px !important;
 
-  .hero-mobile-photo img {
+    object-fit: contain !important;
+    object-position: center !important;
+
     transform: scale(1.44) !important;
     transform-origin: center center !important;
   }
@@ -436,6 +443,7 @@
   .hero-cta .btn-install {
     min-width: 106px !important;
     height: 33px !important;
+
     font-size: 8.5px !important;
   }
 
@@ -449,9 +457,9 @@
 
   /* =====================================================
      DOG + CAT
-     
      360px:
-     IMAGE AUR UP + LEFT
+     AUR UP + LEFT
+     BOTTOM GAP REDUCED
   ===================================================== */
 
   .hero-mobile-media {
@@ -459,7 +467,7 @@
     right: 5px !important;
 
     width: 73% !important;
-    height: 205px !important;
+    height: 225px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -468,16 +476,20 @@
   .hero-mobile-photo {
     top: 0 !important;
     right: 0 !important;
+
+    width: 100% !important;
+    height: 225px !important;
+
     z-index: 20 !important;
   }
 
-  .hero-mobile-photo,
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 205px !important;
-  }
+    height: 225px !important;
 
-  .hero-mobile-photo img {
+    object-fit: contain !important;
+    object-position: center !important;
+
     transform: scale(1.42) !important;
     transform-origin: center center !important;
   }
