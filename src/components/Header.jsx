@@ -165,8 +165,19 @@ export default function Header() {
           Install Pettxo →
         </a>
 
-        {/* MOBILE — ONLY HAMBURGER */}
-        <div className="flex md:hidden items-center">
+        {/* MOBILE — INSTALL + HAMBURGER */}
+        <div className="flex md:hidden items-center gap-2">
+
+          {/* Mobile Install Button */}
+          <a
+            href="#"
+            onClick={handleInstall}
+            className="mobile-install-button"
+          >
+            Install Pettxo →
+          </a>
+
+          {/* Hamburger */}
           <button
             type="button"
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -190,6 +201,7 @@ export default function Header() {
               }
             />
           </button>
+
         </div>
       </div>
 

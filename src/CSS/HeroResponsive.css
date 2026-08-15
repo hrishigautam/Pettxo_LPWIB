@@ -120,7 +120,11 @@
     z-index: 20 !important;
     pointer-events: none !important;
 
-    overflow: visible !important;
+    /* HARD CLIP: whatever the pills' JS animation computes, this
+       ensures nothing ever renders outside the image box — pills
+       stay confined to this section only, never spread across
+       the page. This is the fix; nothing in Hero.jsx changes. */
+    overflow: hidden !important;
   }
 
   .hero-mobile-photo {
@@ -162,12 +166,31 @@
   }
 
   /* =========================================
-     FLOATING PILLS OFF
+     FLOATING PILLS — BEHIND THE DOG/CAT IMAGE,
+     SMALL, NO OVERLAP, CLIPPED TO THIS
+     SECTION ONLY
   ========================================= */
 
-  .hero-mobile-capsules,
+  .hero-mobile-capsules {
+    display: block !important;
+    pointer-events: none !important;
+
+    /* BEHIND the photo (photo is z-20) — pills peek out only
+       where they don't overlap the image itself. */
+    z-index: 5 !important;
+  }
+
   .hero-capsule {
-    display: none !important;
+    display: block !important;
+  }
+
+  .hero-capsule .pill {
+    padding: 3px 7px !important;
+    font-size: 6px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    border-width: 1px !important;
+    box-shadow: 0 3px 8px rgba(31, 41, 55, 0.12) !important;
   }
 }
 
@@ -244,7 +267,7 @@
     width: 72% !important;
     height: 215px !important;
 
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   .hero-mobile-photo,
@@ -256,6 +279,15 @@
   .hero-mobile-photo img {
     transform: scale(1.44) !important;
     transform-origin: center center !important;
+  }
+
+  /* =========================================
+     PILLS — SLIGHTLY SMALLER
+  ========================================= */
+
+  .hero-capsule .pill {
+    padding: 2.8px 6.5px !important;
+    font-size: 5.6px !important;
   }
 }
 
@@ -318,7 +350,7 @@
     width: 73% !important;
     height: 205px !important;
 
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   .hero-mobile-photo,
@@ -330,5 +362,14 @@
   .hero-mobile-photo img {
     transform: scale(1.42) !important;
     transform-origin: center center !important;
+  }
+
+  /* =========================================
+     PILLS — SMALLEST
+  ========================================= */
+
+  .hero-capsule .pill {
+    padding: 2.5px 6px !important;
+    font-size: 5.3px !important;
   }
 }

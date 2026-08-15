@@ -4,21 +4,24 @@ import gsap from "gsap";
 import "../CSS/HeroResponsive.css";
 
 // SEO keyword pills
+// NOTE: `m: true` controls which pills show on MOBILE.
+// Kept to a small set (4) so they stay small, don't overlap,
+// and fit cleanly over the dog/cat image only.
 const CAPS = [
   { l: "Pet Grooming", a: "dot", m: true },
-  { l: "Dog Walker", a: "text", m: true },
+  { l: "Dog Walker", a: "text", m: false },
   { l: "Cat Sitter", a: "none", m: false },
-  { l: "Pet Boarding", a: "dot", m: true },
-  { l: "Trusted Vets", a: "text", m: true },
+  { l: "Pet Boarding", a: "dot", m: false },
+  { l: "Trusted Vets", a: "text", m: false },
   { l: "Pet Training", a: "none", m: false },
   { l: "Pet Adoption", a: "dot", m: false },
-  { l: "Pet Community", a: "text", m: true },
-  { l: "Pet Sitting", a: "none", m: false },
+  { l: "Pet Community", a: "text", m: false },
+  { l: "Pet Sitting", a: "none", m: true },
   { l: "Dog Daycare", a: "dot", m: false },
-  { l: "Verified Providers", a: "text", m: true },
+  { l: "Verified Providers", a: "text", m: false },
   { l: "Book a Walker", a: "none", m: false },
   { l: "Find a Groomer", a: "dot", m: false },
-  { l: "Are you a provider?", a: "text", m: true },
+  { l: "Are you a provider?", a: "text", m: false },
 ];
 
 function Pill({ c, zone }) {
@@ -102,16 +105,21 @@ export default function Hero() {
         const w = cont.clientWidth;
         const h = cont.clientHeight;
 
-        // MOBILE
+        // MOBILE — same idea as desktop (float freely, behind
+        // the photo), just scaled to the small image box. Zone is
+        // inset a bit (not right at the box edge) so pills don't
+        // render half-cut against the screen border, and with
+        // only 2 mobile pills now, there's enough room for the
+        // collision-avoidance logic to actually keep them apart.
         if (el.dataset.zone === "mobile") {
           return {
-            x0: 8,
-            x1: w - 8,
-            y0: Math.max(h * 0.06, 8),
-            y1: Math.min(h * 0.94, h - 8),
-            padL: 80,
-            padR: 80,
-            padY: 60,
+            x0: 6,
+            x1: Math.max(6, w - 6),
+            y0: 6,
+            y1: Math.max(6, h - 6),
+            padL: 6,
+            padR: 6,
+            padY: 6,
           };
         }
 
@@ -156,8 +164,15 @@ export default function Hero() {
         el._h = r.height;
       });
 
-      // More gap between floating pills
-      const GAP = 18;
+      // Gap between floating pills (smaller on mobile so the tiny
+      // pills still fit inside the image box without overlapping)
+      const GAP_DESKTOP = 18;
+      const GAP_MOBILE = 14;
+
+      const gapFor = (el) =>
+        el.dataset.zone === "mobile"
+          ? GAP_MOBILE
+          : GAP_DESKTOP;
 
       // ------------------------------------------------------------
       // OVERLAP CHECK
@@ -169,6 +184,7 @@ export default function Hero() {
         w,
         h,
         other,
+        gap,
       ) => {
         const ox = other._s.x;
         const oy = other._s.y;
@@ -176,10 +192,10 @@ export default function Hero() {
         const oh = other._h;
 
         return (
-          x < ox + ow + GAP &&
-          x + w + GAP > ox &&
-          y < oy + oh + GAP &&
-          y + h + GAP > oy
+          x < ox + ow + gap &&
+          x + w + gap > ox &&
+          y < oy + oh + gap &&
+          y + h + gap > oy
         );
       };
 
@@ -195,6 +211,7 @@ export default function Hero() {
       caps.forEach((el) => {
         const z = zoneFor(el);
         const zoneKey = el.dataset.zone;
+        const gap = gapFor(el);
 
         const w = el._w;
         const h = el._h;
@@ -228,6 +245,7 @@ export default function Hero() {
                   w,
                   h,
                   other,
+                  gap,
                 ),
             );
 
@@ -256,12 +274,12 @@ export default function Hero() {
           );
 
           const stepX = Math.max(
-            w + GAP,
+            w + gap,
             20,
           );
 
           const stepY = Math.max(
-            h + GAP,
+            h + gap,
             20,
           );
 
@@ -286,6 +304,7 @@ export default function Hero() {
                       w,
                       h,
                       other,
+                      gap,
                     ),
                 );
 
@@ -307,7 +326,7 @@ export default function Hero() {
                 z.x0,
                 last._s.x +
                   last._w +
-                  GAP,
+                  gap,
               ),
               maxX,
             );
@@ -572,6 +591,8 @@ export default function Hero() {
                 continue;
               }
 
+              const gap = gapFor(a);
+
               const as = a._s;
               const bs = b._s;
 
@@ -589,11 +610,11 @@ export default function Hero() {
 
               const minDx =
                 (a._w + b._w) / 2 +
-                GAP;
+                gap;
 
               const minDy =
                 (a._h + b._h) / 2 +
-                GAP;
+                gap;
 
               let dx = bcx - acx;
               let dy = bcy - acy;
@@ -650,6 +671,8 @@ export default function Hero() {
 
       // ------------------------------------------------------------
       // KEEP PILLS INSIDE ZONE
+      // (mobile zone has zero outward padding — pills bounce back
+      // instead of wrapping, since CSS also hard-clips the box)
       // ------------------------------------------------------------
 
       const clampToZone = (el) => {
