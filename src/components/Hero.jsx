@@ -110,22 +110,39 @@ export default function Hero() {
         // They remain inside the mobile media/capsule zone only.
         // ----------------------------------------------------------
 
-        if (el.dataset.zone === "mobile") {
-          return {
-            x0: 4,
-            x1: Math.max(4, w - 4),
+        // if (el.dataset.zone === "mobile") {
+        //   return {
+        //     x0: 4,
+        //     x1: Math.max(4, w - 4),
 
-            // Negative Y allows capsules to float
-            // in the space above the dog/cat image.
-            y0: -35,
+        //     // Negative Y allows capsules to float
+        //     // in the space above the dog/cat image.
+        //     y0: -35,
 
-            y1: Math.max(-35, h - 6),
+        //     y1: Math.max(-35, h - 6),
 
-            padL: 4,
-            padR: 4,
-            padY: 4,
-          };
-        }
+        //     padL: 4,
+        //     padR: 4,
+        //     padY: 4,
+        //   };
+        // }
+
+if (el.dataset.zone === "mobile") {
+  return {
+    x0: 65,
+    x1: Math.max(65, w - 65),
+
+    // Capsules dog image ke upar
+    // navbar ke paas tak ja sakti hain
+    y0: -90,
+
+    y1: Math.max(-90, h - 6),
+
+    padL: 4,
+    padR: 4,
+    padY: 4,
+  };
+}
 
         // ----------------------------------------------------------
         // DESKTOP
