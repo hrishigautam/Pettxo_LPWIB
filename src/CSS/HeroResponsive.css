@@ -105,22 +105,19 @@
 
   /* =====================================================
      DOG + CAT MEDIA
-
+     
      RIGHT POSITION SAME
-     IMAGE KO RIGHT SE MOVE NAHI KARNA
+     IMAGE UP
+     IMAGE BOTTOM SE BADI
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    top: 75px !important;
-
-    /* RIGHT SAME */
+    top: 65px !important;
     right: 5px !important;
 
     width: 50% !important;
-
-    /* IMAGE KO NICHE SE BADA KARNE KE LIYE */
     height: 285px !important;
 
     min-height: 0 !important;
@@ -135,9 +132,6 @@
 
   /* =====================================================
      DOG + CAT IMAGE
-
-     BOTTOM SE BADI
-     RIGHT POSITION SAME
   ===================================================== */
 
   .hero-mobile-photo {
@@ -168,19 +162,15 @@
     height: 285px !important;
 
     object-fit: contain !important;
-    object-position: center bottom !important;
+    object-position: center center !important;
 
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     background: transparent !important;
 
-    /*
-      IMAGE KO BOTTOM SE GROW KARO
-      RIGHT/LEFT POSITION KO DISTURB NAHI KARNA
-    */
     transform: scale(1.50) !important;
-    transform-origin: center bottom !important;
+    transform-origin: center center !important;
   }
 
 
@@ -218,7 +208,6 @@
     position: absolute !important;
 
     z-index: 5 !important;
-
     max-width: 90% !important;
   }
 
@@ -323,15 +312,16 @@
      DOG + CAT
      
      RIGHT SAME
+     UP SAME
      BOTTOM SE BADI
   ===================================================== */
 
   .hero-mobile-media {
-    top: 75px !important;
+    top: 60px !important;
     right: 5px !important;
 
     width: 72% !important;
-    height: 265px !important;
+    height: 270px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -342,22 +332,20 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 265px !important;
+    height: 270px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 265px !important;
+    height: 270px !important;
 
     object-fit: contain !important;
-    object-position: center bottom !important;
+    object-position: center center !important;
 
     transform: scale(1.52) !important;
-
-    /* BOTTOM FIXED */
-    transform-origin: center bottom !important;
+    transform-origin: center center !important;
   }
 
 
@@ -461,13 +449,14 @@
 
   /* =====================================================
      DOG + CAT
-
+     
      RIGHT SAME
+     UP SAME
      BOTTOM SE BADI
   ===================================================== */
 
   .hero-mobile-media {
-    top: 65px !important;
+    top: 55px !important;
     right: 5px !important;
 
     width: 73% !important;
@@ -492,12 +481,10 @@
     height: 255px !important;
 
     object-fit: contain !important;
-    object-position: center bottom !important;
+    object-position: center center !important;
 
     transform: scale(1.50) !important;
-
-    /* BOTTOM FIXED */
-    transform-origin: center bottom !important;
+    transform-origin: center center !important;
   }
 
 
