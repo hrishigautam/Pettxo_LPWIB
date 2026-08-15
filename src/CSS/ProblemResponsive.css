@@ -36,7 +36,7 @@
 
   .problem-section {
     padding-top: 58px !important;
-    padding-bottom: 60px !important;
+    padding-bottom: 10px !important;
     overflow: hidden;
   }
 
@@ -95,7 +95,7 @@
 
   .problem-section {
     padding-top: 48px !important;
-    padding-bottom: 50px !important;
+    padding-bottom: 10px !important;
   }
 
   .problem-section > div {

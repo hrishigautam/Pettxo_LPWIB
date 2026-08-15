@@ -49,7 +49,7 @@ export default function HowItWorks() {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-16 sm:py-20 md:py-24"
+      className="w-full py-4 sm:py-20 md:py-24"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-16">
 

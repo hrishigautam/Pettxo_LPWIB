@@ -4,24 +4,23 @@ import gsap from "gsap";
 import "../CSS/HeroResponsive.css";
 
 // SEO keyword pills
-// NOTE: `m: true` controls which pills show on MOBILE.
-// Kept to a small set (4) so they stay small, don't overlap,
-// and fit cleanly over the dog/cat image only.
+// All capsules are allowed on mobile.
+// JS controls their floating position inside the mobile dog/cat zone.
 const CAPS = [
   { l: "Pet Grooming", a: "dot", m: true },
-  { l: "Dog Walker", a: "text", m: false },
-  { l: "Cat Sitter", a: "none", m: false },
-  { l: "Pet Boarding", a: "dot", m: false },
-  { l: "Trusted Vets", a: "text", m: false },
-  { l: "Pet Training", a: "none", m: false },
-  { l: "Pet Adoption", a: "dot", m: false },
-  { l: "Pet Community", a: "text", m: false },
+  { l: "Dog Walker", a: "text", m: true },
+  { l: "Cat Sitter", a: "none", m: true },
+  { l: "Pet Boarding", a: "dot", m: true },
+  { l: "Trusted Vets", a: "text", m: true },
+  { l: "Pet Training", a: "none", m: true },
+  { l: "Pet Adoption", a: "dot", m: true },
+  { l: "Pet Community", a: "text", m: true },
   { l: "Pet Sitting", a: "none", m: true },
-  { l: "Dog Daycare", a: "dot", m: false },
-  { l: "Verified Providers", a: "text", m: false },
-  { l: "Book a Walker", a: "none", m: false },
-  { l: "Find a Groomer", a: "dot", m: false },
-  { l: "Are you a provider?", a: "text", m: false },
+  { l: "Dog Daycare", a: "dot", m: true },
+  { l: "Verified Providers", a: "text", m: true },
+  { l: "Book a Walker", a: "none", m: true },
+  { l: "Find a Groomer", a: "dot", m: true },
+  { l: "Are you a provider?", a: "text", m: true },
 ];
 
 function Pill({ c, zone }) {
@@ -71,17 +70,17 @@ export default function Hero() {
   useGSAP(
     () => {
       const reduce = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
+        "(prefers-reduced-motion: reduce)"
       ).matches;
 
       const root = sectionRef.current;
 
       const caps = gsap.utils.toArray(
-        root.querySelectorAll(".hero-capsule"),
+        root.querySelectorAll(".hero-capsule")
       );
 
       const pills = caps.map((c) =>
-        c.querySelector(".pill"),
+        c.querySelector(".pill")
       );
 
       const textEls = [
@@ -105,25 +104,33 @@ export default function Hero() {
         const w = cont.clientWidth;
         const h = cont.clientHeight;
 
-        // MOBILE — same idea as desktop (float freely, behind
-        // the photo), just scaled to the small image box. Zone is
-        // inset a bit (not right at the box edge) so pills don't
-        // render half-cut against the screen border, and with
-        // only 2 mobile pills now, there's enough room for the
-        // collision-avoidance logic to actually keep them apart.
+        // ----------------------------------------------------------
+        // MOBILE
+        // Capsules can float slightly ABOVE the image.
+        // They remain inside the mobile media/capsule zone only.
+        // ----------------------------------------------------------
+
         if (el.dataset.zone === "mobile") {
           return {
-            x0: 6,
-            x1: Math.max(6, w - 6),
-            y0: 6,
-            y1: Math.max(6, h - 6),
-            padL: 6,
-            padR: 6,
-            padY: 6,
+            x0: 4,
+            x1: Math.max(4, w - 4),
+
+            // Negative Y allows capsules to float
+            // in the space above the dog/cat image.
+            y0: -35,
+
+            y1: Math.max(-35, h - 6),
+
+            padL: 4,
+            padR: 4,
+            padY: 4,
           };
         }
 
+        // ----------------------------------------------------------
         // DESKTOP
+        // ----------------------------------------------------------
+
         let safeLeft = w * 0.5;
 
         const tc = textColRef.current;
@@ -134,7 +141,7 @@ export default function Hero() {
 
           safeLeft = Math.max(
             tb.right - hb.left + 32,
-            w * 0.5,
+            w * 0.5
           );
         }
 
@@ -164,10 +171,14 @@ export default function Hero() {
         el._h = r.height;
       });
 
-      // Gap between floating pills (smaller on mobile so the tiny
-      // pills still fit inside the image box without overlapping)
+      // ------------------------------------------------------------
+      // GAP BETWEEN FLOATING PILLS
+      // ------------------------------------------------------------
+
       const GAP_DESKTOP = 18;
-      const GAP_MOBILE = 14;
+
+      // Smaller mobile gap so more capsules can fit.
+      const GAP_MOBILE = 8;
 
       const gapFor = (el) =>
         el.dataset.zone === "mobile"
@@ -184,7 +195,7 @@ export default function Hero() {
         w,
         h,
         other,
-        gap,
+        gap
       ) => {
         const ox = other._s.x;
         const oy = other._s.y;
@@ -221,16 +232,16 @@ export default function Hero() {
 
         let placed = false;
 
-        // Try many positions to avoid overlap
-        for (let tries = 0; tries < 100; tries++) {
+        // Try many random positions.
+        for (let tries = 0; tries < 150; tries++) {
           const maxX = Math.max(
             z.x0,
-            z.x1 - w,
+            z.x1 - w
           );
 
           const maxY = Math.max(
             z.y0,
-            z.y1 - h,
+            z.y1 - h
           );
 
           x = rnd(z.x0, maxX);
@@ -245,8 +256,8 @@ export default function Hero() {
                   w,
                   h,
                   other,
-                  gap,
-                ),
+                  gap
+                )
             );
 
           if (!collision) {
@@ -255,32 +266,32 @@ export default function Hero() {
           }
         }
 
-        // Fallback: scan a grid of candidate spots and check
-        // against ALL already-placed pills in this zone (not
-        // just the last one), so we never silently place on top
-        // of an earlier pill.
+        // ----------------------------------------------------------
+        // FALLBACK GRID
+        // ----------------------------------------------------------
+
         if (!placed) {
           const existing =
             placedByZone[zoneKey];
 
           const maxX = Math.max(
             z.x0,
-            z.x1 - w,
+            z.x1 - w
           );
 
           const maxY = Math.max(
             z.y0,
-            z.y1 - h,
+            z.y1 - h
           );
 
           const stepX = Math.max(
             w + gap,
-            20,
+            16
           );
 
           const stepY = Math.max(
             h + gap,
-            20,
+            16
           );
 
           let found = false;
@@ -304,8 +315,8 @@ export default function Hero() {
                       w,
                       h,
                       other,
-                      gap,
-                    ),
+                      gap
+                    )
                 );
 
               if (!collision) {
@@ -326,20 +337,24 @@ export default function Hero() {
                 z.x0,
                 last._s.x +
                   last._w +
-                  gap,
+                  gap
               ),
-              maxX,
+              maxX
             );
 
             y = Math.min(
               Math.max(
                 z.y0,
-                last._s.y,
+                last._s.y
               ),
-              maxY,
+              maxY
             );
           }
         }
+
+        // ----------------------------------------------------------
+        // PILL MOTION STATE
+        // ----------------------------------------------------------
 
         el._s = {
           x,
@@ -414,7 +429,7 @@ export default function Hero() {
           y: 0,
           duration: 0.6,
         },
-        0.1,
+        0.1
       )
         .fromTo(
           line1Ref.current,
@@ -427,7 +442,7 @@ export default function Hero() {
             y: 0,
             duration: 0.8,
           },
-          0.25,
+          0.25
         )
         .fromTo(
           line2Ref.current,
@@ -440,7 +455,7 @@ export default function Hero() {
             y: 0,
             duration: 0.8,
           },
-          0.4,
+          0.4
         )
         .fromTo(
           subRef.current,
@@ -453,7 +468,7 @@ export default function Hero() {
             y: 0,
             duration: 0.7,
           },
-          0.55,
+          0.55
         )
         .fromTo(
           ctaRef.current,
@@ -466,7 +481,7 @@ export default function Hero() {
             y: 0,
             duration: 0.6,
           },
-          0.7,
+          0.7
         )
         .fromTo(
           photoRef.current,
@@ -479,10 +494,13 @@ export default function Hero() {
             scale: 1,
             duration: 1.2,
           },
-          0.3,
+          0.3
         );
 
-      // Pill entrance
+      // ------------------------------------------------------------
+      // PILL ENTRANCE
+      // ------------------------------------------------------------
+
       pills.forEach((el, i) => {
         tl.fromTo(
           el,
@@ -496,7 +514,7 @@ export default function Hero() {
             duration: 0.45,
             ease: "back.out(1.2)",
           },
-          0.9 + i * 0.06,
+          0.9 + i * 0.06
         );
       });
 
@@ -514,7 +532,7 @@ export default function Hero() {
             repeat: -1,
             yoyo: true,
             delay: 1.5,
-          },
+          }
         );
       }
 
@@ -528,7 +546,7 @@ export default function Hero() {
             repeat: -1,
             yoyo: true,
             delay: 1.5,
-          },
+          }
         );
       }
 
@@ -547,7 +565,7 @@ export default function Hero() {
             repeat: 5,
             yoyo: true,
             delay: 2,
-          },
+          }
         );
       }
 
@@ -671,8 +689,6 @@ export default function Hero() {
 
       // ------------------------------------------------------------
       // KEEP PILLS INSIDE ZONE
-      // (mobile zone has zero outward padding — pills bounce back
-      // instead of wrapping, since CSS also hard-clips the box)
       // ------------------------------------------------------------
 
       const clampToZone = (el) => {
@@ -730,9 +746,7 @@ export default function Hero() {
 
         resolveCollisions();
 
-        // Re-clamp after collision resolution so a pill pushed
-        // outside its zone doesn't get teleported to the opposite
-        // edge next tick and land on top of another pill.
+        // Re-clamp after collision resolution.
         caps.forEach((el) => {
           clampToZone(el);
         });
@@ -743,9 +757,11 @@ export default function Hero() {
           el.style.transform =
             `translate(
               ${s.x}px,
-              ${s.y +
+              ${
+                s.y +
                 Math.sin(s.bob) *
-                  s.bobAmp}px
+                  s.bobAmp
+              }px
             )`;
         });
       };
@@ -758,12 +774,14 @@ export default function Hero() {
     },
     {
       scope: sectionRef,
-    },
+    }
   );
 
-  const mobileCaps = CAPS.filter(
-    (c) => c.m,
-  );
+  // ------------------------------------------------------------
+  // ALL CAPSULES ON MOBILE
+  // ------------------------------------------------------------
+
+  const mobileCaps = CAPS;
 
   return (
     <section
@@ -794,7 +812,9 @@ export default function Hero() {
 
       <div className="relative md:min-h-[600px]">
 
-        {/* DESKTOP FLOATING CAPSULES */}
+        {/* =======================================================
+            DESKTOP FLOATING CAPSULES
+        ======================================================= */}
 
         <div
           className="
@@ -816,7 +836,9 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* DESKTOP PHOTO */}
+        {/* =======================================================
+            DESKTOP PHOTO
+        ======================================================= */}
 
         {imgOk && (
           <div
@@ -867,7 +889,9 @@ export default function Hero() {
           </div>
         )}
 
-        {/* TEXT COLUMN */}
+        {/* =======================================================
+            TEXT COLUMN
+        ======================================================= */}
 
         <div
           className="
@@ -1021,7 +1045,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* MOBILE */}
+        {/* =======================================================
+            MOBILE
+        ======================================================= */}
 
         <div
           className="
@@ -1034,6 +1060,8 @@ export default function Hero() {
             hero-mobile-media
           "
         >
+          {/* MOBILE FLOATING CAPSULES */}
+
           <div
             className="
               absolute
@@ -1042,6 +1070,7 @@ export default function Hero() {
               pointer-events-none
               hero-mobile-capsules
             "
+            aria-hidden="true"
           >
             {mobileCaps.map((c) => (
               <Pill
@@ -1051,6 +1080,8 @@ export default function Hero() {
               />
             ))}
           </div>
+
+          {/* MOBILE DOG + CAT IMAGE */}
 
           {imgOk && (
             <div

@@ -154,7 +154,7 @@ export default function Features() {
 function Header() {
   return (
     <div>
-      <span className="block text-[10.5px] font-semibold tracking-[0.20em] uppercase pt-10 text-orange mb-2">
+      <span className="block text-[10.5px] font-semibold tracking-[0.20em] uppercase pt-8 text-orange mb-2">
         What's Inside
       </span>
       <h2 className="font-serif font-bold text-dark leading-[1.14] max-w-[670px]" style={{ fontSize: 'clamp(28px, 3vw, 40px)' }}>
