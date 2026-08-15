@@ -105,20 +105,20 @@
 
   /* =====================================================
      DOG + CAT MEDIA
-     
-     RIGHT POSITION SAME
-     IMAGE UP
-     IMAGE BOTTOM SE BADI
+
+     UP + THODA LEFT
+     IMAGE BADI (SCALE UP) TAAKI
+     NICHE / RIGHT KHALI SPACE NA DIKHE
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    top: 65px !important;
+    top: 30px !important;      /* pehle 65px tha -> upar gaya */
     right: 5px !important;
 
-    width: 50% !important;
-    height: 285px !important;
+    width: 58% !important;     /* thodi badi container */
+    height: 330px !important;  /* pehle 285px tha -> badi */
 
     min-height: 0 !important;
     margin: 0 !important;
@@ -141,7 +141,7 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 285px !important;
+    height: 330px !important;
 
     margin: 0 !important;
 
@@ -159,7 +159,7 @@
     display: block !important;
 
     width: 100% !important;
-    height: 285px !important;
+    height: 330px !important;
 
     object-fit: contain !important;
     object-position: center center !important;
@@ -169,7 +169,8 @@
     box-shadow: none !important;
     background: transparent !important;
 
-    transform: scale(1.50) !important;
+    /* scale badhaya + thoda left shift taaki right/bottom gap na dikhe */
+    transform: scale(1.75) translate(-6%, 2%) !important;
     transform-origin: center center !important;
   }
 
@@ -310,18 +311,17 @@
 
   /* =====================================================
      DOG + CAT
-     
-     RIGHT SAME
-     UP SAME
-     BOTTOM SE BADI
+
+     UP + THODA LEFT
+     BADI (SCALE UP)
   ===================================================== */
 
   .hero-mobile-media {
-    top: 60px !important;
+    top: 26px !important;      /* pehle 60px tha -> upar */
     right: 5px !important;
 
-    width: 72% !important;
-    height: 270px !important;
+    width: 78% !important;     /* pehle 72% */
+    height: 310px !important;  /* pehle 270px */
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -332,19 +332,19 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 270px !important;
+    height: 310px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 270px !important;
+    height: 310px !important;
 
     object-fit: contain !important;
     object-position: center center !important;
 
-    transform: scale(1.52) !important;
+    transform: scale(1.78) translate(-6%, 2%) !important;
     transform-origin: center center !important;
   }
 
@@ -449,18 +449,17 @@
 
   /* =====================================================
      DOG + CAT
-     
-     RIGHT SAME
-     UP SAME
-     BOTTOM SE BADI
+
+     UP + THODA LEFT
+     BADI (SCALE UP)
   ===================================================== */
 
   .hero-mobile-media {
-    top: 55px !important;
+    top: 22px !important;      /* pehle 55px tha -> upar */
     right: 5px !important;
 
-    width: 73% !important;
-    height: 255px !important;
+    width: 79% !important;     /* pehle 73% */
+    height: 295px !important;  /* pehle 255px */
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -471,19 +470,19 @@
     right: 0 !important;
 
     width: 100% !important;
-    height: 255px !important;
+    height: 295px !important;
 
     z-index: 20 !important;
   }
 
   .hero-mobile-photo img {
     width: 100% !important;
-    height: 255px !important;
+    height: 295px !important;
 
     object-fit: contain !important;
     object-position: center center !important;
 
-    transform: scale(1.50) !important;
+    transform: scale(1.75) translate(-6%, 2%) !important;
     transform-origin: center center !important;
   }
 
