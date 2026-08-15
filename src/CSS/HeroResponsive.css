@@ -219,7 +219,7 @@
 
     position: absolute !important;
 
-    z-index: 30 !important;
+    z-index: 10 !important;
 
     /*
       Capsule ko box ke bahar visible hone se rokna.
@@ -358,12 +358,12 @@
     height: 100% !important;
 
     overflow: hidden !important;
-    z-index: 30 !important;
+    z-index: 10 !important;
   }
 
   .hero-capsule {
     position: absolute !important;
-    z-index: 30 !important;
+    z-index: 10 !important;
   }
 
   .hero-capsule .pill {
