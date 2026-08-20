@@ -1,18 +1,18 @@
 // CTA.jsx
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function CTA() {
-  const sectionRef = useRef(null)
-  const btnRef = useRef(null)
+  const sectionRef = useRef(null);
+  const btnRef = useRef(null);
 
   useGSAP(
     () => {
-      const elements = sectionRef.current?.querySelectorAll('.reveal')
+      const elements = sectionRef.current?.querySelectorAll(".reveal");
 
-      if (!elements?.length) return
+      if (!elements?.length) return;
 
       gsap.fromTo(
         elements,
@@ -25,22 +25,22 @@ export default function CTA() {
           y: 0,
           duration: 0.85,
           stagger: 0.12,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 82%',
+            start: "top 82%",
             once: true,
           },
-        }
-      )
+        },
+      );
 
-      const btn = btnRef.current
+      const btn = btnRef.current;
 
-      if (!btn) return
+      if (!btn) return;
 
       ScrollTrigger.create({
         trigger: btn,
-        start: 'top 90%',
+        start: "top 90%",
         once: true,
         onEnter: () => {
           gsap.fromTo(
@@ -53,28 +53,29 @@ export default function CTA() {
               scale: 1,
               opacity: 1,
               duration: 0.6,
-              ease: 'back.out(1.3)',
-            }
-          )
+              ease: "back.out(1.3)",
+            },
+          );
 
           gsap.set(btn, {
-            boxShadow: '0 0 0 0 rgba(247,89,39,0.30)',
-          })
+            boxShadow: "0 0 0 0 rgba(247,89,39,0.30)",
+          });
 
           gsap.to(btn, {
-            boxShadow: '0 0 0 18px rgba(247,89,39,0)',
+            boxShadow: "0 0 0 18px rgba(247,89,39,0)",
             duration: 1.5,
-            ease: 'power2.out',
-          })
+            ease: "power2.out",
+          });
         },
-      })
+      });
     },
-    { scope: sectionRef }
-  )
+    { scope: sectionRef },
+  );
 
   return (
-    
-      <section id="cta" ref={sectionRef}
+    <section
+      id="cta"
+      ref={sectionRef}
       className="
         w-full
         overflow-hidden
@@ -103,7 +104,6 @@ export default function CTA() {
             mx-auto
           "
         >
-
           {/* =========================
               HEADING
           ========================== */}
@@ -119,7 +119,7 @@ export default function CTA() {
               w-full
             "
             style={{
-              fontSize: 'clamp(34px, 8vw, 72px)',
+              fontSize: "clamp(34px, 8vw, 72px)",
             }}
           >
             Your pet's world starts here.
@@ -140,7 +140,7 @@ export default function CTA() {
               max-w-[560px]
             "
             style={{
-              fontSize: 'clamp(14.5px, 2vw, 17px)',
+              fontSize: "clamp(14.5px, 2vw, 17px)",
             }}
           >
             Every pet parent, service provider, and pet lover
@@ -164,7 +164,6 @@ export default function CTA() {
               w-full
             "
           >
-
             {/* =========================
                 MAIN BUTTON
             ========================== */}
@@ -213,7 +212,8 @@ export default function CTA() {
                 opacity: 0,
               }}
             >
-              Install Pettxo — Free
+              {/* Install Pettxo — Free */}
+              Pettxo - Coming Soon
             </a>
 
             {/* =========================
@@ -293,10 +293,9 @@ export default function CTA() {
             >
               Care · Trust · Love
             </p>
-
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

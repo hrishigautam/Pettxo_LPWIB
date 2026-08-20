@@ -1042,7 +1042,8 @@ if (el.dataset.zone === "mobile") {
                   hover:shadow-[0_18px_44px_rgba(247,89,39,0.46)]
                 "
               >
-                Install Pettxo — Free
+                {/* Install Pettxo — Free */}
+                Pettxo - Coming  Soon
               </a>
 
               <p

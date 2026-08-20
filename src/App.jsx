@@ -11,6 +11,7 @@ import Contact from './pages/Contact.jsx'
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cancellation from './pages/Cancellation'
+import Audience from './components/Audience.jsx'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -26,6 +27,7 @@ export default function App() {
            <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cancellation" element={<Cancellation />} />
+          <Route path="/audience" element={<Audience />} />
 
         </Route>
       </Routes>
