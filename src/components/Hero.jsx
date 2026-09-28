@@ -1,7 +1,9 @@
+// Hero.jsx
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "../CSS/HeroResponsive.css";
+import InstallButton from "../components/InstallButton.jsx";
 
 // SEO keyword pills
 // All capsules are allowed on mobile.
@@ -1016,36 +1018,32 @@ if (el.dataset.zone === "mobile") {
             >
               {/* HERO INSTALL BUTTON */}
 
-              <a
-                ref={btnRef}
-                href="#cta"
-                aria-label="Install Pettxo — Free"
-                className="
-                  btn-install
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2.5
-                  h-[54px]
-                  px-9
-                  w-full
-                  md:w-auto
-                  bg-orange
-                  text-white
-                  font-semibold
-                  text-[16px]
-                  rounded-[14px]
-                  shadow-[0_14px_34px_rgba(247,89,39,0.36)]
-                  transition-all
-                  duration-200
-                  hover:-translate-y-0.5
-                  hover:shadow-[0_18px_44px_rgba(247,89,39,0.46)]
-                "
-              >
-                {/* Install Pettxo — Free */}
-                Pettxo - Coming  Soon
-              </a>
-
+              <InstallButton
+  label="Download Pettxo"
+  innerRef={btnRef}
+  className="
+    btn-install
+    inline-flex
+    items-center
+    justify-center
+    gap-2.5
+    h-[54px]
+    px-9
+    w-full
+    md:w-auto
+    bg-orange
+    text-white
+    font-semibold
+    text-[16px]
+    rounded-[14px]
+    shadow-[0_14px_34px_rgba(247,89,39,0.36)]
+    transition-all
+    duration-200
+    hover:-translate-y-0.5
+    hover:shadow-[0_18px_44px_rgba(247,89,39,0.46)]
+  "
+/>
+          
               <p
                 className="
                   mt-3

@@ -1,6 +1,25 @@
 /* =========================================================
-   MOBILE RESPONSIVE ONLY
-   DESKTOP COMPLETELY UNTOUCHED
+   HERO RESPONSIVE CSS
+
+   MOBILE:
+   0px - 767px
+
+   TABLET:
+   768px - 1023px
+
+   DESKTOP:
+   1024px+
+
+   IMPORTANT:
+   Desktop layout is controlled separately in Hero.jsx.
+   Large screens are capped at 1440px through
+   .hero-desktop-stage.
+========================================================= */
+
+
+/* =========================================================
+   MOBILE
+   0px - 767px
 ========================================================= */
 
 @media (max-width: 767px) {
@@ -10,6 +29,22 @@
     overflow: hidden !important;
   }
 
+
+  /* =====================================================
+     MAIN STAGE
+  ===================================================== */
+
+  .hero-desktop-stage {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+
+  /* =====================================================
+     TEXT CONTAINER
+  ===================================================== */
+
   .hero-section .relative.z-30.max-w-\[1280px\] {
     padding-top: 30px !important;
     padding-bottom: 14px !important;
@@ -17,19 +52,21 @@
     padding-right: 20px !important;
   }
 
-
-  /* =====================================================
-     TEXT
-  ===================================================== */
-
   .hero-section .max-w-\[600px\] {
     max-width: 68% !important;
+
     position: relative !important;
     z-index: 100 !important;
   }
 
+
+  /* =====================================================
+     EYEBROW
+  ===================================================== */
+
   .hero-eyebrow {
     position: relative !important;
+
     top: 17px !important;
 
     font-size: 7.5px !important;
@@ -41,7 +78,12 @@
     z-index: 100 !important;
   }
 
-  .hero-section h1 {
+
+  /* =====================================================
+     HEADING
+  ===================================================== */
+
+  .hero-section .hero-title {
     font-size: 27px !important;
     line-height: 1.04 !important;
     letter-spacing: -0.035em !important;
@@ -51,9 +93,15 @@
     z-index: 100 !important;
   }
 
+
+  /* =====================================================
+     DESCRIPTION
+  ===================================================== */
+
   .hero-description {
     font-size: 7.8px !important;
     line-height: 1.42 !important;
+
     max-width: 225px !important;
     margin-bottom: 12px !important;
 
@@ -68,12 +116,14 @@
 
   .hero-cta {
     width: auto !important;
+
     position: relative !important;
     z-index: 100 !important;
   }
 
   .hero-cta .btn-install {
     width: auto !important;
+
     min-width: 112px !important;
     height: 35px !important;
 
@@ -89,6 +139,7 @@
 
   .hero-cta > p {
     text-align: left !important;
+
     width: max-content !important;
 
     margin-top: 5px !important;
@@ -105,20 +156,16 @@
 
   /* =====================================================
      DOG + CAT MEDIA
-
-     UP + THODA LEFT
-     IMAGE BADI (SCALE UP) TAAKI
-     NICHE / RIGHT KHALI SPACE NA DIKHE
   ===================================================== */
 
   .hero-mobile-media {
     position: absolute !important;
 
-    top: 30px !important;      /* pehle 65px tha -> upar gaya */
+    top: 30px !important;
     right: 5px !important;
 
-    width: 58% !important;     /* thodi badi container */
-    height: 330px !important;  /* pehle 285px tha -> badi */
+    width: 58% !important;
+    height: 330px !important;
 
     min-height: 0 !important;
     margin: 0 !important;
@@ -169,8 +216,10 @@
     box-shadow: none !important;
     background: transparent !important;
 
-    /* scale badhaya + thoda left shift taaki right/bottom gap na dikhe */
-    transform: scale(1.75) translate(-6%, 2%) !important;
+    transform:
+      scale(1.75)
+      translate(-6%, 2%) !important;
+
     transform-origin: center center !important;
   }
 
@@ -228,6 +277,7 @@
 
 
 /* =========================================================
+   SMALL MOBILE
    390px AND BELOW
 ========================================================= */
 
@@ -248,8 +298,10 @@
     z-index: 100 !important;
   }
 
+
   .hero-eyebrow {
     top: 17px !important;
+
     font-size: 7px !important;
     margin-bottom: 24px !important;
 
@@ -257,7 +309,8 @@
     z-index: 100 !important;
   }
 
-  .hero-section h1 {
+
+  .hero-section .hero-title {
     font-size: 26px !important;
     line-height: 1.03 !important;
     margin-bottom: 11px !important;
@@ -265,6 +318,7 @@
     position: relative !important;
     z-index: 100 !important;
   }
+
 
   .hero-description {
     font-size: 7.5px !important;
@@ -278,9 +332,7 @@
   }
 
 
-  /* =====================================================
-     BUTTON
-  ===================================================== */
+  /* BUTTON */
 
   .hero-cta {
     position: relative !important;
@@ -309,19 +361,14 @@
   }
 
 
-  /* =====================================================
-     DOG + CAT
-
-     UP + THODA LEFT
-     BADI (SCALE UP)
-  ===================================================== */
+  /* DOG + CAT */
 
   .hero-mobile-media {
-    top: 26px !important;      /* pehle 60px tha -> upar */
+    top: 26px !important;
     right: 5px !important;
 
-    width: 78% !important;     /* pehle 72% */
-    height: 310px !important;  /* pehle 270px */
+    width: 78% !important;
+    height: 310px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -344,14 +391,15 @@
     object-fit: contain !important;
     object-position: center center !important;
 
-    transform: scale(1.78) translate(-6%, 2%) !important;
+    transform:
+      scale(1.78)
+      translate(-6%, 2%) !important;
+
     transform-origin: center center !important;
   }
 
 
-  /* =====================================================
-     CAPSULES
-  ===================================================== */
+  /* CAPSULES */
 
   .hero-mobile-capsules {
     top: 0 !important;
@@ -379,6 +427,7 @@
 
 
 /* =========================================================
+   EXTRA SMALL MOBILE
    360px AND BELOW
 ========================================================= */
 
@@ -396,8 +445,10 @@
     z-index: 100 !important;
   }
 
+
   .hero-eyebrow {
     top: 16px !important;
+
     font-size: 6.8px !important;
     margin-bottom: 23px !important;
 
@@ -405,7 +456,8 @@
     z-index: 100 !important;
   }
 
-  .hero-section h1 {
+
+  .hero-section .hero-title {
     font-size: 25px !important;
     line-height: 1.03 !important;
 
@@ -413,9 +465,11 @@
     z-index: 100 !important;
   }
 
+
   .hero-description {
     font-size: 7.3px !important;
     line-height: 1.4 !important;
+
     max-width: 205px !important;
 
     position: relative !important;
@@ -423,9 +477,7 @@
   }
 
 
-  /* =====================================================
-     BUTTON
-  ===================================================== */
+  /* BUTTON */
 
   .hero-cta {
     position: relative !important;
@@ -447,19 +499,14 @@
   }
 
 
-  /* =====================================================
-     DOG + CAT
-
-     UP + THODA LEFT
-     BADI (SCALE UP)
-  ===================================================== */
+  /* DOG + CAT */
 
   .hero-mobile-media {
-    top: 22px !important;      /* pehle 55px tha -> upar */
+    top: 22px !important;
     right: 5px !important;
 
-    width: 79% !important;     /* pehle 73% */
-    height: 295px !important;  /* pehle 255px */
+    width: 79% !important;
+    height: 295px !important;
 
     overflow: visible !important;
     z-index: 20 !important;
@@ -482,14 +529,15 @@
     object-fit: contain !important;
     object-position: center center !important;
 
-    transform: scale(1.75) translate(-6%, 2%) !important;
+    transform:
+      scale(1.75)
+      translate(-6%, 2%) !important;
+
     transform-origin: center center !important;
   }
 
 
-  /* =====================================================
-     CAPSULES
-  ===================================================== */
+  /* CAPSULES */
 
   .hero-mobile-capsules {
     top: 0 !important;
@@ -512,5 +560,319 @@
   .hero-capsule .pill {
     padding: 2px 5px !important;
     font-size: 5px !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1023px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .hero-section {
+    min-height: 600px !important;
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     TABLET STAGE
+  ===================================================== */
+
+  .hero-desktop-stage {
+    width: 100% !important;
+    max-width: 1023px !important;
+    margin: 0 auto !important;
+  }
+
+
+  /* =====================================================
+     TABLET TEXT CONTAINER
+  ===================================================== */
+
+  .hero-section .relative.z-30.max-w-\[1280px\] {
+    padding-top: 105px !important;
+    padding-bottom: 32px !important;
+
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+
+  .hero-section .max-w-\[600px\] {
+    max-width: 48% !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     TABLET EYEBROW
+  ===================================================== */
+
+  .hero-eyebrow {
+    top: 0 !important;
+
+    font-size: 10px !important;
+    letter-spacing: 0.16em !important;
+
+    padding: 0 !important;
+    margin-bottom: 18px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     TABLET HEADING
+  ===================================================== */
+
+  .hero-section .hero-title {
+    font-size: 44px !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.03em !important;
+    margin-bottom: 20px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     TABLET DESCRIPTION
+  ===================================================== */
+
+  .hero-description {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+
+    max-width: 360px !important;
+    margin-bottom: 18px !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+
+  /* =====================================================
+     TABLET BUTTON
+  ===================================================== */
+
+  .hero-cta {
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-cta .btn-install {
+    width: auto !important;
+
+    min-width: 170px !important;
+    height: 48px !important;
+
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+
+    font-size: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  .hero-cta > p {
+    width: max-content !important;
+
+    margin-top: 10px !important;
+
+    text-align: left !important;
+
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     TABLET DOG + CAT
+  ===================================================== */
+
+  .hero-mobile-media {
+    position: absolute !important;
+
+    top: 150px !important;
+    right: 12px !important;
+
+    width: 52% !important;
+    height: 410px !important;
+
+    min-height: 0 !important;
+    margin: 0 !important;
+
+    z-index: 20 !important;
+    pointer-events: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  .hero-mobile-photo {
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: 410px !important;
+
+    margin: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-mobile-photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 410px !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    transform:
+      scale(1.18)
+      translate(-2%, 1%) !important;
+
+    transform-origin: center center !important;
+  }
+
+
+  /* =====================================================
+     TABLET CAPSULES
+  ===================================================== */
+
+  .hero-mobile-capsules {
+    display: block !important;
+
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    pointer-events: none !important;
+
+    z-index: 10 !important;
+    overflow: visible !important;
+  }
+
+  .hero-capsule {
+    display: block !important;
+
+    position: absolute !important;
+
+    z-index: 5 !important;
+    max-width: 90% !important;
+  }
+
+  .hero-capsule .pill {
+    padding: 5px 10px !important;
+
+    font-size: 9px !important;
+    font-weight: 600 !important;
+
+    letter-spacing: 0 !important;
+
+    border-width: 1px !important;
+
+    box-shadow:
+      0 4px 12px rgba(31, 41, 55, 0.12) !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   1024px+
+========================================================= */
+
+@media (min-width: 1024px) {
+
+  /*
+    IMPORTANT:
+
+    The desktop stage itself is capped at 1440px.
+    So on:
+
+    1024px
+    1280px
+    1440px
+    1920px
+    2560px
+    3840px
+
+    the actual design does not keep stretching.
+  */
+
+  .hero-desktop-stage {
+    width: 100% !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    position: relative !important;
+  }
+
+
+  /*
+    Keep desktop section height stable.
+    Do not use viewport-height here.
+  */
+
+  .hero-desktop-stage {
+    min-height: 600px !important;
+  }
+
+
+  /*
+    Fixed desktop typography.
+    No clamp / vw scaling.
+  */
+
+  .hero-section .hero-title {
+    font-size: 68px !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-description {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+
+  /*
+    Desktop photo remains bounded.
+  */
+
+  .hero-desktop-stage > .hidden.lg\:block.absolute.top-8 {
+    width: 79% !important;
+    max-width: 950px !important;
+    height: 640px !important;
+    min-height: 480px !important;
   }
 }

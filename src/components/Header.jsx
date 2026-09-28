@@ -129,7 +129,8 @@ export default function Header() {
           className="hidden md:inline-flex bg-orange text-white font-medium text-sm px-4 py-2 rounded-md whitespace-nowrap transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(247,89,39,0.38)]" 
         > 
           {/* Install Pettxo → */} 
-          Pettxo - Coming Soon 
+          {/* Pettxo - Coming Soon  */}
+          Download Pettxo
         </a> 
  
         {/* MOBILE — INSTALL + HAMBURGER */} 
@@ -142,7 +143,8 @@ export default function Header() {
             className="mobile-install-button" 
           > 
             {/* Install Pettxo → */} 
-                             Pettxo — Comming Soon.. 
+                             {/* Pettxo — Comming Soon..  */}
+                             Download Pettxo
  
           </a> 
  

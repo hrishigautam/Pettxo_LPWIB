@@ -1,9 +1,11 @@
+// InstallButton.jsx
 import { handleInstall } from '../lib/stores.js'
 
 // Locked label variants. Default is the primary hero/CTA label.
 export default function InstallButton({
   // label = 'Install Pettxo — Free',
-label = 'Pettxo - Coming Soon',
+// label = 'Pettxo - Coming Soon',
+label = 'Download Pettxo',
   className = '',
   innerRef,
   style,

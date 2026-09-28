@@ -30,7 +30,7 @@ const FAQ = [
 ]
 
 const LIST_LABEL = 'Become a Founding Provider'
-const LIST_LABEL_SHORT = 'Install Pettxo — Free'
+const LIST_LABEL_SHORT = 'Download Pettxo'
 
 export default function ForProviders() {
   const ref = useRef(null)

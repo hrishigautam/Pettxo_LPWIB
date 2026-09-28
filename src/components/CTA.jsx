@@ -3,6 +3,8 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { handleInstall } from "../lib/stores.js";
+import config from "../config.js";
 
 export default function CTA() {
   const sectionRef = useRef(null);
@@ -170,7 +172,8 @@ export default function CTA() {
             <a
               ref={btnRef}
               href="#"
-              aria-label="Install Pettxo — Free"
+              aria-label="Download Pettxo"
+              onClick={handleInstall}
               className="
                 inline-flex
                 items-center
@@ -212,70 +215,111 @@ export default function CTA() {
                 opacity: 0,
               }}
             >
-              {/* Install Pettxo — Free */}
-              Pettxo - Coming Soon
+              Download Pettxo
             </a>
 
             {/* =========================
-                STORE LINKS
+                STORE BADGES
             ========================== */}
-            <div
+            {/* <div
               className="
                 flex
                 items-center
                 justify-center
                 gap-4
-                mt-6
+                mt-3
               "
             >
               <a
                 href="#"
-                className="
-                  text-[13px]
-                  sm:text-[14px]
-                  font-medium
-                  text-muted
-                  border-b
-                  border-[#E5E7EB]
-                  pb-1
-                  hover:text-dark
-                  hover:border-dark
-                  transition-colors
-                "
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = config.APP_STORE_URL;
+                }}
+                aria-label="Download Pettxo from App Store"
               >
-                App Store
+                <img
+                  src="/images/app-store-badge.svg.svg"
+                  alt="Download on the App Store"
+                  className="
+                    h-[100px]
+                    sm:h-[110px]
+                    w-auto
+                  "
+                />
               </a>
-
-              <span
-                aria-hidden="true"
-                className="
-                  text-[#D1D5DB]
-                  text-[16px]
-                  leading-none
-                "
-              >
-                ·
-              </span>
 
               <a
                 href="#"
-                className="
-                  text-[13px]
-                  sm:text-[14px]
-                  font-medium
-                  text-muted
-                  border-b
-                  border-[#E5E7EB]
-                  pb-1
-                  hover:text-dark
-                  hover:border-dark
-                  transition-colors
-                "
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = config.GOOGLE_PLAY_URL;
+                }}
+                aria-label="Get Pettxo on Google Play"
               >
-                Play Store
+                <img
+                  src="/images/google-play-badge.svg.svg"
+                  alt="Get it on Google Play"
+                  className="
+                    h-[100px]
+                    sm:h-[110px]
+                    w-auto
+                  "
+                />
               </a>
-            </div>
+            </div> */}
+{/* =========================
+    STORE BADGES
+========================== */}
+{/* =========================
+    STORE BADGES
+========================== */}
+<div
+  id="store-badges"
+  className="
+    flex
+    items-center
+    justify-center
+    gap-3
+    mt-2
+  "
+>
+  <a
+    href={config.APP_STORE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Download Pettxo from App Store"
+  >
+    <img
+      src="/images/app-store-badge.svg.svg"
+      alt="Download on the App Store"
+      className="
+        h-[150px]
+        sm:h-[150px]
+        w-auto
+        object-contain
+      "
+    />
+  </a>
 
+  <a
+    href={config.GOOGLE_PLAY_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Get Pettxo on Google Play"
+  >
+    <img
+      src="/images/google-play-badge.svg.svg"
+      alt="Get it on Google Play"
+      className="
+        h-[150px]
+        sm:h-[150px]
+        w-auto
+        object-contain
+      "
+    />
+  </a>
+</div>
             {/* =========================
                 TAGLINE
             ========================== */}
