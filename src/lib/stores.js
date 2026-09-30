@@ -81,8 +81,6 @@
 // }
 
 
-// stores.js
-
 import config from "../config.js";
 
 export const APP_STORE_URL = config.APP_STORE_URL;
@@ -101,5 +99,8 @@ export function handleInstall(e) {
       behavior: "smooth",
       block: "center",
     });
+    return;
   }
+
+  window.location.href = "/#store-badges";
 }

@@ -13,7 +13,7 @@ import Terms from "./pages/Terms";
 import Cancellation from './pages/Cancellation'
 import Audience from './components/Audience.jsx'
 import CookieConsent from './components/CookieConsent.jsx'
-
+import NotFound from './pages/NotFound.jsx'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 export default function App() {
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/cancellation-policy" element={<Cancellation />} />
           <Route path="/audience" element={<Audience />} />
-
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <CookieConsent />
