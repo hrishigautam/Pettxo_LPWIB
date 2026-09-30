@@ -19,10 +19,7 @@ export default function CTA() {
 
       gsap.fromTo(
         elements,
-        {
-          opacity: 0,
-          y: 30,
-        },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
@@ -48,10 +45,7 @@ export default function CTA() {
         onEnter: () => {
           gsap.fromTo(
             btn,
-            {
-              scale: 0.96,
-              opacity: 0,
-            },
+            { scale: 0.96, opacity: 0 },
             {
               scale: 1,
               opacity: 1,
@@ -222,109 +216,98 @@ export default function CTA() {
             {/* =========================
                 STORE BADGES
             ========================== */}
-            {/* <div
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+                w-full
+                max-w-[380px]
+                mt-9
+              "
+            >
+              <span className="h-px flex-1 bg-[rgba(247,89,39,0.25)]" />
+              <span
+                className="
+                  text-[12px]
+                  sm:text-[13px]
+                  font-medium
+                  text-muted
+                "
+              >
+                Available on
+              </span>
+              <span className="h-px flex-1 bg-[rgba(247,89,39,0.25)]" />
+            </div>
+
+            <div
+              id="store-badges"
               className="
                 flex
                 items-center
                 justify-center
-                gap-4
-                mt-3
+                gap-2
+                sm:gap-4
+                mt-1
               "
             >
               <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = config.APP_STORE_URL;
-                }}
+                href={config.APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Download Pettxo from App Store"
+                onClick={() => trackEvent("app_store_click")}
+                className="
+                  inline-block
+                  rounded-[14px]
+                  transition-all
+                  duration-200
+                  hover:-translate-y-1
+                  hover:drop-shadow-[0_10px_16px_rgba(247,89,39,0.28)]
+                  active:scale-[0.97]
+                  focus-visible:outline
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-2
+                  focus-visible:outline-orange
+                "
               >
                 <img
-                  src="/images/app-store-badge.svg.svg"
+                  src="/images/app-store-badge.svg"
                   alt="Download on the App Store"
-                  className="
-                    h-[100px]
-                    sm:h-[110px]
-                    w-auto
-                  "
+                  className="h-[150px] w-auto object-contain"
+                  draggable="false"
                 />
               </a>
 
               <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = config.GOOGLE_PLAY_URL;
-                }}
+                href={config.GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Get Pettxo on Google Play"
+                onClick={() => trackEvent("google_play_click")}
+                className="
+                  inline-block
+                  rounded-[14px]
+                  transition-all
+                  duration-200
+                  hover:-translate-y-1
+                  hover:drop-shadow-[0_10px_16px_rgba(247,89,39,0.28)]
+                  active:scale-[0.97]
+                  focus-visible:outline
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-2
+                  focus-visible:outline-orange
+                "
               >
                 <img
-                  src="/images/google-play-badge.svg.svg"
+                  src="/images/google-play-badge.svg"
                   alt="Get it on Google Play"
-                  className="
-                    h-[100px]
-                    sm:h-[110px]
-                    w-auto
-                  "
+                  className="h-[150px] w-auto object-contain"
+                  draggable="false"
                 />
               </a>
-            </div> */}
-{/* =========================
-    STORE BADGES
-========================== */}
-{/* =========================
-    STORE BADGES
-========================== */}
-<div
-  id="store-badges"
-  className="
-    flex
-    items-center
-    justify-center
-    gap-3
-    mt-2
-  "
->
-  <a
-    href={config.APP_STORE_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Download Pettxo from App Store"
-      onClick={() => trackEvent("app_store_click")}
+            </div>
 
-  >
-    <img
-      src="/images/app-store-badge.svg"
-      alt="Download on the App Store"
-      className="
-        h-[150px]
-        sm:h-[150px]
-        w-auto
-        object-contain
-      "
-    />
-  </a>
-
-  <a
-    href={config.GOOGLE_PLAY_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Get Pettxo on Google Play"
-      onClick={() => trackEvent("google_play_click")}
-
-  >
-    <img
-      src="/images/google-play-badge.svg"
-      alt="Get it on Google Play"
-      className="
-        h-[150px]
-        sm:h-[150px]
-        w-auto
-        object-contain
-      "
-    />
-  </a>
-</div>
             {/* =========================
                 TAGLINE
             ========================== */}
@@ -337,7 +320,7 @@ export default function CTA() {
                 sm:tracking-[0.16em]
                 uppercase
                 text-orange
-                mt-7
+                mt-5
               "
             >
               Care · Trust · Love
