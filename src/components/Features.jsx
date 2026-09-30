@@ -13,7 +13,7 @@ const FEATURES = [
       'Real profiles. Real work. Real reviews — before you send a single message.',
       'No more asking in group chats. No more forwarded contacts.',
     ],
-    image: '/images/screen-services.png',
+    image: '/images/screen-services.webp',
     alt: 'Services screen showing nearby groomers, walkers, and boarding listings',
     insetY: '1px',   // upar-neeche kitna margin — number badhao to zyada margin (chhoti image)
 insetX: '-12px', 
@@ -26,7 +26,7 @@ insetX: '-12px',
       'See their work. Build trust through content, not cold calls.',
       'Your feed. Your community. Your city.',
     ],
-    image: '/images/screen-feed.png',
+    image: '/images/screen-feed.webp',
     alt: 'Home feed screen showing posts from pet parents and service providers',
       insetY: '1px',   // upar-neeche kitna margin — number badhao to zyada margin (chhoti image)
 insetX: '-12px', 
@@ -38,7 +38,7 @@ insetX: '-12px',
       'No DMs. No cash handovers. No "I\'ll send you the details later."',
       "Your pet's complete service history, organised in one place, forever.",
     ],
-    image: '/images/screen-booking.png',
+    image: '/images/screen-booking.webp',
     alt: 'Booking details screen showing a confirmed, paid booking',
       insetY: '1px',   // upar-neeche kitna margin — number badhao to zyada margin (chhoti image)
 insetX: '-12px', 
@@ -207,6 +207,7 @@ function Screen({ f }) {
         <img
           src={f.image}
           alt={f.alt}
+          // loading="lazy"
           className="select-none pointer-events-none"
           style={{
             width: f.insetX ? `calc(100% - ${f.insetX})` : '100%',
@@ -223,6 +224,7 @@ function Screen({ f }) {
     <img
       src={f.image}
       alt={f.alt}
+      // loading="lazy"
       className="w-full h-full object-cover object-center select-none pointer-events-none"
       draggable={false}
     />

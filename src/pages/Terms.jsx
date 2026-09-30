@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import SEO from "../components/SEO.jsx";
+
 
 const POINTS = [
   'Using Pettxo means you agree to provide accurate account details, respectful communication, and lawful use of the platform.',
@@ -35,52 +37,62 @@ export default function Terms() {
   }, { scope: rootRef })
 
   return (
-    <section ref={rootRef} className="min-h-screen bg-beige">
-      <div className="max-w-[760px] mx-auto px-6 md:px-8 pt-8 md:pt-20 pb-16">
-        <Link
-          ref={backRef}
-          to="/"
-          className="inline-flex items-center gap-2 text-[13.5px] font-medium text-muted hover:text-dark transition-colors mb-10"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          Back to home
-        </Link>
+    <>
+      <SEO
+        canonical="/terms"
+        description="Read Pettxo's Terms of Service to understand the rules, responsibilities, and conditions for using the Pettxo platform."
+      />
 
-        <div className="flex items-center gap-4 mb-6">
-          <span ref={iconRef} className="flex items-center justify-center w-11 h-11 rounded-full bg-orange/10 text-orange flex-shrink-0">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" />
-              <path d="M14 2v6h6" />
-              <path d="M9 13h6M9 17h6" strokeLinecap="round" />
-            </svg>
-          </span>
-          <h1 ref={headRef} className="font-serif font-black text-dark text-[26px] md:text-[32px]">
-            Terms of Service
-          </h1>
-        </div>
-
-        <ul ref={listRef} className="border-t border-[rgba(31,41,55,0.10)]">
-          {POINTS.map((p, i) => (
-            <li key={i} className="flex gap-4 py-3 border-b border-[rgba(31,41,55,0.10)]">
-              <span className="mt-[9px] w-[7px] h-[7px] rounded-full bg-orange flex-shrink-0" />
-              <span className="text-dark font-light leading-[1.75] text-[15px] md:text-[16px]">{p}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div ref={footRef} className="mt-6">
-          <a
-            href={READ_MORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-orange font-semibold text-[14px] hover:underline"
+      <section ref={rootRef} className="min-h-screen bg-beige">
+        <div className="max-w-[760px] mx-auto px-6 md:px-8 pt-8 md:pt-20 pb-16">
+          <Link
+            ref={backRef}
+            to="/"
+            className="inline-flex items-center gap-2 text-[13.5px] font-medium text-muted hover:text-dark transition-colors mb-10"
           >
-            Read more →
-          </a>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to home
+          </Link>
+
+          <div className="flex items-center gap-4 mb-6">
+            <span ref={iconRef} className="flex items-center justify-center w-11 h-11 rounded-full bg-orange/10 text-orange flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" />
+                <path d="M14 2v6h6" />
+                <path d="M9 13h6M9 17h6" strokeLinecap="round" />
+              </svg>
+            </span>
+
+            <h1 ref={headRef} className="font-serif font-black text-dark text-[26px] md:text-[32px]">
+              Terms of Service
+            </h1>
+          </div>
+
+          <ul ref={listRef} className="border-t border-[rgba(31,41,55,0.10)]">
+            {POINTS.map((p, i) => (
+              <li key={i} className="flex gap-4 py-3 border-b border-[rgba(31,41,55,0.10)]">
+                <span className="mt-[9px] w-[7px] h-[7px] rounded-full bg-orange flex-shrink-0" />
+                <span className="text-dark font-light leading-[1.75] text-[15px] md:text-[16px]">
+                  {p}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div ref={footRef} className="mt-6">
+            <a
+              href={READ_MORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange font-semibold text-[14px] hover:underline"
+            >
+              Read more →
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

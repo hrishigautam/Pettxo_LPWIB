@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Helmet } from 'react-helmet-async'
 import InstallButton from '../components/InstallButton.jsx'
 import '../CSS/AboutResponsive.css'
+import SEO from "../components/SEO.jsx";
 
 const VALUES = [
   { h: 'Every pet deserves better.', b: 'Better care, chosen with confidence — not guesswork from a group chat.' },
@@ -42,13 +42,18 @@ export default function About() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>About Pettxo — Our Story</title>
         <meta
           name="description"
           content="We're building the trust layer pet care has been missing. Meet the team behind Pettxo."
         />
-      </Helmet>
+      </Helmet> */}
+
+      <SEO
+  canonical="/about"
+  description="Learn about Pettxo, a community-first platform connecting pet parents, service providers, and pet lovers through trusted pet connections and services."
+/>
 
       <div ref={ref} className="about-page">
 

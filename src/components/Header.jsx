@@ -93,8 +93,13 @@ export default function Header() {
           to="/" 
           className="flex items-center "  
           aria-label="Pettxo home" 
-          onClick={() => setOpen(false)} 
-        > 
+  onClick={() => {
+    setOpen(false);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }}        > 
           <img 
             src="/images/logo.png" 
             alt="Pettxo Logo" 

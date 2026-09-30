@@ -24,7 +24,7 @@ return (
       to="/"
       className="flex items-center gap-1"
       aria-label="Pettxo home"
-      onClick={() => setOpen(false)}
+      // onClick={() => setOpen(false)}
     >
       <span className="font-sans font-semibold text-[16px] sm:text-[17px] md:text-[18px] text-orange tracking-[-0.02em]">
         Pettxo
@@ -159,7 +159,7 @@ return (
           Terms of Service
         </Link>
 
-        <Link to="/cancellation" className={A}>
+        <Link to="/cancellation-policy" className={A}>
           Cancellation & Refund
         </Link>
 

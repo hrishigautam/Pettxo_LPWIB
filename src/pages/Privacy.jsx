@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import SEO from "../components/SEO.jsx";
 
 const POINTS = [
   'Pettxo collects account, booking, and device information needed to deliver platform features securely.',
@@ -35,52 +36,59 @@ export default function Privacy() {
   }, { scope: rootRef })
 
   return (
-    <section ref={rootRef} className="min-h-screen bg-beige">
-      <div className="max-w-[760px] mx-auto px-6 md:px-8 pt-14 md:pt-20 pb-16">
-        <Link
-          ref={backRef}
-          to="/"
-          className="inline-flex items-center gap-2 text-[13.5px] font-medium text-muted hover:text-dark transition-colors mb-10"
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          Back to home
-        </Link>
+    <>
+      <SEO
+        canonical="/privacy"
+        description="Read Pettxo's Privacy Policy to understand how we collect, use, protect, and handle information when you use our platform."
+      />
 
-        <div className="flex items-center gap-4 mb-6">
-          <span ref={iconRef} className="flex items-center justify-center w-11 h-11 rounded-full bg-orange/10 text-orange flex-shrink-0">
-            <svg width="20" height="20" viewBox="0 0 24 20" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 2 4 5v6c0 5.2 3.4 9.7 8 11 4.6-1.3 8-5.8 8-11V5l-8-3Z" />
-              <path d="M12 8v5" strokeLinecap="round" />
-              <circle cx="12" cy="16.2" r="0.6" fill="currentColor" stroke="none" />
-            </svg>
-          </span>
-          <h1 ref={headRef} className="font-serif font-black text-dark text-[26px] md:text-[32px]">
-            Privacy Policy
-          </h1>
-        </div>
-
-        <ul ref={listRef} className="border-t border-[rgba(31,41,55,0.10)]">
-          {POINTS.map((p, i) => (
-            <li key={i} className="flex gap-4 py-3 border-b border-[rgba(31,41,55,0.10)]">
-              <span className="mt-[9px] w-[7px] h-[7px] rounded-full bg-orange flex-shrink-0" />
-              <span className="text-dark font-light leading-[1.75] text-[15px] md:text-[16px]">{p}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div ref={footRef} className="mt-6">
-          <a
-            href={READ_MORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-orange font-semibold text-[14px] hover:underline"
+      <section ref={rootRef} className="min-h-screen bg-beige">
+        <div className="max-w-[760px] mx-auto px-6 md:px-8 pt-14 md:pt-20 pb-16">
+          <Link
+            ref={backRef}
+            to="/"
+            className="inline-flex items-center gap-2 text-[13.5px] font-medium text-muted hover:text-dark transition-colors mb-10"
           >
-            Read more →
-          </a>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to home
+          </Link>
+
+          <div className="flex items-center gap-4 mb-6">
+            <span ref={iconRef} className="flex items-center justify-center w-11 h-11 rounded-full bg-orange/10 text-orange flex-shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 20" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2 4 5v6c0 5.2 3.4 9.7 8 11 4.6-1.3 8-5.8 8-11V5l-8-3Z" />
+                <path d="M12 8v5" strokeLinecap="round" />
+                <circle cx="12" cy="16.2" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
+            <h1 ref={headRef} className="font-serif font-black text-dark text-[26px] md:text-[32px]">
+              Privacy Policy
+            </h1>
+          </div>
+
+          <ul ref={listRef} className="border-t border-[rgba(31,41,55,0.10)]">
+            {POINTS.map((p, i) => (
+              <li key={i} className="flex gap-4 py-3 border-b border-[rgba(31,41,55,0.10)]">
+                <span className="mt-[9px] w-[7px] h-[7px] rounded-full bg-orange flex-shrink-0" />
+                <span className="text-dark font-light leading-[1.75] text-[15px] md:text-[16px]">{p}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div ref={footRef} className="mt-6">
+            <a
+              href={READ_MORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange font-semibold text-[14px] hover:underline"
+            >
+              Read more →
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

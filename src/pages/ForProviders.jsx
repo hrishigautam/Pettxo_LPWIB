@@ -4,9 +4,9 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Helmet } from 'react-helmet-async'
 import InstallButton from '../components/InstallButton.jsx'
 import "../CSS/ForProvidersResponsive.css"
+import SEO from "../components/SEO.jsx";
 
 const BENEFITS = [
   { h: 'Get discovered, not buried.', b: 'Pet parents near you search by service and location. Show up where they’re looking.' },
@@ -58,13 +58,17 @@ export default function ForProviders() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>List Your Services on Pettxo — Become a Founding Provider</title>
         <meta
           name="description"
           content="Get discovered by pet parents near you. Join early and list free during early access."
         />
-      </Helmet>
+      </Helmet> */}
+      <SEO
+  canonical="/for-providers"
+  description="Join Pettxo as a pet service provider and connect with pet parents looking for trusted local services, bookings, and community connections."
+/>
 
       <div ref={ref}>
 

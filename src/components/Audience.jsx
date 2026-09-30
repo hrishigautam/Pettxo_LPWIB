@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SEO from "./SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -143,6 +144,11 @@ export default function Audience() {
   }
 
   return (
+    <>
+    <SEO
+  canonical="/audience"
+  description="Discover how Pettxo connects pet parents, service providers, and pet lovers through a trusted community-first pet ecosystem."
+/>
     <section
       ref={sectionRef}
       className="w-full bg-beige py-4 sm:py-20 lg:py-24 overflow-hidden"
@@ -366,5 +372,6 @@ export default function Audience() {
         </p>
       </div>
     </section>
+    </>
   )
 }

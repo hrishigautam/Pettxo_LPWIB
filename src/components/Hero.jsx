@@ -879,7 +879,7 @@ if (el.dataset.zone === "mobile") {
           >
             <img
               ref={photoImgRef}
-              src="/images/hero-pets.png"
+              src="/images/hero-pets.webp"
               alt="A dog and a cat together"
               onError={() =>
                 setImgOk(false)
@@ -1112,7 +1112,7 @@ if (el.dataset.zone === "mobile") {
               "
             >
               <img
-                src="/images/hero-pets.png"
+                src="/images/hero-pets.webp"
                 alt="A dog and a cat together"
                 onError={() =>
                   setImgOk(false)

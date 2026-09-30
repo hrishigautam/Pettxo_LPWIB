@@ -46,7 +46,7 @@ export default function BuiltBy() {
           {/* Photo */}
           <div className="relative reveal">
             <img
-              src="/images/founder.jpg"
+              src="/images/founder.webp"
               alt="Hrishi Gautam, Founder & CEO of Pettxo"
               loading="lazy"
               className="

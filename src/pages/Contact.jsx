@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Helmet } from 'react-helmet-async'
 import InstallButton from '../components/InstallButton.jsx'
 import "../CSS/ContactResponsive.css"
+import SEO from "../components/SEO.jsx";
 
 const FAQ = [
   { q: 'Is Pettxo live yet?', a: 'We’re launching soon. Install the app to be among the first in your city.' },
@@ -42,13 +42,17 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Contact Pettxo — Get in Touch</title>
         <meta
           name="description"
           content="Questions about Pettxo? Reach us at hello@pettxo.com — we'd love to hear from you."
         />
-      </Helmet>
+      </Helmet> */}
+      <SEO
+  canonical="/contact"
+  description="Contact Pettxo for questions, support, partnerships, or other inquiries about our community-first pet ecosystem."
+/>
 
       <div ref={ref} className="contact-page">
 

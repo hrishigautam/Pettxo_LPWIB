@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 
 import Hero from '../components/Hero.jsx'
 import TrustStrip from '../components/TrustStrip.jsx'
@@ -8,17 +7,22 @@ import Audience from '../components/Audience.jsx'
 import HowItWorks from '../components/HowItWorks.jsx'
 import Founder from '../components/Founder.jsx'
 import CTA from '../components/CTA.jsx'
+import SEO from "../components/SEO.jsx";
 
 export default function Home() {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Pettxo — Because Pets Aren't Just Animals. They're Family.</title>
         <meta
           name="description"
           content="Pettxo — Because Pets Aren't Just Animals. They're Family."
         />
-      </Helmet>
+      </Helmet> */}
+      <SEO
+  canonical="/"
+  description="Pettxo connects pet parents, service providers, and pet lovers in one community-first platform for trusted pet connections and services."
+/>
 
       <Hero />
       <TrustStrip />

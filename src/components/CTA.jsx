@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { handleInstall } from "../lib/stores.js";
+import { trackEvent } from "../lib/analytics.js";
 import config from "../config.js";
 
 export default function CTA() {
@@ -289,9 +290,11 @@ export default function CTA() {
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Download Pettxo from App Store"
+      onClick={() => trackEvent("app_store_click")}
+
   >
     <img
-      src="/images/app-store-badge.svg.svg"
+      src="/images/app-store-badge.svg"
       alt="Download on the App Store"
       className="
         h-[150px]
@@ -307,9 +310,11 @@ export default function CTA() {
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Get Pettxo on Google Play"
+      onClick={() => trackEvent("google_play_click")}
+
   >
     <img
-      src="/images/google-play-badge.svg.svg"
+      src="/images/google-play-badge.svg"
       alt="Get it on Google Play"
       className="
         h-[150px]

@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import SEO from "../components/SEO.jsx";
 
 const CANCELLATION_POINTS = [
   'Free cancellation is available within 30 minutes of booking confirmation.',
@@ -68,6 +69,13 @@ export default function Cancellation() {
   }, { scope: rootRef })
 
   return (
+
+    <>
+    <SEO
+  canonical="/cancellation-policy"
+  description="Read Pettxo's Cancellation and Refund Policy to understand cancellation rules, refund conditions, and payment-related terms."
+/>
+
     <section ref={rootRef} className="min-h-screen bg-beige">
       <div className="max-w-[760px] mx-auto px-6 md:px-8 pt-14 md:pt-20 pb-16">
         <Link
@@ -121,5 +129,6 @@ export default function Cancellation() {
         </div>
       </div>
     </section>
+    </>
   )
 }
