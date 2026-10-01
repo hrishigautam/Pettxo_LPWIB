@@ -7,9 +7,27 @@ import { handleInstall } from "../lib/stores.js";
 import { trackEvent } from "../lib/analytics.js";
 import config from "../config.js";
 
+// Dono store badges (App Store + Google Play) isi same style ko use karte hain.
+// Badge chhota/bada dikhe to sirf yahan height badal do.
+const BADGE_H = "h-[140px] sm:h-[180px]";
+
+const badgeLink = `
+  inline-flex
+  items-center
+  justify-center
+  rounded-[14px]
+  transition-transform
+  duration-200
+  hover:-translate-y-0.5
+  active:scale-[0.97]
+  focus-visible:outline
+  focus-visible:outline-2
+  focus-visible:outline-offset-2
+  focus-visible:outline-orange
+`;
+
 export default function CTA() {
   const sectionRef = useRef(null);
-  const btnRef = useRef(null);
 
   useGSAP(
     () => {
@@ -19,12 +37,12 @@ export default function CTA() {
 
       gsap.fromTo(
         elements,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.85,
-          stagger: 0.12,
+          duration: 0.8,
+          stagger: 0.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -33,38 +51,6 @@ export default function CTA() {
           },
         },
       );
-
-      const btn = btnRef.current;
-
-      if (!btn) return;
-
-      ScrollTrigger.create({
-        trigger: btn,
-        start: "top 90%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo(
-            btn,
-            { scale: 0.96, opacity: 0 },
-            {
-              scale: 1,
-              opacity: 1,
-              duration: 0.6,
-              ease: "back.out(1.3)",
-            },
-          );
-
-          gsap.set(btn, {
-            boxShadow: "0 0 0 0 rgba(247,89,39,0.30)",
-          });
-
-          gsap.to(btn, {
-            boxShadow: "0 0 0 18px rgba(247,89,39,0)",
-            duration: 1.5,
-            ease: "power2.out",
-          });
-        },
-      });
     },
     { scope: sectionRef },
   );
@@ -76,9 +62,9 @@ export default function CTA() {
       className="
         w-full
         overflow-hidden
-        py-16
-        sm:py-20
-        lg:py-24
+        py-10
+        sm:py-12
+        lg:py-14
       "
     >
       <div
@@ -101,9 +87,7 @@ export default function CTA() {
             mx-auto
           "
         >
-          {/* =========================
-              HEADING
-          ========================== */}
+          {/* HEADING */}
           <h2
             className="
               reveal
@@ -112,7 +96,7 @@ export default function CTA() {
               text-dark
               leading-[1.08]
               tracking-[-0.025em]
-              mb-5
+              mb-4
               w-full
             "
             style={{
@@ -122,17 +106,14 @@ export default function CTA() {
             Your pet's world starts here.
           </h2>
 
-          {/* =========================
-              DESCRIPTION
-          ========================== */}
+          {/* DESCRIPTION */}
           <p
             className="
               reveal
               font-light
               leading-[1.75]
               text-muted
-              mb-8
-              sm:mb-10
+              mb-7
               w-full
               max-w-[560px]
             "
@@ -149,9 +130,7 @@ export default function CTA() {
             Pettxo brings you together.
           </p>
 
-          {/* =========================
-              CTA AREA
-          ========================== */}
+          {/* CTA AREA */}
           <div
             className="
               reveal
@@ -161,61 +140,7 @@ export default function CTA() {
               w-full
             "
           >
-            {/* =========================
-                MAIN BUTTON
-            ========================== */}
-            <a
-              ref={btnRef}
-              href="#"
-              aria-label="Download Pettxo"
-              onClick={handleInstall}
-              className="
-                inline-flex
-                items-center
-                justify-center
-
-                w-full
-                max-w-[290px]
-
-                sm:w-auto
-                sm:max-w-none
-
-                h-[54px]
-                sm:h-14
-
-                px-7
-                sm:px-11
-
-                bg-orange
-                text-white
-
-                font-sans
-                font-medium
-
-                text-[15px]
-                sm:text-base
-
-                rounded-[12px]
-
-                shadow-[0_8px_24px_rgba(247,89,39,0.20)]
-
-                transition-all
-                duration-200
-
-                active:scale-[0.98]
-                hover:-translate-y-0.5
-                hover:shadow-[0_12px_36px_rgba(247,89,39,0.38)]
-              "
-              style={{
-                opacity: 0,
-              }}
-            >
-              Download Pettxo
-            </a>
-
-            {/* =========================
-                STORE BADGES
-            ========================== */}
+            {/* AVAILABLE ON */}
             <div
               className="
                 flex
@@ -223,7 +148,6 @@ export default function CTA() {
                 gap-3
                 w-full
                 max-w-[380px]
-                mt-9
               "
             >
               <span className="h-px flex-1 bg-[rgba(247,89,39,0.25)]" />
@@ -240,44 +164,36 @@ export default function CTA() {
               <span className="h-px flex-1 bg-[rgba(247,89,39,0.25)]" />
             </div>
 
+            {/* STORE BADGES (dono ke liye same UI) */}
             <div
               id="store-badges"
               className="
                 flex
+                flex-wrap
                 items-center
                 justify-center
-                gap-2
+                gap-3
                 sm:gap-4
-                mt-1
+                mt-4
               "
             >
+              {/* App Store — abhi comment out hai, uncomment karte hi Google Play jaisa hi dikhega
               <a
                 href={config.APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download Pettxo from App Store"
                 onClick={() => trackEvent("app_store_click")}
-                className="
-                  inline-block
-                  rounded-[14px]
-                  transition-all
-                  duration-200
-                  hover:-translate-y-1
-                  hover:drop-shadow-[0_10px_16px_rgba(247,89,39,0.28)]
-                  active:scale-[0.97]
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-2
-                  focus-visible:outline-orange
-                "
+                className={badgeLink}
               >
                 <img
                   src="/images/app-store-badge.svg"
                   alt="Download on the App Store"
-                  className="h-[150px] w-auto object-contain"
+                  className={`${BADGE_H} w-auto object-contain`}
                   draggable="false"
                 />
               </a>
+              */}
 
               <a
                 href={config.GOOGLE_PLAY_URL}
@@ -285,32 +201,32 @@ export default function CTA() {
                 rel="noopener noreferrer"
                 aria-label="Get Pettxo on Google Play"
                 onClick={() => trackEvent("google_play_click")}
-                className="
-                  inline-block
-                  rounded-[14px]
-                  transition-all
-                  duration-200
-                  hover:-translate-y-1
-                  hover:drop-shadow-[0_10px_16px_rgba(247,89,39,0.28)]
-                  active:scale-[0.97]
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-2
-                  focus-visible:outline-orange
-                "
+                className={badgeLink}
               >
                 <img
                   src="/images/google-play-badge.svg"
                   alt="Get it on Google Play"
-                  className="h-[150px] w-auto object-contain"
+                  className={`${BADGE_H} w-auto object-contain`}
                   draggable="false"
                 />
               </a>
             </div>
 
-            {/* =========================
-                TAGLINE
-            ========================== */}
+            {/* LIKHA HUA TEXT (badge ke neeche) */}
+            <p
+              className="
+                mt-3
+                max-w-[320px]
+                text-[13px]
+                sm:text-[14px]
+                leading-[1.6]
+                text-muted
+              "
+            >
+              Download the app and find trusted pet care near you.
+            </p>
+
+            {/* TAGLINE */}
             <p
               className="
                 text-[11px]

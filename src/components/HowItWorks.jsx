@@ -103,14 +103,7 @@ export default function HowItWorks() {
 
         <div className="reveal text-center md:text-left">
 
-          <InstallButton
-           label="Download Pettxo"
-            className="inline-flex items-center justify-center h-[46px] sm:h-[48px] md:h-[52px] px-7 sm:px-8 md:px-10 bg-orange text-white font-sans font-medium text-[13px] sm:text-[14px] md:text-base rounded-[10px] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(247,89,39,0.38)]"
-          >
-            {/* Install Pettxo — Free */}
-          {/* Pettxo - Coming Soon */}
-          Download Pettxo
-          </InstallButton>
+        
 
         </div>
 
