@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
@@ -23,15 +22,27 @@
   </url>
 
   <url>
-    <loc>https://www.pettxo.com/privacy</loc>
+    <loc>https://www.pettxo.com/terms-of-service</loc>
   </url>
 
   <url>
-    <loc>https://www.pettxo.com/terms</loc>
+    <loc>https://www.pettxo.com/privacy-policy</loc>
   </url>
 
   <url>
-    <loc>https://www.pettxo.com/cancellation-policy</loc>
+    <loc>https://www.pettxo.com/cancellation-refund-policy</loc>
+  </url>
+
+  <url>
+    <loc>https://www.pettxo.com/service-provider-agreement</loc>
+  </url>
+
+  <url>
+    <loc>https://www.pettxo.com/community-guidelines</loc>
+  </url>
+
+  <url>
+    <loc>https://www.pettxo.com/legal</loc>
   </url>
 
 </urlset>
