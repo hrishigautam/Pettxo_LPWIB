@@ -11,7 +11,12 @@ import config from "../config.js";
 // Badge chhota/bada dikhe to sirf yahan height badal do.
 const BADGE_H = "h-[140px] sm:h-[180px]";
 
+// SVG ke andar upar-neeche jo extra khali jagah hai use kaatne ke liye.
+// Space abhi bhi zyada ho to number badhao (-my-8 -> -my-10), kam ho to ghatao (-my-8 -> -my-6).
+const BADGE_TRIM = "-my-6 sm:-my-10";
+
 const badgeLink = `
+  ${BADGE_TRIM}
   inline-flex
   items-center
   justify-center
