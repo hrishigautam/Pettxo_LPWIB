@@ -33,10 +33,10 @@ export default function TrustStrip() {
             start: "top 92%",
             once: true,
           },
-        }
+        },
       );
     },
-    { scope: ref }
+    { scope: ref },
   );
 
   return (
@@ -47,48 +47,47 @@ export default function TrustStrip() {
     >
       <div className="max-w-[1280px] mx-auto px-3 sm:px-6 md:px-12 py-3 md:py-4">
         {/* <div className="flex flex-wrap items-center justify-center gap-x-4 md:gap-x-4 gap-y-2"> */}
-          <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-4 gap-y-2">
+        <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 md:gap-x-4 gap-y-2">
           {/* First dot - Desktop/Tablet only */}
           <span
             aria-hidden="true"
-            className="hidden sm:inline text-orange text-[22px] leading-none font-bold"
+            className=" text-orange text-[22px] leading-none font-bold"
           >
             ·
           </span>
 
-          {ITEMS.map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-x-4 md:gap-x-8"
-            >
-             <span
-  className="
-    trust-item
-    text-center sm:text-left
-    text-[6px] sm:text-[12px] md:text-[16px]
-    font-medium
-    text-dark
-    leading-none
-    whitespace-nowrap
-    px-0
-  "
->
-  {item}
-</span>
-
-              {/* Separator */}
+          {ITEMS.map((item, index) => (
+            <div key={item} className="flex items-center gap-x-4 md:gap-x-8">
               <span
-                aria-hidden="true"
                 className="
-                  hidden sm:inline
-                  text-orange
-                  text-[22px]
+                  trust-item
+                  text-center sm:text-left
+                  text-[6px] sm:text-[12px] md:text-[16px]
+                  font-medium
+                  text-dark
                   leading-none
-                  font-bold
+                  whitespace-nowrap
+                  px-0
                 "
               >
-                ·
+                {item}
               </span>
+
+              {/* Separator - not shown after last item */}
+              {index < ITEMS.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className="
+                
+                    text-orange
+                    text-[22px]
+                    leading-none
+                    font-bold
+                  "
+                >
+                  ·
+                </span>
+              )}
             </div>
           ))}
         </div>

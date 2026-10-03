@@ -74,7 +74,7 @@ export default function About() {
             </h1>
 
             <p
-              className="reveal font-light pb-28 leading-[1.82] text-muted max-w-[620px]"
+              className="reveal font-light  leading-[1.82] text-muted max-w-[620px]"
               style={{ fontSize: 'clamp(15px,2vw,18px)' }}
             >
               Pettxo is the social platform for the entire pet ecosystem —

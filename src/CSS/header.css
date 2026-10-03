@@ -12,30 +12,30 @@
 .mobile-menu-button {
   width: 40px;
   height: 40px;
-
   display: grid;
   place-items: center;
-
   position: relative;
-
-  border: 0;
-  background: transparent;
+  border: 1px solid rgba(31, 41, 55, 0.08);
+  background: rgba(245, 239, 230, 0.72);
   padding: 0;
-
   cursor: pointer;
   z-index: 1002;
+  border-radius: 10px;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-menu-button:active {
+  transform: scale(0.95);
 }
 
 .menu-line {
   position: absolute;
-
-  width: 21px;
+  width: 19px;
   height: 2px;
-
   border-radius: 999px;
-
   background: #1f2937;
-
   transition:
     transform 0.35s ease,
     top 0.35s ease,
@@ -69,19 +69,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   background: #f75927;
   color: #ffffff;
-
   font-size: 12px;
   font-weight: 500;
-
-  padding: 8px 12px;
-  border-radius: 6px;
-
+  padding: 9px 13px;
+  border-radius: 8px;
   text-decoration: none;
   white-space: nowrap;
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -89,7 +84,6 @@
 
 .mobile-install-button:hover {
   transform: translateY(-1px);
-
   box-shadow:
     0 5px 14px rgba(247, 89, 39, 0.28);
 }
@@ -101,34 +95,24 @@
 
 .mobile-side-menu {
   position: fixed;
-
   top: 0;
   right: 0;
-
   height: 100dvh;
-
   width: min(82vw, 360px);
-
   z-index: 1001;
 
   opacity: 0;
   transform: translateX(100%);
 
-  /*
-    SOLID BACKGROUND
-    No glass / gradient
-  */
   background: #f5efe6;
 
-  border-left: 1px solid #e5e7eb;
+  border-left: 1px solid rgba(31, 41, 55, 0.08);
 
   box-shadow:
-    -18px 0 55px rgba(31, 41, 55, 0.12);
+    -18px 0 55px rgba(31, 41, 55, 0.14);
 
   overflow: hidden;
-
   pointer-events: none;
-
   visibility: hidden;
 }
 
@@ -147,13 +131,12 @@
 
 .mobile-menu-inner {
   height: 100%;
-
   display: flex;
   flex-direction: column;
 
   padding:
-    22px
-    22px
+    88px
+    24px
     max(24px, env(safe-area-inset-bottom));
 }
 
@@ -165,8 +148,7 @@
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-
-  margin-top: 72px;
+  margin-top: 0;
 }
 
 .mobile-nav-link {
@@ -176,19 +158,22 @@
   align-items: center;
   justify-content: space-between;
 
-  min-height: 58px;
-
+  min-height: 60px;
   padding: 0 2px;
 
   text-decoration: none;
-
   color: #1f2937;
 
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.09);
 
   transition:
     padding-left 0.25s ease,
-    color 0.25s ease;
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.mobile-nav-link:first-child {
+  border-top: 1px solid rgba(31, 41, 55, 0.09);
 }
 
 .mobile-nav-link:hover {
@@ -199,16 +184,13 @@
 .mobile-nav-text {
   font-size: 16px;
   font-weight: 500;
-
   letter-spacing: -0.01em;
 }
 
 .mobile-nav-dot {
   width: 6px;
   height: 6px;
-
   border-radius: 50%;
-
   background: #f75927;
 
   opacity: 0;
@@ -231,7 +213,6 @@
 
 .mobile-menu-bottom {
   margin-top: auto;
-
   padding-top: 20px;
 
   font-size: 11px;
@@ -249,18 +230,12 @@
 
 .mobile-menu-backdrop {
   position: fixed;
-
   inset: 0;
-
   z-index: 1000;
 
   border: 0;
 
-  /*
-    Normal backdrop.
-    No glass blur.
-  */
-  background: rgba(31, 41, 55, 0.08);
+  background: rgba(31, 41, 55, 0.12);
 
   cursor: pointer;
 }
@@ -272,7 +247,6 @@
    ========================================================= */
 
 @media (min-width: 768px) {
-
   .mobile-side-menu,
   .mobile-menu-backdrop {
     display: none !important;
@@ -293,7 +267,6 @@
    ----------------------------- */
 
 @media (max-width: 480px) {
-
   .mobile-side-menu {
     width: min(84vw, 340px);
   }
@@ -301,19 +274,20 @@
   .mobile-menu-inner {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 84px;
   }
 
   .mobile-nav-text {
     font-size: 15px;
   }
 
-  .mobile-nav-links {
-    margin-top: 68px;
+  .mobile-nav-link {
+    min-height: 57px;
   }
 
   .mobile-install-button {
     font-size: 11px;
-    padding: 7px 10px;
+    padding: 8px 11px;
   }
 }
 
@@ -323,7 +297,6 @@
    ----------------------------- */
 
 @media (max-width: 360px) {
-
   .mobile-side-menu {
     width: 88vw;
   }
@@ -331,14 +304,37 @@
   .mobile-menu-inner {
     padding-left: 18px;
     padding-right: 18px;
+    padding-top: 80px;
   }
 
   .mobile-nav-text {
     font-size: 15px;
   }
 
+  .mobile-nav-link {
+    min-height: 55px;
+  }
+
   .mobile-install-button {
     font-size: 10px;
-    padding: 7px 8px;
+    padding: 7px 9px;
+  }
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   MOBILE + TABLET CONTENT OFFSET
+   Keeps page content below the fixed navbar
+   ========================================================= */
+
+@media (max-width: 767px) {
+  main {
+    padding-top: 68px;
   }
 }
