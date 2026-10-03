@@ -151,7 +151,9 @@ export default function Audience() {
 />
     <section
       ref={sectionRef}
-      className="w-full bg-beige py-4 sm:py-20 lg:py-24 overflow-hidden"
+      // className="w-full bg-beige py-4 sm:py-20 lg:py-24 overflow-hidden"
+        className="w-full bg-beige pt-[88px] pb-4 sm:pt-[100px] sm:pb-20 lg:py-24 overflow-hidden"
+
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-16">
 
