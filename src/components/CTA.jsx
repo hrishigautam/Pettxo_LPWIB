@@ -182,7 +182,7 @@ export default function CTA() {
                 mt-4
               "
             >
-              {/* App Store — abhi comment out hai, uncomment karte hi Google Play jaisa hi dikhega
+              {/* App Store — abhi comment out hai, uncomment karte hi Google Play jaisa hi dikhega */}
               <a
                 href={config.APP_STORE_URL}
                 target="_blank"
@@ -198,7 +198,7 @@ export default function CTA() {
                   draggable="false"
                 />
               </a>
-              */}
+             
 
               <a
                 href={config.GOOGLE_PLAY_URL}
